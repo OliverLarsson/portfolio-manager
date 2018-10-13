@@ -17,7 +17,8 @@ using namespace std;
  * Constructor
  * Takes four parameters from user input: age, wealth, risk tolerance, and sector preference
 */ 
-Investor::Investor(int age, int wealth, int risk, Sector sector) {
+Investor::Investor(string name, int age, int wealth, int risk, Sector sector) {
+    name_ = name; 
     age_ = age; 
     wealth_ = wealth; 
     risk_ = risk; 
@@ -25,6 +26,16 @@ Investor::Investor(int age, int wealth, int risk, Sector sector) {
 }
 
 /**
- * 
- * 
+ * get_sector
+ * Can't cout an enum type 
 */ 
+string Investor::get_sector() { // might use a map here if it's necessary / more efficient ... not sure yet 
+    string sec; 
+    if(sector_ == Sector::tech) {
+        sec = "Technology"; 
+    }
+    else {
+        sec = "Industrial"; 
+    }
+    return sec; 
+}
