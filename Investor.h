@@ -18,6 +18,6 @@ class Investor {
     private: 
     //private methods go here 
 
-} // class Investor
+}; // class Investor
 
 #endif //_INVESTOR_H_ 
