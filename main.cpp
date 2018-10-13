@@ -20,7 +20,8 @@ int main() {
     string name; 
     int age; 
     int wealth;
-    int risk; 
+    int risk_tolerance; 
+    int risk_required; 
     Sector sector; 
     string sector_; 
 
@@ -32,8 +33,6 @@ int main() {
     cin >> age; 
     cout << "How much money do you have for your portfolio? (Please exclude $ and commas) "; 
     cin >> wealth; 
-    cout << "On a whole number scale of 1 to 10, 1 being lowest, how tolerant to investment risk are you? "; 
-    cin >> risk; 
     cout << "Would you prefer to invest in technology (t) or industrial (i) businesses? "; 
     cin >> sector_; // cannot cin >> to an enum, so cin to string and assign to enum 
     if(sector_ == "t") {
@@ -42,14 +41,38 @@ int main() {
         sector = Sector::industrial; 
     }   
 
-    Investor investor(name, age, wealth, risk, sector); 
+    cout << endl;
+    cout << "On a whole number scale of 1 to 10, 1 being lowest, how tolerant to investment risk are you? "; 
+    cin >> risk_tolerance; 
+    cout << "It's important to consider how much growth you need to see in your portfolio." << endl;
+    cout << "What would you consider to be your necessary financial gain?" << endl;
+    cout << "   1. I cannot lose money. I would prefer to stay even over any monetary growth." <<endl;
+    cout << "   2. I need to see at least 2% year-over-year growth." << endl; 
+    cout << "   3. I need to see at least 5% year-over-year growth." << endl; 
+    cout << "   4. I need to see at least 10% year-over-year growth." << endl; 
+    cout << "   5. I need to see at least 15% year-over-year growth." << endl; 
+    cin >> risk_required; 
 
+    Investor investor(name, age, wealth, risk_tolerance, risk_required, sector); 
+
+    cout << endl; 
     cout << "From what you provided, these are your attributes:" << endl; 
     cout << "   Name: " << investor.get_name() << "." << endl;
     cout << "   Age: " << investor.get_age() << "." << endl;
     cout << "   Wealth: " << investor.get_wealth() << "." << endl;
-    cout << "   Risk tolerance: " << investor.get_risk() << "." << endl;
     cout << "   Sector preference: " << investor.get_sector() << "." << endl;
+
+    cout << endl;
+    cout << "Based on the risk assessment you provided: " << endl; 
+    cout << "   Risk tolerance: " << investor.get_risk_tolerance() << "." << endl;
+    cout << "   Risk required: " << investor.get_risk_required() << "." << endl;
+    cout << "While considering your profile size:" << endl;
+    cout << "   " << investor.get_wealth() << " dollars." <<endl; 
+    cout << "We decided you have a risk capacity of " << investor.get_risk_capacity() << " dollars." << endl; 
+    cout << "We believe you should have a " << investor.risk_profile() << " profile." << endl;
+    cout << "Roughly, this will consist of: " << endl;
+    cout << "   Equities, bonds, etc." << endl;
+
 
 
 
