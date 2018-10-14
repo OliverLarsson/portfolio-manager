@@ -18,10 +18,10 @@ using namespace std;
 int main() {   
 
     string name; 
-    int age; 
-    int wealth;
-    int risk_tolerance; 
-    int risk_required; 
+    double age; 
+    double wealth;
+    double risk_tolerance; 
+    double risk_required; 
     Sector sector; 
     string sector_; 
 

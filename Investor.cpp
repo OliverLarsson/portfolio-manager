@@ -17,7 +17,7 @@ using namespace std;
  * Constructor
  * Takes four parameters from user input: age, wealth, risk tolerance, and sector preference
 */ 
-Investor::Investor(string name, int age, int wealth, int risk_tolerance, int risk_required, Sector sector) {
+Investor::Investor(string name, double age, double wealth, double risk_tolerance, double risk_required, Sector sector) {
     name_ = name; 
     age_ = age; 
     wealth_ = wealth; 
