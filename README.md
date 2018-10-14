@@ -16,6 +16,11 @@ Once you complete the downloading steps, it's time to play. To run the game, mak
     1. make all
     2. ./portfolio
 
+If you want to test the game, follow these steps on the command line: 
+
+    1. make all 
+    2. ./test
+
 Have fun! 
 
 ********************
