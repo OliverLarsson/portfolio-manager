@@ -12,6 +12,8 @@
 
 // Libraries 
 #include <iostream> 
+#include <stdio.h>  
+
 
 using namespace std; 
 
@@ -77,7 +79,7 @@ int main() {
     cout << "On a whole number percentage scale of 0-100, what is your required return on investment (ROI)? " << endl; 
     cout << "Keep in mind that investing is a balance of risk vs reward. What you are requesting to gain, you must be willing to lose." << endl; 
     cout << "ROI: "; 
-    cin >> risk_requirement; 
+    cin >> risk_requirement; // compare this against their risk capacity 
 
 
 
