@@ -21,7 +21,6 @@ int main() {
     double age; 
     double wealth;
     double risk_tolerance; 
-    double risk_required; 
     Sector sector; 
     string sector_; 
 
@@ -44,16 +43,8 @@ int main() {
     cout << endl;
     cout << "On a whole number scale of 1 to 10, 1 being lowest, how tolerant to investment risk are you? "; 
     cin >> risk_tolerance; 
-    cout << "It's important to consider how much growth you need to see in your portfolio." << endl;
-    cout << "What would you consider to be your necessary financial gain?" << endl;
-    cout << "   1. I cannot lose money. I would prefer to stay even over any monetary growth." <<endl;
-    cout << "   2. I need to see at least 2% year-over-year growth." << endl; 
-    cout << "   3. I need to see at least 5% year-over-year growth." << endl; 
-    cout << "   4. I need to see at least 10% year-over-year growth." << endl; 
-    cout << "   5. I need to see at least 15% year-over-year growth." << endl; 
-    cin >> risk_required; 
 
-    Investor investor(name, age, wealth, risk_tolerance, risk_required, sector); 
+    Investor investor(name, age, wealth, risk_tolerance, sector); 
 
     cout << endl; 
     cout << "From what you provided, these are your attributes:" << endl; 
@@ -65,13 +56,31 @@ int main() {
     cout << endl;
     cout << "Based on the risk assessment you provided: " << endl; 
     cout << "   Risk tolerance: " << investor.get_risk_tolerance() << "." << endl;
-    cout << "   Risk required: " << investor.get_risk_required() << "." << endl;
     cout << "While considering your profile size:" << endl;
     cout << "   " << investor.get_wealth() << " dollars." <<endl; 
+    cout << "And your age: " << endl;
+    cout << "   " << investor.get_age() << " years old." << endl; 
     cout << "We decided you have a risk capacity of " << investor.get_risk_capacity() << " dollars." << endl; 
-    cout << "We believe you should have a " << investor.risk_profile() << " profile." << endl;
-    cout << "Roughly, this will consist of: " << endl;
-    cout << "   Equities, bonds, etc." << endl;
+    cout << "We believe you should have a profile with " << investor.risk_profile() << "% securites, " << (100 - investor.risk_profile() - 5) << "% fixed incomes, and 5% cash." << endl; 
+    cout << endl; 
+    string yes; 
+    cout << "Ready to move on to the portfolio? " << endl; 
+    cin >> yes; 
+
+    // Moving to Portfolio 
+    double risk_requirement; 
+
+    cout << endl; 
+    cout << endl; 
+    cout << "Now that we know more about you, we'll move on to which assets best fit your needs." << endl; 
+    cout << endl; 
+    cout << "On a whole number percentage scale of 0-100, what is your required return on investment (ROI)? " << endl; 
+    cout << "Keep in mind that investing is a balance of risk vs reward. What you are requesting to gain, you must be willing to lose." << endl; 
+    cout << "ROI: "; 
+    cin >> risk_requirement; 
+
+
+
 
 
 
