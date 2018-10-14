@@ -21,7 +21,7 @@ class Investor {
     double get_age() { return age_; }; // inline
     double get_wealth() { return wealth_; }; //inline
     double get_risk_tolerance() { return risk_tolerance_; }; //inline
-    double get_risk_capacity() { return (wealth_ - (wealth_ * (risk_tolerance_ / 10))); };
+    double get_risk_capacity() { return (wealth_ * (risk_tolerance_ / 10)); };
     string get_sector(); 
     double risk_profile(); 
 
