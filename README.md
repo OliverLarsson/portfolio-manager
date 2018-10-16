@@ -27,8 +27,8 @@ Have fun!
 
 Additional information on functionality, features, dependencies, etc. 
 
-Framer X: 
+Framer X mockup: 
     - Framer X is a software that allows you to draw, style, and export responsive mockups. Used by companies like Twitter, Dropbox, and YouTube, it comes with loads of features both locally and in the Framer X store, giving you plenty of options in designing the product. Personally, I found it extremely useful and intuitive. Going through the several page tutorial that is offered upon launching the app gave me everything I needed to effectively design my Portfolio Manager and create links between all the pages. 
-    - As far as viewing the Framer X document, you might need to download the software. It comes with a 14-day free trial with card needed, so it's easy enough to download if you want to check it out. Here's their site: https://framer.com/
+    - As far as viewing the Framer X document, you'll need to download the software. It comes with a 14-day free trial with no card needed, so you don't have to worry about accidentally forgetting to cancel the subscription and getting charged. Here's their site: https://framer.com/
     - I'll also be uploading a PDF of the mockup into the Checkpoints folder on GitHub so it's viewable without the software. 
 
