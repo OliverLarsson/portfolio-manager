@@ -19,9 +19,11 @@ class Portfolio {
             return instance; 
         }
 
-        void fill_portfolio(); 
-        void print_portfolio(vector <struct> asset_vec); // printing from the tickers and prices in a map parameter
-        double portfolio_value(); // calculate the value of the whole porfolio 
+        vector <string> portfolio_contents; // store the stocks that fit an investor in vector 
+
+        void add_contents(); // adds contents to portfolio_contents 
+        void print_portfolio(); // printing from the tickers and prices in portfolio contents
+        double portfolio_value(); // calculate the value of the whole porfolio by price and units in Investor.portfolio table
 
         Portfolio(Portfolio const&) = delete; 
         void operator = (Portfolio const&) = delete; 
