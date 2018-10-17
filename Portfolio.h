@@ -11,12 +11,23 @@
 
 using namespace std; 
 
+// singleton implementation 
 class Portfolio {
     public: 
-    // public methods go here 
+        static Portfolio& GetInstance() {
+            static Portfolio instance; 
+            return instance; 
+        }
+
+        void fill_portfolio(); 
+        void print_portfolio(vector <struct> asset_vec); // printing from the tickers and prices in a map parameter
+        double portfolio_value(); // calculate the value of the whole porfolio 
+
+        Portfolio(Portfolio const&) = delete; 
+        void operator = (Portfolio const&) = delete; 
 
     private: 
-    //private methods go here 
+        Portfolio(); // private constructor 
 
 }; // class Portfolio
 

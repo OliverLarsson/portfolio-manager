@@ -13,10 +13,16 @@ using namespace std;
 
 class Forecast {
     public: 
-    // public methods go here 
+        Forecast(double value; double variance, double risk); 
+
+        double calculate_value(); // calculate value of the future portfolio based on current value, variance, and risk 
+        double calculate_risk(); // calculate future risk 
+        double calculate_growth(); // calculate future growth 
 
     private: 
-    //private methods go here 
+        double value_; 
+        double variance_; 
+        double risk_; 
 
 }; // class Forecast
 
