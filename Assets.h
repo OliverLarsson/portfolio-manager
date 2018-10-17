@@ -13,10 +13,13 @@ using namespace std;
 
 class Assets {
     public: 
-    // public methods go here 
+    Assets(); 
+    double calculate_risk(); 
 
     private: 
-    //private methods go here 
+    double volatility_; // used as a parameter for calculating the risk of an asset 
+                        // the more volatile/variance an asset has, the higher risk 
+    
 
 }; // class Assets
 
