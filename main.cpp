@@ -9,6 +9,9 @@
 #include "Market.h"
 #include "Portfolio.h"
 #include "Forecast.h" 
+//$(Users/Ollie/Documents/Project/portfolio-manager/Ultralight)/include/ -> put in the include directories in XCode
+// $(Users/Ollie/Documents/Project/portfolio-manager/Ultralight)/deps/ -> also 
+//#include <Ultralight/Ultralight.h> // include for Ultralight API 
 
 // Libraries 
 #include <iostream> 

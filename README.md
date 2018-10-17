@@ -51,6 +51,14 @@ Back-end:
 
 Front-End: 
 - The front-end is currently a Text UI. Once the application is near completion it will be changed to an HTML UI with the Ultralight HTML UI Engine. Ultralight is implemented within the C++ application. 
+- All documentation on Ultralight and how to set up is here: https://github.com/ultralight-ux/ultralight/blob/1.9.1/README.md#getting-started
+- It requires: 
+    - Cmake 2.8.12 or later
+    - OpenGL 3.2 or later 
+    - Compiler with C++11 or later 
+    - XCode 8.0
+- An example of Ultralight is under the Ultralight directory in the portfolio-manager repo. To run it, navigate: 
+    - /Ultralight/build/samples/Browser/Browser (open second browser)
 - https://ultralig.ht/
 
 Testing: 
