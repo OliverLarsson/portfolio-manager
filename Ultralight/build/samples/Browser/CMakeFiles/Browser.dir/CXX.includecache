@@ -474,15 +474,15 @@ Ultralight/Bitmap.h
 Ultralight/Defines.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/JSHelpers.cpp
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/JSHelpers.cpp
 JSHelpers.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/JSHelpers.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/JSHelpers.h
 cstring
 -
 cassert
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/JSHelpers.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/JSHelpers.h
 JavaScriptCore/JavaScript.h
 -
 JavaScriptCore/JSStringRef.h
@@ -496,9 +496,9 @@ vector
 memory
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/Overlay.cpp
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/Overlay.cpp
 Overlay.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/Overlay.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/Overlay.h
 Ultralight/Renderer.h
 -
 Ultralight/platform/Platform.h
@@ -506,7 +506,7 @@ Ultralight/platform/Platform.h
 Ultralight/platform/Config.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/Overlay.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/Overlay.h
 vector
 -
 Ultralight/View.h
@@ -516,7 +516,7 @@ Ultralight/Renderer.h
 Ultralight/platform/GPUDriver.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/PlatformGLFW.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/PlatformGLFW.h
 Framework/Platform.h
 -
 glad/glad.h
@@ -524,17 +524,17 @@ glad/glad.h
 GLFW/glfw3.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/WindowGLFW.cpp
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/WindowGLFW.cpp
 Framework/Window.h
 -
 PlatformGLFW.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/PlatformGLFW.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/PlatformGLFW.h
 Ultralight/KeyCodes.h
 -
 cmath
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/gl/GPUContextGL.cpp
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/gl/GPUContextGL.cpp
 Framework/GPUContext.h
 -
 Framework/platform/glfw/PlatformGLFW.h
@@ -544,9 +544,9 @@ Framework/platform/glfw/gl/GPUDriverGL.h
 glad/glad.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp
 GPUDriverGL.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/gl/GPUDriverGL.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/gl/GPUDriverGL.h
 Ultralight/platform/Platform.h
 -
 Ultralight/platform/FileSystem.h
@@ -558,7 +558,7 @@ fstream
 sstream
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/gl/GPUDriverGL.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/gl/GPUDriverGL.h
 Ultralight/platform/GPUDriver.h
 -
 Framework/platform/glfw/PlatformGLFW.h
@@ -568,7 +568,7 @@ vector
 map
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/main.cpp
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/main.cpp
 Framework/Window.h
 -
 Framework/Application.h
@@ -580,13 +580,13 @@ chrono
 thread
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FileSystemMac.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FileSystemMac.h
 Ultralight/platform/FileSystem.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FileSystemMac.mm
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FileSystemMac.mm
 FileSystemMac.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FileSystemMac.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FileSystemMac.h
 CoreFoundation/CoreFoundation.h
 -
 CoreServices/CoreServices.h
@@ -614,21 +614,21 @@ fnmatch.h
 dirent.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FontLoaderMac.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FontLoaderMac.h
 Ultralight/platform/FontLoader.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FontLoaderMac.mm
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FontLoaderMac.mm
 FontLoaderMac.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FontLoaderMac.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FontLoaderMac.h
 Foundation/Foundation.h
 -
 CoreText/CoreText.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Browser.cc
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Browser.cc
 Browser.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Browser.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Browser.h
 Ultralight/platform/Platform.h
 -
 Ultralight/platform/Config.h
@@ -636,7 +636,7 @@ Ultralight/platform/Config.h
 Ultralight/Renderer.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Browser.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Browser.h
 Framework/Application.h
 -
 Framework/GPUContext.h
@@ -644,29 +644,29 @@ Framework/GPUContext.h
 Ultralight/Renderer.h
 -
 UI.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.h
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Tab.cc
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Tab.cc
 Tab.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Tab.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Tab.h
 UI.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.h
 iostream
 -
 string
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Tab.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Tab.h
 Framework/Overlay.h
 -
 Ultralight/Listener.h
 -
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.cc
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.cc
 UI.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.h
 
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.h
 Framework/Overlay.h
 -
 Framework/Window.h
@@ -674,7 +674,7 @@ Framework/Window.h
 Framework/JSHelpers.h
 -
 Tab.h
-/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Tab.h
+/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Tab.h
 map
 -
 memory

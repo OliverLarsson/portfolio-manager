@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/glfw/src
+# Install script for directory: /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

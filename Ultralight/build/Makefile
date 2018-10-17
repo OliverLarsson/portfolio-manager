@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.12.3/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64
+CMAKE_SOURCE_DIR = /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build
+CMAKE_BINARY_DIR = /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build/CMakeFiles /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build/CMakeFiles /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser
+# Install script for directory: /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

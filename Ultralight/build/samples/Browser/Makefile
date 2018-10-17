@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.12.3/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64
+CMAKE_SOURCE_DIR = /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build
+CMAKE_BINARY_DIR = /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build/CMakeFiles /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build/samples/Browser/CMakeFiles/progress.marks
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build/CMakeFiles 0
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build/CMakeFiles /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build/samples/Browser/CMakeFiles/progress.marks
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/clean
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/preinstall
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/preinstall
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 samples/Browser/CMakeFiles/Browser.dir/rule:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/CMakeFiles/Browser.dir/rule
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f CMakeFiles/Makefile2 samples/Browser/CMakeFiles/Browser.dir/rule
 .PHONY : samples/Browser/CMakeFiles/Browser.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ Browser: samples/Browser/CMakeFiles/Browser.dir/rule
 
 # fast build rule for target.
 Browser/fast:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/build
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/build
 .PHONY : Browser/fast
 
 __/__/deps/Framework/JSHelpers.o: __/__/deps/Framework/JSHelpers.cpp.o
@@ -131,7 +131,7 @@ __/__/deps/Framework/JSHelpers.o: __/__/deps/Framework/JSHelpers.cpp.o
 
 # target to build an object file
 __/__/deps/Framework/JSHelpers.cpp.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/JSHelpers.cpp.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/JSHelpers.cpp.o
 .PHONY : __/__/deps/Framework/JSHelpers.cpp.o
 
 __/__/deps/Framework/JSHelpers.i: __/__/deps/Framework/JSHelpers.cpp.i
@@ -140,7 +140,7 @@ __/__/deps/Framework/JSHelpers.i: __/__/deps/Framework/JSHelpers.cpp.i
 
 # target to preprocess a source file
 __/__/deps/Framework/JSHelpers.cpp.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/JSHelpers.cpp.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/JSHelpers.cpp.i
 .PHONY : __/__/deps/Framework/JSHelpers.cpp.i
 
 __/__/deps/Framework/JSHelpers.s: __/__/deps/Framework/JSHelpers.cpp.s
@@ -149,7 +149,7 @@ __/__/deps/Framework/JSHelpers.s: __/__/deps/Framework/JSHelpers.cpp.s
 
 # target to generate assembly for a file
 __/__/deps/Framework/JSHelpers.cpp.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/JSHelpers.cpp.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/JSHelpers.cpp.s
 .PHONY : __/__/deps/Framework/JSHelpers.cpp.s
 
 __/__/deps/Framework/Overlay.o: __/__/deps/Framework/Overlay.cpp.o
@@ -158,7 +158,7 @@ __/__/deps/Framework/Overlay.o: __/__/deps/Framework/Overlay.cpp.o
 
 # target to build an object file
 __/__/deps/Framework/Overlay.cpp.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/Overlay.cpp.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/Overlay.cpp.o
 .PHONY : __/__/deps/Framework/Overlay.cpp.o
 
 __/__/deps/Framework/Overlay.i: __/__/deps/Framework/Overlay.cpp.i
@@ -167,7 +167,7 @@ __/__/deps/Framework/Overlay.i: __/__/deps/Framework/Overlay.cpp.i
 
 # target to preprocess a source file
 __/__/deps/Framework/Overlay.cpp.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/Overlay.cpp.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/Overlay.cpp.i
 .PHONY : __/__/deps/Framework/Overlay.cpp.i
 
 __/__/deps/Framework/Overlay.s: __/__/deps/Framework/Overlay.cpp.s
@@ -176,7 +176,7 @@ __/__/deps/Framework/Overlay.s: __/__/deps/Framework/Overlay.cpp.s
 
 # target to generate assembly for a file
 __/__/deps/Framework/Overlay.cpp.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/Overlay.cpp.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/Overlay.cpp.s
 .PHONY : __/__/deps/Framework/Overlay.cpp.s
 
 __/__/deps/Framework/platform/glfw/WindowGLFW.o: __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.o
@@ -185,7 +185,7 @@ __/__/deps/Framework/platform/glfw/WindowGLFW.o: __/__/deps/Framework/platform/g
 
 # target to build an object file
 __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/WindowGLFW.cpp.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/WindowGLFW.cpp.o
 .PHONY : __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.o
 
 __/__/deps/Framework/platform/glfw/WindowGLFW.i: __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.i
@@ -194,7 +194,7 @@ __/__/deps/Framework/platform/glfw/WindowGLFW.i: __/__/deps/Framework/platform/g
 
 # target to preprocess a source file
 __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/WindowGLFW.cpp.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/WindowGLFW.cpp.i
 .PHONY : __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.i
 
 __/__/deps/Framework/platform/glfw/WindowGLFW.s: __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.s
@@ -203,7 +203,7 @@ __/__/deps/Framework/platform/glfw/WindowGLFW.s: __/__/deps/Framework/platform/g
 
 # target to generate assembly for a file
 __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/WindowGLFW.cpp.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/WindowGLFW.cpp.s
 .PHONY : __/__/deps/Framework/platform/glfw/WindowGLFW.cpp.s
 
 __/__/deps/Framework/platform/glfw/gl/GPUContextGL.o: __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.o
@@ -212,7 +212,7 @@ __/__/deps/Framework/platform/glfw/gl/GPUContextGL.o: __/__/deps/Framework/platf
 
 # target to build an object file
 __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.o
 .PHONY : __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.o
 
 __/__/deps/Framework/platform/glfw/gl/GPUContextGL.i: __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.i
@@ -221,7 +221,7 @@ __/__/deps/Framework/platform/glfw/gl/GPUContextGL.i: __/__/deps/Framework/platf
 
 # target to preprocess a source file
 __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.i
 .PHONY : __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.i
 
 __/__/deps/Framework/platform/glfw/gl/GPUContextGL.s: __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.s
@@ -230,7 +230,7 @@ __/__/deps/Framework/platform/glfw/gl/GPUContextGL.s: __/__/deps/Framework/platf
 
 # target to generate assembly for a file
 __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.s
 .PHONY : __/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.s
 
 __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.o: __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.o
@@ -239,7 +239,7 @@ __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.o: __/__/deps/Framework/platfo
 
 # target to build an object file
 __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.o
 .PHONY : __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.o
 
 __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.i: __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.i
@@ -248,7 +248,7 @@ __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.i: __/__/deps/Framework/platfo
 
 # target to preprocess a source file
 __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.i
 .PHONY : __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.i
 
 __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.s: __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.s
@@ -257,7 +257,7 @@ __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.s: __/__/deps/Framework/platfo
 
 # target to generate assembly for a file
 __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.s
 .PHONY : __/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.s
 
 __/__/deps/Framework/platform/glfw/main.o: __/__/deps/Framework/platform/glfw/main.cpp.o
@@ -266,7 +266,7 @@ __/__/deps/Framework/platform/glfw/main.o: __/__/deps/Framework/platform/glfw/ma
 
 # target to build an object file
 __/__/deps/Framework/platform/glfw/main.cpp.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/main.cpp.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/main.cpp.o
 .PHONY : __/__/deps/Framework/platform/glfw/main.cpp.o
 
 __/__/deps/Framework/platform/glfw/main.i: __/__/deps/Framework/platform/glfw/main.cpp.i
@@ -275,7 +275,7 @@ __/__/deps/Framework/platform/glfw/main.i: __/__/deps/Framework/platform/glfw/ma
 
 # target to preprocess a source file
 __/__/deps/Framework/platform/glfw/main.cpp.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/main.cpp.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/main.cpp.i
 .PHONY : __/__/deps/Framework/platform/glfw/main.cpp.i
 
 __/__/deps/Framework/platform/glfw/main.s: __/__/deps/Framework/platform/glfw/main.cpp.s
@@ -284,7 +284,7 @@ __/__/deps/Framework/platform/glfw/main.s: __/__/deps/Framework/platform/glfw/ma
 
 # target to generate assembly for a file
 __/__/deps/Framework/platform/glfw/main.cpp.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/main.cpp.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/main.cpp.s
 .PHONY : __/__/deps/Framework/platform/glfw/main.cpp.s
 
 __/__/deps/Framework/platform/mac/FileSystemMac.o: __/__/deps/Framework/platform/mac/FileSystemMac.mm.o
@@ -293,7 +293,7 @@ __/__/deps/Framework/platform/mac/FileSystemMac.o: __/__/deps/Framework/platform
 
 # target to build an object file
 __/__/deps/Framework/platform/mac/FileSystemMac.mm.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FileSystemMac.mm.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FileSystemMac.mm.o
 .PHONY : __/__/deps/Framework/platform/mac/FileSystemMac.mm.o
 
 __/__/deps/Framework/platform/mac/FileSystemMac.i: __/__/deps/Framework/platform/mac/FileSystemMac.mm.i
@@ -302,7 +302,7 @@ __/__/deps/Framework/platform/mac/FileSystemMac.i: __/__/deps/Framework/platform
 
 # target to preprocess a source file
 __/__/deps/Framework/platform/mac/FileSystemMac.mm.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FileSystemMac.mm.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FileSystemMac.mm.i
 .PHONY : __/__/deps/Framework/platform/mac/FileSystemMac.mm.i
 
 __/__/deps/Framework/platform/mac/FileSystemMac.s: __/__/deps/Framework/platform/mac/FileSystemMac.mm.s
@@ -311,7 +311,7 @@ __/__/deps/Framework/platform/mac/FileSystemMac.s: __/__/deps/Framework/platform
 
 # target to generate assembly for a file
 __/__/deps/Framework/platform/mac/FileSystemMac.mm.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FileSystemMac.mm.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FileSystemMac.mm.s
 .PHONY : __/__/deps/Framework/platform/mac/FileSystemMac.mm.s
 
 __/__/deps/Framework/platform/mac/FontLoaderMac.o: __/__/deps/Framework/platform/mac/FontLoaderMac.mm.o
@@ -320,7 +320,7 @@ __/__/deps/Framework/platform/mac/FontLoaderMac.o: __/__/deps/Framework/platform
 
 # target to build an object file
 __/__/deps/Framework/platform/mac/FontLoaderMac.mm.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FontLoaderMac.mm.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FontLoaderMac.mm.o
 .PHONY : __/__/deps/Framework/platform/mac/FontLoaderMac.mm.o
 
 __/__/deps/Framework/platform/mac/FontLoaderMac.i: __/__/deps/Framework/platform/mac/FontLoaderMac.mm.i
@@ -329,7 +329,7 @@ __/__/deps/Framework/platform/mac/FontLoaderMac.i: __/__/deps/Framework/platform
 
 # target to preprocess a source file
 __/__/deps/Framework/platform/mac/FontLoaderMac.mm.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FontLoaderMac.mm.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FontLoaderMac.mm.i
 .PHONY : __/__/deps/Framework/platform/mac/FontLoaderMac.mm.i
 
 __/__/deps/Framework/platform/mac/FontLoaderMac.s: __/__/deps/Framework/platform/mac/FontLoaderMac.mm.s
@@ -338,7 +338,7 @@ __/__/deps/Framework/platform/mac/FontLoaderMac.s: __/__/deps/Framework/platform
 
 # target to generate assembly for a file
 __/__/deps/Framework/platform/mac/FontLoaderMac.mm.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FontLoaderMac.mm.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FontLoaderMac.mm.s
 .PHONY : __/__/deps/Framework/platform/mac/FontLoaderMac.mm.s
 
 __/__/deps/glfw/deps/glad.o: __/__/deps/glfw/deps/glad.c.o
@@ -347,7 +347,7 @@ __/__/deps/glfw/deps/glad.o: __/__/deps/glfw/deps/glad.c.o
 
 # target to build an object file
 __/__/deps/glfw/deps/glad.c.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/glfw/deps/glad.c.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/glfw/deps/glad.c.o
 .PHONY : __/__/deps/glfw/deps/glad.c.o
 
 __/__/deps/glfw/deps/glad.i: __/__/deps/glfw/deps/glad.c.i
@@ -356,7 +356,7 @@ __/__/deps/glfw/deps/glad.i: __/__/deps/glfw/deps/glad.c.i
 
 # target to preprocess a source file
 __/__/deps/glfw/deps/glad.c.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/glfw/deps/glad.c.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/glfw/deps/glad.c.i
 .PHONY : __/__/deps/glfw/deps/glad.c.i
 
 __/__/deps/glfw/deps/glad.s: __/__/deps/glfw/deps/glad.c.s
@@ -365,7 +365,7 @@ __/__/deps/glfw/deps/glad.s: __/__/deps/glfw/deps/glad.c.s
 
 # target to generate assembly for a file
 __/__/deps/glfw/deps/glad.c.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/glfw/deps/glad.c.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/__/__/deps/glfw/deps/glad.c.s
 .PHONY : __/__/deps/glfw/deps/glad.c.s
 
 src/Browser.o: src/Browser.cc.o
@@ -374,7 +374,7 @@ src/Browser.o: src/Browser.cc.o
 
 # target to build an object file
 src/Browser.cc.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Browser.cc.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Browser.cc.o
 .PHONY : src/Browser.cc.o
 
 src/Browser.i: src/Browser.cc.i
@@ -383,7 +383,7 @@ src/Browser.i: src/Browser.cc.i
 
 # target to preprocess a source file
 src/Browser.cc.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Browser.cc.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Browser.cc.i
 .PHONY : src/Browser.cc.i
 
 src/Browser.s: src/Browser.cc.s
@@ -392,7 +392,7 @@ src/Browser.s: src/Browser.cc.s
 
 # target to generate assembly for a file
 src/Browser.cc.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Browser.cc.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Browser.cc.s
 .PHONY : src/Browser.cc.s
 
 src/Tab.o: src/Tab.cc.o
@@ -401,7 +401,7 @@ src/Tab.o: src/Tab.cc.o
 
 # target to build an object file
 src/Tab.cc.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Tab.cc.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Tab.cc.o
 .PHONY : src/Tab.cc.o
 
 src/Tab.i: src/Tab.cc.i
@@ -410,7 +410,7 @@ src/Tab.i: src/Tab.cc.i
 
 # target to preprocess a source file
 src/Tab.cc.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Tab.cc.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Tab.cc.i
 .PHONY : src/Tab.cc.i
 
 src/Tab.s: src/Tab.cc.s
@@ -419,7 +419,7 @@ src/Tab.s: src/Tab.cc.s
 
 # target to generate assembly for a file
 src/Tab.cc.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Tab.cc.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/Tab.cc.s
 .PHONY : src/Tab.cc.s
 
 src/UI.o: src/UI.cc.o
@@ -428,7 +428,7 @@ src/UI.o: src/UI.cc.o
 
 # target to build an object file
 src/UI.cc.o:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/UI.cc.o
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/UI.cc.o
 .PHONY : src/UI.cc.o
 
 src/UI.i: src/UI.cc.i
@@ -437,7 +437,7 @@ src/UI.i: src/UI.cc.i
 
 # target to preprocess a source file
 src/UI.cc.i:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/UI.cc.i
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/UI.cc.i
 .PHONY : src/UI.cc.i
 
 src/UI.s: src/UI.cc.s
@@ -446,7 +446,7 @@ src/UI.s: src/UI.cc.s
 
 # target to generate assembly for a file
 src/UI.cc.s:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/UI.cc.s
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(MAKE) -f samples/Browser/CMakeFiles/Browser.dir/build.make samples/Browser/CMakeFiles/Browser.dir/src/UI.cc.s
 .PHONY : src/UI.cc.s
 
 # Help Target
@@ -505,6 +505,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

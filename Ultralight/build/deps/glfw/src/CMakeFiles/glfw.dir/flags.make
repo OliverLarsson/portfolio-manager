@@ -6,7 +6,7 @@ C_FLAGS = -fPIC   -Wall
 
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/glfw/include -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/glfw/src -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/build/deps/glfw/src 
+C_INCLUDES = -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/glfw/include -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/glfw/src -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/build/deps/glfw/src 
 
 # Custom flags: deps/glfw/src/CMakeFiles/glfw.dir/context.c.o_FLAGS = -Wdeclaration-after-statement
 

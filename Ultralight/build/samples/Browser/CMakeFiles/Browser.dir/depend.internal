@@ -4,7 +4,7 @@
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/glfw/deps/glad.c.o
  ../deps/glfw/deps/KHR/khrplatform.h
  ../deps/glfw/deps/glad/glad.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/glfw/deps/glad.c
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/glfw/deps/glad.c
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/JSHelpers.cpp.o
  ../include/JavaScriptCore/JSBase.h
  ../include/JavaScriptCore/JSContextRef.h
@@ -20,8 +20,8 @@ samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/JSHelpers.cpp.o
  ../include/Ultralight/String16.h
  ../include/Ultralight/String32.h
  ../include/Ultralight/String8.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/JSHelpers.cpp
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/JSHelpers.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/JSHelpers.cpp
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/JSHelpers.h
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/Overlay.cpp.o
  ../include/JavaScriptCore/JSBase.h
  ../include/JavaScriptCore/JSContextRef.h
@@ -51,8 +51,8 @@ samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/Overlay.cpp.o
  ../include/Ultralight/platform/Config.h
  ../include/Ultralight/platform/GPUDriver.h
  ../include/Ultralight/platform/Platform.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/Overlay.cpp
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/Overlay.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/Overlay.cpp
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/Overlay.h
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/WindowGLFW.cpp.o
  ../deps/Framework/Platform.h
  ../deps/Framework/Window.h
@@ -78,8 +78,8 @@ samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/Window
  ../include/Ultralight/String8.h
  ../include/Ultralight/platform/FileSystem.h
  ../include/Ultralight/platform/FontLoader.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/PlatformGLFW.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/WindowGLFW.cpp
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/PlatformGLFW.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/WindowGLFW.cpp
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUContextGL.cpp.o
  ../deps/Framework/GPUContext.h
  ../deps/Framework/Platform.h
@@ -113,7 +113,7 @@ samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPU
  ../include/Ultralight/platform/FileSystem.h
  ../include/Ultralight/platform/FontLoader.h
  ../include/Ultralight/platform/GPUDriver.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/gl/GPUContextGL.cpp
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/gl/GPUContextGL.cpp
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp.o
  ../deps/Framework/Platform.h
  ../deps/Framework/platform/glfw/PlatformGLFW.h
@@ -136,8 +136,8 @@ samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/gl/GPU
  ../include/Ultralight/platform/FontLoader.h
  ../include/Ultralight/platform/GPUDriver.h
  ../include/Ultralight/platform/Platform.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/gl/GPUDriverGL.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/gl/GPUDriverGL.cpp
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/gl/GPUDriverGL.h
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/main.cpp.o
  ../deps/Framework/Application.h
  ../deps/Framework/Platform.h
@@ -165,7 +165,7 @@ samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/glfw/main.c
  ../include/Ultralight/String8.h
  ../include/Ultralight/platform/FileSystem.h
  ../include/Ultralight/platform/FontLoader.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/glfw/main.cpp
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/glfw/main.cpp
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FileSystemMac.mm.o
  ../include/Ultralight/Defines.h
  ../include/Ultralight/RefPtr.h
@@ -174,16 +174,16 @@ samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FileSys
  ../include/Ultralight/String32.h
  ../include/Ultralight/String8.h
  ../include/Ultralight/platform/FileSystem.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FileSystemMac.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FileSystemMac.mm
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FileSystemMac.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FileSystemMac.mm
 samples/Browser/CMakeFiles/Browser.dir/__/__/deps/Framework/platform/mac/FontLoaderMac.mm.o
  ../include/Ultralight/Buffer.h
  ../include/Ultralight/Defines.h
  ../include/Ultralight/RefPtr.h
  ../include/Ultralight/String16.h
  ../include/Ultralight/platform/FontLoader.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FontLoaderMac.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/Framework/platform/mac/FontLoaderMac.mm
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FontLoaderMac.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/Framework/platform/mac/FontLoaderMac.mm
 samples/Browser/CMakeFiles/Browser.dir/src/Browser.cc.o
  ../deps/Framework/Application.h
  ../deps/Framework/GPUContext.h
@@ -224,10 +224,10 @@ samples/Browser/CMakeFiles/Browser.dir/src/Browser.cc.o
  ../include/Ultralight/platform/FontLoader.h
  ../include/Ultralight/platform/GPUDriver.h
  ../include/Ultralight/platform/Platform.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Browser.cc
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Browser.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Tab.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Browser.cc
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Browser.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Tab.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.h
 samples/Browser/CMakeFiles/Browser.dir/src/Tab.cc.o
  ../deps/Framework/JSHelpers.h
  ../deps/Framework/Overlay.h
@@ -264,9 +264,9 @@ samples/Browser/CMakeFiles/Browser.dir/src/Tab.cc.o
  ../include/Ultralight/platform/FileSystem.h
  ../include/Ultralight/platform/FontLoader.h
  ../include/Ultralight/platform/GPUDriver.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Tab.cc
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Tab.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Tab.cc
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Tab.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.h
 samples/Browser/CMakeFiles/Browser.dir/src/UI.cc.o
  ../deps/Framework/JSHelpers.h
  ../deps/Framework/Overlay.h
@@ -303,6 +303,6 @@ samples/Browser/CMakeFiles/Browser.dir/src/UI.cc.o
  ../include/Ultralight/platform/FileSystem.h
  ../include/Ultralight/platform/FontLoader.h
  ../include/Ultralight/platform/GPUDriver.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/Tab.h
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.cc
- /Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/samples/Browser/src/UI.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/Tab.h
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.cc
+ /Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/samples/Browser/src/UI.h

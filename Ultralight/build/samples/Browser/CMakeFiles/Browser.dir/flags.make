@@ -7,11 +7,11 @@ C_FLAGS =
 
 C_DEFINES = -DFRAMEWORK_PLATFORM_GLFW
 
-C_INCLUDES = -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/include -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/glfw/deps -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/glfw/include 
+C_INCLUDES = -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/include -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/glfw/deps -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/glfw/include 
 
 CXX_FLAGS =  -fno-rtti   -std=gnu++11
 
 CXX_DEFINES = -DFRAMEWORK_PLATFORM_GLFW
 
-CXX_INCLUDES = -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/include -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/glfw/deps -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps -I/Users/Ollie/Downloads/ultralight-sdk-0.9.1-mac-x64/deps/glfw/include 
+CXX_INCLUDES = -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/include -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/glfw/deps -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps -I/Users/Ollie/Documents/CSCI3010/Project/portfolio-manager/Ultralight/deps/glfw/include 
 
