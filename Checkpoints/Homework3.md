@@ -2,7 +2,7 @@
 Oliver Larsson 
 CSCI 3010 - Felix Muzny 
 
-1. The initial plan for Homework 3 in the project proposal: 
+1) The initial plan for Homework 3 in the project proposal: 
 - Studying: Since this is the first step of the project, the work will include studying and freshening up on tools and technologies that I’m either not familiar with or haven’t used recently. This is particularly important for SOCI and Ultralight since I have not used these before. Further practice in implementation will have to be done in the use of multiple classes, seeing as I didn’t do a great job of that on Homework 1. This will be especially important to me as it will give me a self-led example of how C++ classes and object look in a full-stack (or close to) environment. 
 - Structure: To begin the project, adequate structure has to be laid out. For this step, the database, back end, front end, and UI base must be set up and ready to be built on. This means that the MySQL server should be connected to the back end through SOCI and the UI should be connected to the front end through Ultralight. 
 - Initial header files: To help visualize the product it’s important to begin with header files. This way I can piece together all methods and fields that will be involved with the Investor class, the Financial Asset class, and the Portfolio class. 
@@ -13,7 +13,7 @@ CSCI 3010 - Felix Muzny
 - What knowledge will I need to know? Along with everything we have learned so far in this class, I will need to know how SOCI and Ultralight work. I am not familiar with these two tools, so I will need to study their implementation techniques and how they are worked into C++ code. I will also need to know where the data will be coming from and how that will be drawn into the program. 
 - What will I need to learn? Referencing the question above and the first “Study” point, I’ll need to learn tools that I have not had experience in before. 
 
-2. What was completed or modified from each task in initial plan: 
+2) What was completed or modified from each task in initial plan: 
 - Studying: Most of the studying came along with linking the MySQL C++ Connector (detailed in Structure section) and Ultralight to the project. Since I had never worked with either of these tools before, it took some time to actually understand how and why they should be used. 
 - Structure: I elected to go with a MySQL C++ Connector rather than SOCI to connect the database. The reason for this is that I hadn't found the Connector when researching database connections in C++, so I went with SOCI as it had decent reviews. After looking into SOCI further and finding out about the MySQL C++ Connector, it was obvious that the latter was the better option since I'm connecting to a MySQL database. Ultralight was also a bit difficult to implement due to a lack of documentation, but the base connection has been made so I'll continue to learn as I build on it in the later Homeworks. 
 - Initial header files: Done. They are subject to change as I integrate them into the project, but as it stands I believe the methods and fields are listed properly for how the classes will be used. I didn't list the Forecast class in the proposal, but that was always part of the plan and documented elsewhere in that submission. 
@@ -22,7 +22,7 @@ CSCI 3010 - Felix Muzny
 - Preliminary test cases: Done. I created a few test cases to run through the program as it stands for Homework 3 using Catch2. These are pretty basic and relate to the Investor class. The testing will be built upon further in the project as the data is loaded and the front-end has transitioned to a GUI from its current Text UI state. 
 - Create Investor class: Done. Objects are created using user input and tests for functionality have come back positive. 
 
-3. What was planned for in the Homework 4 proposal and any changes: 
+3) What was planned for in the Homework 4 proposal and any changes: 
 - Draw data into project: This phase will need to access data from the first phase and insert it into a database. This data will be used by the three classes yet to be implemented: financial assets, portfolio, and forecast. 
     - Still the plan. 
 - Create financial asset class: This class will be the first to be created following the investor class in the first phase. It will involve pulling data from the database and sorting it by sector, date, and price. It will then have to be accessible by the investor class, the portfolio class, and the forecast class. 
@@ -38,7 +38,7 @@ CSCI 3010 - Felix Muzny
 - What will I need to learn? I’m new to the SOCI library so along with the initial studying done in the first phase, I’ll need to be sure to implement it correctly here. 
     - No longer using SOCI. I'll have to do the same task for MySQL C++ Connector. 
 
-4. These screenshots show the current functionality of the program. Included with each Text UI screenshot is a screenshot of the same functionality on the GUI mock-up. 
+4) These screenshots show the current functionality of the program. Included with each Text UI screenshot is a screenshot of the same functionality on the GUI mock-up. 
 
 - Build 
 
