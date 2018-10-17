@@ -22,11 +22,20 @@ TEST_CASE("Investor class methods", "[Investor]") {
 
   // Tests that constructor is dealing with parameters
   SECTION("Constructor check") {
-    REQUIRE( investor.get_name() == "Oliver" );  
+    REQUIRE( investor.get_name() == "Oliver" );
+    REQUIRE( investor.get_age() == 21 );  
+    REQUIRE( investor.get_wealth() == 500000 );  
+    REQUIRE( investor.get_risk_tolerance() == 2 );  
+    REQUIRE( investor.get_sector() == "Technology" );  
   }
 
   // Tests that the simple risk capacity function returns correctly 
   SECTION("Risk capacity") {
     REQUIRE( investor.get_risk_capacity() == 100000.0); 
+  }
+
+  // Tests that the risk profile returns correctly based on age and risk tolerance 
+  SECTION("Risk Profile") {
+    REQUIRE( investor.risk_profile() == 70.0);
   }
 }
