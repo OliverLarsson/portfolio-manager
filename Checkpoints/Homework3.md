@@ -41,5 +41,32 @@ CSCI 3010 - Felix Muzny
 4. These screenshots show the current functionlity of the program. You create an Investor object with user input. Included with each Text UI screenshot is a screenshot of the same functionality on the GUI mock-up. 
 
 - Build 
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t1.png)
 
+- Welcome
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t2.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m1.png)
 
+- Investor Attributes Input 
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t3.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m2.png)
+
+- Investor's Risk 
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t4.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m3.png)
+
+- Investor Attribute Display 
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t5.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m4.png)
+
+- Investor Risk Profile & Portfolio Distribution
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t6.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m8.png)
+
+- Mock-up only: Changed the Technology vs Industrial input to after the Investor's Risk input
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m5.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m6.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m7.png)
+
+- Full Text UI build and display 
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t7.png)
