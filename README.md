@@ -35,7 +35,7 @@ Lucy.jpg:
 
 Framer X mockup: 
 - Framer X is a software that allows you to draw, style, and export responsive mockups. It comes with loads of features both locally and in the Framer X store, giving you plenty of options in designing the product. 
-- As far as viewing the Framer X document, you'll need to download the software. It comes with a 14-day free trial with no card needed, so you don't have to worry about accidentally forgetting to cancel the subscription and getting charged.
+- You'll need to download the Framer X software to view the mockup.framerx file. It comes with a 14-day free trial with no card needed, so you don't have to worry about accidentally forgetting to cancel the subscription and getting charged.
 - I'll also be uploading a PDF of the mockup into the Checkpoints/Checkpoint_1 folder on GitHub so it's viewable without the software. 
 - https://framer.com/
 
