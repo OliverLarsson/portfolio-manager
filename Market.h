@@ -11,22 +11,19 @@
 
 using namespace std; 
 
-// might also be singleton? 
+// runs queries for stocks in decided sector
 class Market {
     public: 
-        Market(string ticker, double price, double variance, double sector); 
+       Market(string sector); 
 
-        void fill_market(); // my idea is to fill a vector with structs that will be used by the Portfolio class 
-                            // structs are filled with 
-        void print_market(string ticker_); // print the asset by ticker and price 
-        double calculate_risk(); // calculate the risk of an asset by it's year-to-date variance and current price 
+       void print_market(); // prints Technology if Market object created with t and Industrial if created with i 
+       void print_by_price(); // prints a specific query based on the price limit a user gives 
+       void print_by_ticker(); // prints the information of an asset by ticker 
+       void print_by_name(); // prints the information of an asset by name 
+       void print_by_variance(); // prints the information of an asset by YTD variance limit
 
     private: 
-        // fields all used for calculation and/or printing 
-        string ticker_; 
-        double price_; 
-        double variance_; 
-        double sector_; 
+        string sector_; // needed for queries done by price, ticker, name, or variance
 
 }; // class Market
 
