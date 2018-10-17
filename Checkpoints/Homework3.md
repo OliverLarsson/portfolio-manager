@@ -15,7 +15,7 @@ CSCI 3010 - Felix Muzny
 
 2) What was completed or modified from each task in initial plan: 
     - Studying: Most of the studying came along with linking the MySQL C++ Connector (detailed in Structure section) and Ultralight to the project. Since I had never worked with either of these tools before, it took some time to actually understand how and why they should be used. 
-    - Structure: I elected to go with a MySQL C++ Connector rather than SOCI to connect the database. The reason for this is that I hadn't found the Connector when researching database connections in C++, so I went with SOCI as it had decent reviews. After looking into SOCI further and finding out about the MySQL C++ Connector, it was obvious that the latter was the better option since I'm connecting to a MySQL database. Ultralight was also a bit difficult to implement due to a lack of documentation, but the base connection has been made so I'll continue to learn as I build on it in the later Homeworks. 
+    - Structure: I elected to go with a MySQL C++ Connector rather than SOCI to connect the database. The reason for this is that I hadn't found the Connector when researching database connections in C++, so I went with SOCI as it had decent reviews. After looking into SOCI further and finding out about the MySQL C++ Connector, it was obvious that the latter was the better option since I'm connecting to a MySQL database. Ultralight was also a bit difficult to implement due to a lack of documentation, but the base connection has been made so I'll continue to learn as I build on it in the later Homeworks. I changed a few columns in the database tables because I realized some columns might be better as functions which draw from columns. Once data is loaded in HW4 this might be altered again. 
     - Initial header files: Done. They are subject to change as I integrate them into the project, but as it stands I believe the methods and fields are listed properly for how the classes will be used. I didn't list the Forecast class in the proposal, but that was always part of the plan and documented elsewhere in that submission. 
     - Mock-up program: I started out on paper with a storyboard to plan what I wanted the program to look like. I then used a software called Framer X to visualize and link the pages together. The file for this is in the repo as mockup.framerx, but you'll need to download the software in order to view it interactively. A 14-day free trial is offered without providing a card number, so you can download and view the file without worrying about cancelling the subscription. I also uploaded a .png of the flowchart and am happy to show you the interactive version with button linking in person. Framer X is noted in the main README.md. 
     - Find real and mock data: Mentioned in this step was the need to find real data by October 13th. As I spoke on in person, Yahoo Finance's API was removed so all API's that provide financial data tend to be on a subscription basis. After some research into the API's I mentioend (Alpha Vantage, etc.) I decided that it's less plausible to use one of these since they limit calls without paying for a subscription. For the sake of testing purposes and not spending money when there are alternatives, I won't be going with a real-time API. Instead, I'll be downloading a couple hundred stocks into a CSV and loading that into the database. While this won't be real-time, it still provides recent and real data that can be used for all the same purposes. I'm happy to discuss how this will look in further detail, but the gist of it is that it will provide the same features as any other option, but with quotes delayed a few weeks. 
@@ -86,3 +86,13 @@ CSCI 3010 - Felix Muzny
 - Testing
 
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t8.png)
+
+- MySQL tables (MySQL Workbench screenshots)
+
+    - markets
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/d1.png)
+
+    - portfolio
+    
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/d2.png)
