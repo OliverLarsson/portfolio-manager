@@ -78,3 +78,10 @@ CSCI 3010 - Felix Muzny
 - Full Text UI build and display 
 
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t7.png)
+
+- Full GUI mock-up flowchart 
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/portfolio-manager.png)
+
+- Testing
+
