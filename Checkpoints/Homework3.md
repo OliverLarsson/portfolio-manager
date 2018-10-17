@@ -87,12 +87,14 @@ CSCI 3010 - Felix Muzny
 
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t8.png)
 
-- MySQL tables (MySQL Workbench screenshots)
+- Table (MySQL Workbench screenshot)
 
-    - markets
+    - market
 
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/d1.png)
 
+- Table (MySQL Workbench screenshot)
+
     - portfolio
-    
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/d2.png)
