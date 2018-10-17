@@ -38,35 +38,43 @@ CSCI 3010 - Felix Muzny
 - What will I need to learn? I’m new to the SOCI library so along with the initial studying done in the first phase, I’ll need to be sure to implement it correctly here. 
     - No longer using SOCI. I'll have to do the same task for MySQL C++ Connector. 
 
-4. These screenshots show the current functionlity of the program. You create an Investor object with user input. Included with each Text UI screenshot is a screenshot of the same functionality on the GUI mock-up. 
+4. These screenshots show the current functionality of the program. Included with each Text UI screenshot is a screenshot of the same functionality on the GUI mock-up. 
 
 - Build 
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t1.png)
 
 - Welcome
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t2.png)
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m1.png)
 
 - Investor Attributes Input 
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t3.png)
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m2.png)
 
 - Investor's Risk 
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t4.png)
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m3.png)
 
-- Investor Attribute Display 
+- Investor Attribute Display
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t5.png)
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m4.png)
 
 - Investor Risk Profile & Portfolio Distribution
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t6.png)
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m8.png)
 
 - Mock-up only: Changed the Technology vs Industrial input to after the Investor's Risk input
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m5.png)
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m6.png)
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m7.png)
 
 - Full Text UI build and display 
+
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t7.png)
