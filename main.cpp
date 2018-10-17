@@ -65,11 +65,15 @@ int main() {
     cout << "We decided you have a risk capacity of " << investor.get_risk_capacity() << " dollars." << endl; 
     cout << "We believe you should have a profile with " << investor.risk_profile() << "% securites, " << (100 - investor.risk_profile() - 5) << "% fixed incomes, and 5% cash." << endl; 
     cout << endl; 
+
+    /**
+     * Everything past here was done to visualize the move on to the next classes. 
+     * They are not part of the Homework 3 Checkpoint. 
+    */ 
     string yes; 
     cout << "Ready to move on to the portfolio? " << endl; 
     cin >> yes; 
 
-    // Moving to Portfolio 
     double risk_requirement; 
 
     cout << endl; 
