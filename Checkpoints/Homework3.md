@@ -98,3 +98,8 @@ CSCI 3010 - Felix Muzny
     - portfolio
 
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/d2.png)
+
+- Ultralight build and run 
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/u1.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/u2.png)
