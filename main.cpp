@@ -34,7 +34,7 @@ int main() {
     cin >> age; 
     cout << "How much money do you have for your portfolio? (Please exclude $ and commas) "; 
     cin >> wealth; 
-    cout << "Would you prefer to invest in technology (t) or industrial (i) businesses? "; 
+    cout << "Would you prefer to invest in technology (t) or industrial (i) businesses? "; // should this be in portfolio class as a final parameter? 
     cin >> sector_; // cannot cin >> to an enum, so cin to string and assign to enum 
     if(sector_ == "t") {
         sector = Sector::tech;  
@@ -43,6 +43,8 @@ int main() {
     }   
 
     cout << endl;
+    cout << "Let's talk about risk." << endl; 
+    cout << "Risk is any uncertainty within investing that may lead to a negative financial impact." << endl; 
     cout << "On a whole number scale of 1 to 10, 1 being lowest, how tolerant to investment risk are you? "; 
     cin >> risk_tolerance; 
 
@@ -56,12 +58,10 @@ int main() {
     cout << "   Sector preference: " << investor.get_sector() << "." << endl;
 
     cout << endl;
-    cout << "Based on the risk assessment you provided: " << endl; 
+    cout << "Based on the answers you provided: " << endl; 
     cout << "   Risk tolerance: " << investor.get_risk_tolerance() << "." << endl;
-    cout << "While considering your profile size:" << endl;
-    cout << "   " << investor.get_wealth() << " dollars." <<endl; 
-    cout << "And your age: " << endl;
-    cout << "   " << investor.get_age() << " years old." << endl; 
+    cout << "   Profile size: " << investor.get_wealth() << " dollars." <<endl; 
+    cout << "   Your age: " << investor.get_age() << " years old." << endl; 
     cout << "We decided you have a risk capacity of " << investor.get_risk_capacity() << " dollars." << endl; 
     cout << "We believe you should have a profile with " << investor.risk_profile() << "% securites, " << (100 - investor.risk_profile() - 5) << "% fixed incomes, and 5% cash." << endl; 
     cout << endl; 
