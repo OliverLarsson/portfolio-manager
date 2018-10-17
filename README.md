@@ -27,11 +27,13 @@ Have fun!
 
 Additional information on functionality, features, dependencies, etc. 
 
-System requirements: 
-- This entire application has been built and maintained on MacOS. It has not been tested on Linux or Windows. 
-
 Lucy.jpg: 
 - This is Lucy the coding support dog. She's at the foundation of all the work on his project. 
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Lucy.jpg)
+
+System requirements: 
+- This entire application has been built and maintained on MacOS. It has not been tested on Linux or Windows. 
 
 Framer X mockup: 
 - Framer X is a software that allows you to draw, style, and export responsive mockups. It comes with loads of features both locally and in the Framer X store, giving you plenty of options in designing the product. 
