@@ -85,3 +85,4 @@ CSCI 3010 - Felix Muzny
 
 - Testing
 
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t8.png)
