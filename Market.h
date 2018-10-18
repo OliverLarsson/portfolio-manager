@@ -16,7 +16,7 @@ using namespace std;
 // runs queries for stocks in decided sector
 class Market {
     public: 
-       Market(string sector); 
+       Market(string sector); // creates a Market with only the sector (t or i / DJIA or NASDAQ) that the user asks for
 
        void print_market(); // prints Technology if Market object created with t and Industrial if created with i 
        void print_by_price(); // prints a specific query based on the price limit a user gives 

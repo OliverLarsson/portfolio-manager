@@ -19,10 +19,13 @@ class Investor {
     public: 
     Investor(string name, double age, double wealth, double risk_tolerance, Sector sector); // constructor
 
-    string get_name() { return name_; }; // inline implementation
-    double get_age() { return age_; }; // inline
-    double get_wealth() { return wealth_; }; //inline
-    double get_risk_tolerance() { return risk_tolerance_; }; //inline
+    /**
+     * Below are inline method implementations to get an Investor object's attributes
+    */ 
+    string get_name() { return name_; }; 
+    double get_age() { return age_; }; 
+    double get_wealth() { return wealth_; }; 
+    double get_risk_tolerance() { return risk_tolerance_; }; 
     double get_risk_capacity() { return (wealth_ * (risk_tolerance_ / 10)); };
     string get_sector(); 
     double risk_profile(); 
@@ -31,7 +34,7 @@ class Investor {
     string name_; 
     double age_; 
     double wealth_; 
-    double risk_tolerance_; // what the investor claims
+    double risk_tolerance_; 
     Sector sector_; 
 
 }; // class Investor

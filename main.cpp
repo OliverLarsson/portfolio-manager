@@ -30,7 +30,10 @@ int main() {
     Sector sector;
     string sector_;
 
-    // Get parameters for Investor class
+    /**
+     * Start TextUI 
+     * Gather user input for Investor object instantiation
+    */ 
     cout << "Welcome to your Portfolio Manager! Please provide some more information about yourself." << endl;
     cout << "What is your name? ";
     getline(cin, name);
@@ -38,7 +41,7 @@ int main() {
     cin >> age;
     cout << "How much money do you have for your portfolio? (Please exclude $ and commas) ";
     cin >> wealth;
-    cout << "Would you prefer to invest in technology (t) or industrial (i) businesses? "; // should this be in portfolio class as a final parameter?
+    cout << "Would you prefer to invest in technology (t) or industrial (i) businesses? "; 
     cin >> sector_; // cannot cin >> to an enum, so cin to string and assign to enum
     if(sector_ == "t") {
         sector = Sector::tech;
@@ -52,6 +55,9 @@ int main() {
     cout << "On a whole number scale of 1 to 10, 1 being lowest, how tolerant to investment risk are you? ";
     cin >> risk_tolerance;
 
+    /**
+     * Create Investor object with parameters from user input
+    */ 
     Investor investor(name, age, wealth, risk_tolerance, sector);
 
     cout << endl;
@@ -74,6 +80,7 @@ int main() {
      * Everything past here was done to visualize the move on to the next classes.
      * They are not part of the Homework 3 Checkpoint.
     */
+    /*
     string yes;
     cout << "Ready to move on to the portfolio? " << endl;
     cin >> yes;
@@ -88,7 +95,7 @@ int main() {
     cout << "Keep in mind that investing is a balance of risk vs reward. What you are requesting to gain, you must be willing to lose." << endl;
     cout << "ROI: ";
     cin >> risk_requirement; // compare this against their risk capacity
-
+    */
 
 
 

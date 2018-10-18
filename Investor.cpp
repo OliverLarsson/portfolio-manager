@@ -30,7 +30,7 @@ Investor::Investor(string name, double age, double wealth, double risk_tolerance
 
 /**
  * get_sector
- * Can't cout an enum type 
+ * Can't cout an enum type so we have to change it to a string based on input 
 */ 
 string Investor::get_sector() { // might use a map here if it's necessary / more efficient ... not sure yet 
     string sec; 

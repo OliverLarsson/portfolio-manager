@@ -14,7 +14,9 @@
 
 using namespace std; 
 
-// singleton implementation 
+/**
+ * Singleton implementation 
+*/ 
 class Portfolio {
     public: 
         static Portfolio& GetInstance() {
