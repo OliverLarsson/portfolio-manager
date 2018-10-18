@@ -17,6 +17,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+#include "sqlite3.h" // header file for the SQLite database
 
 using namespace std;
 

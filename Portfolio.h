@@ -10,6 +10,7 @@
 #include <iostream> 
 #include <vector>
 //#include <Ultralight/Ultralight.h> // include for Ultralight API 
+#include "sqlite3.h" // header file for the SQLite database
 
 using namespace std; 
 
