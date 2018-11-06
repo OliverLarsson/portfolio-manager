@@ -37,7 +37,7 @@ CSCI 3010 - Felix Muzny
 - What will I need to learn? New to Ultralight so more research will have to go into that along with the initial studying in the first phase. Also will need research into how to best implement a forecasting strategy. 
     - Still the plan 
 
-4) These screenshots show the current functionality of the program. Included with each Text UI screenshot is a screenshot of the same functionality on the GUI mock-up. I included the same screenshots from Homework 3 for what was already done. 
+4) These screenshots show the current functionality of the program. Included with each Text UI screenshot is a screenshot of the same functionality on the GUI mock-up. I included the same screenshots from Homework 3 for what was already done.  
 
 - Build 
 
