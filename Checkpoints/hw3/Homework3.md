@@ -42,56 +42,56 @@ CSCI 3010 - Felix Muzny
 
 - Build 
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t1.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/t1.png)
 
 - Welcome
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t2.png)
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m1.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/t2.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/m1.png)
 
 - Investor Attributes Input 
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t3.png)
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m2.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/t3.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/m2.png)
 
 - Investor's Risk 
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t4.png)
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m3.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/t4.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/m3.png)
 
 - Investor Attribute Display
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t5.png)
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m4.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/t5.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/m4.png)
 
 - Investor Risk Profile & Portfolio Distribution
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t6.png)
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m8.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/t6.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/m8.png)
 
 - Mock-up only: Changed the Technology vs Industrial input to after the Investor's Risk input
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m5.png)
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m6.png)
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/m7.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/m5.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/m6.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/m7.png)
 
 - Full Text UI build and display 
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t7.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/t7.png)
 
 - Full GUI mock-up flowchart 
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/portfolio-manager.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/portfolio-manager.png)
 
 - Testing
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/t8.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/t8.png)
 
 - Sqlite database and tables created 
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/d3.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/d3.png)
 
 - Ultralight build and run 
 
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/u1.png)
-![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/u2.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/u1.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/u2.png)
