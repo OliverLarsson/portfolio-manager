@@ -1,8 +1,8 @@
-XX = g++  # the compiler
-CXXFLAGS = -std=c++11 -Wall  # flags for the compiler (use c++11 standards, turn on all optional warnings)
+XX = g++ # the compiler
+CXXFLAGS = -std=c++11 -Wall -l sqlite3 # flags for the compiler (use c++11 standards, turn on all optional warnings) & sqlite3 needed to connect to SQLite
 GDBINFO = -ggdb # include this to generate info needed to run gdb
 
-all: portfolio test
+all: portfolio test 
 
 clean:
 	rm Investor.o Market.o Portfolio.o Forecast.o portfolio test

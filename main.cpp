@@ -17,12 +17,51 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include "sqlite3.h" // header file for the SQLite database
+#include <sqlite3.h> // header file for the SQLite database
 
 using namespace std;
 
-int main() {
+static int callback(void *NotUsed, int argc, char **argv, char **azColName)
+{
+	int i;
+	for(i=0; i<argc; i++)
+	{
+		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL")<<"\n";
+	}
+	cout<<"\n";
+	return 0;
+}
 
+int main() {
+    
+    sqlite3 *db;
+	char *zErrMsg = 0;
+	const char *pSQL;
+	int rc;
+    
+	rc = sqlite3_open("Investor.db", &db);
+
+	if( rc )
+	{
+		cout<<"Can't open database: "<<sqlite3_errmsg(db)<<"\n";
+	} 
+	else
+	{
+		cout<<"Open database successfully\n\n";
+	}
+
+	pSQL = "select * from market";
+	rc = sqlite3_exec(db, pSQL, callback, 0, &zErrMsg);
+
+	if( rc != SQLITE_OK ) {
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
+
+	sqlite3_close(db);
+    
     string name;
     double age;
     double wealth;
