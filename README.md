@@ -46,8 +46,7 @@ Data:
 - https://www.nasdaq.com/article/difference-between-dow-nasdaq-and-sp-500-major-facts-opportunities-cm1001888
 
 Back-end: 
-- I went with a MySQL database maintained on MySQL Workbench. The two tables, Market and Portfolio, will be loaded with the CSV file mentioned above. It's linked to the application by the MySQL C++ Connector. 
-- https://www.mysql.com/
+- I went with a SQLite database. The two tables, Market and Portfolio, will be loaded with the CSV file mentioned above. It's linked to the application by the sqlite3 header file. 
 
 Front-End: 
 - The front-end is currently a Text UI. Once the application is near completion it will be changed to an HTML UI with the Ultralight HTML UI Engine. Ultralight is implemented within the C++ application. 
