@@ -16,13 +16,15 @@ using namespace std;
 // runs queries for stocks in decided sector
 class Market {
     public: 
-       Market(string sector); // constructor
+        Market(string sector); // constructor
 
-       void print_market();  
-       void print_by_price(); 
-       void print_by_ticker(); 
-       void print_by_name(); 
-       void print_by_variance(); 
+        void market_controller(int option); 
+        void print_options(); 
+        void print_market();  
+        void print_by_price(); 
+        void print_by_ticker(); 
+        void print_by_name(); 
+        void print_by_variance(); 
 
     private: 
         string sector_; // needed for queries done by price, ticker, name, or variance

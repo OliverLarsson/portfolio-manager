@@ -115,15 +115,15 @@ int main() {
     cout << "We believe you should have a profile with " << investor.risk_profile() << "% securites, " << (100 - investor.risk_profile() - 5) << "% fixed incomes, and 5% cash." << endl;
     cout << endl;
 
-    /**
-     * Everything past here was done to visualize the move on to the next classes.
-     * They are not part of the Homework 3 Checkpoint.
-    */
-    /*
+    // Market and Portfolio class implementations 
+
+    // This is just to slow down the Text UI since there's a break in topics/classes 
     string yes;
     cout << "Ready to move on to the portfolio? " << endl;
     cin >> yes;
 
+
+    // risk_requirement will be used in the Porfolio object 
     double risk_requirement;
 
     cout << endl;
@@ -134,9 +134,26 @@ int main() {
     cout << "Keep in mind that investing is a balance of risk vs reward. What you are requesting to gain, you must be willing to lose." << endl;
     cout << "ROI: ";
     cin >> risk_requirement; // compare this against their risk capacity
-    */
+    
+    // creating Market object 
 
+    Market market(sector_); // creating market object with their sector preference 
 
+    int option; 
+    cout << "Earlier you selected " << sector_ << " as your preferred sector." << endl;
+    cout << "Please select options to view the financial assets in this sector." << endl;
+    cout << "If you would like to move on to your Portfolio without viewing the markets, enter '6'. " << endl;
+    cout << "Here are your market options: " << endl; 
+    
+    market.print_options(); 
+    cin >> option; 
+    if(option != 6) { 
+        market.market_controller(option); 
+    } else {
+        cout << "You've selected to move on to your portfolio. Let's check it out!" << endl;
+    }
+
+    
 
 
 
