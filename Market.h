@@ -18,6 +18,7 @@ class Market {
     public: 
         Market(string sector); // constructor
 
+        static int callback(void *NotUsed, int argc, char **argv, char **azColName);
         void market_controller(int option); 
         void print_options(); 
         void print_market();  
