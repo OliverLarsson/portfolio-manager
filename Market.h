@@ -19,13 +19,15 @@ class Market {
         Market(string sector); // constructor
 
         static int callback(void *NotUsed, int argc, char **argv, char **azColName);
+        void access_database(int option); 
+        void database_controller(int option, sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
         void market_controller(int option); 
         void print_options(); 
-        void print_market();  
-        void print_by_price(); 
-        void print_by_ticker(); 
-        void print_by_name(); 
-        void print_by_variance(); 
+        void print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc);  
+        void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
+        void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
+        void print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
+        void print_by_variance(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
 
     private: 
         string sector_; // needed for queries done by price, ticker, name, or variance
