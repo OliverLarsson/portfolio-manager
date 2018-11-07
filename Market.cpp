@@ -40,6 +40,7 @@ Market::Market(string sector) {
 
 /**
  * access_database
+ * Called by market_controller 
  * Needed each time market_controller is called to open the database connection 
 */ 
 void Market::access_database(int option) {
@@ -51,12 +52,9 @@ void Market::access_database(int option) {
     
 	rc = sqlite3_open("Investor.db", &db);
 
-	if( rc )
-	{
+	if( rc ) {
 		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
-	} 
-	else
-	{
+	} else {
 		fprintf(stdout, "Open database successfully\n\n");
 	}
 
@@ -65,7 +63,10 @@ void Market::access_database(int option) {
 
 /**
  * database_controller
+ * Called by access_database, which opens the database connection 
  * Function called for each market controller option aside from quit
+ * Directs the user input option to the function needed for that query 
+ * Closes database connection each time 
  */ 
 void Market::database_controller(int option, sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
     if(option == 1) {
@@ -105,6 +106,7 @@ void Market::print_options() {
 
 /**
  * market_controller
+ * Called in main.cpp and directs all other functions in class 
  * Controller for viewing market db 
  * Mainly to declutter main.cpp 
 */

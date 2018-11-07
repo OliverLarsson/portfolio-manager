@@ -15,7 +15,7 @@ CSCI 3010 - Felix Muzny
 - Draw data into project: This phase will need to access data from the first phase and insert it into a database. This data will be used by the three classes yet to be implemented: financial assets, portfolio, and forecast. 
     - Completed. I went into more depth as to what data I would be using in Homework 3. Briefly here for clarity, I decided to draw data from a manually downloaded Excel file with lots of financial asset information within it. While this isn't as "real time" as an API would be, all the APIs available for stock information had limited daily calls before you have to pay. This would be inconvenient for testing purposes and paying is unnecessary when this solution is just about the same. 
 - Create financial asset class: This class will be the first to be created following the investor class in the first phase. It will involve pulling data from the database and sorting it by sector, date, and price. It will then have to be accessible by the investor class, the portfolio class, and the forecast class. 
-    - Completed as intended. 
+    - Completed as intended. Although the class is now called 'Market'. 
 - Create portfolio class: This class will use the prior two – investor and financial assets – and create a portfolio based on the characteristics of the two. It will then create a portfolio object consisting of financial assets that cater to the investor’s profile. 
     - Completed as intended. 
 - Create algorithms for risk assessment and forecasting: Both these algorithms will be reliant on the decided data in this phase, so it’s a good point to create algorithms for future use.  (taken out from Homework 3) 
