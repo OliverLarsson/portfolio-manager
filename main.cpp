@@ -36,22 +36,22 @@ int main() {
     
     sqlite3 *db;
 	char *zErrMsg = 0;
-	const char *pSQL;
+	const char *sql;
 	int rc;
     
 	rc = sqlite3_open("Investor.db", &db);
 
 	if( rc )
 	{
-		cout<<"Can't open database: "<<sqlite3_errmsg(db)<<"\n";
+		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
 	} 
 	else
 	{
-		cout<<"Open database successfully\n\n";
+		fprintf(stdout, "Open database successfully\n\n");
 	}
 
-	pSQL = "select * from market";
-	rc = sqlite3_exec(db, pSQL, callback, 0, &zErrMsg);
+	sql = "select * from market";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 
 	if( rc != SQLITE_OK ) {
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
