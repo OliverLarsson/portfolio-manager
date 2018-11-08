@@ -24,10 +24,17 @@ class Portfolio {
             return instance; 
         }
 
-        vector <string> portfolio_contents; // store the stocks that fit an investor in vector 
+        // Database handlers 
+        static int callback(void *NotUsed, int argc, char **argv, char **azColName);
+        void access_database(int option); 
+        void database_controller(int option, sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
+        void portfolio_controller(int option); 
 
+        void print_options(); 
         void add_contents(); // adds contents to portfolio_contents 
-        void print_portfolio(); // printing from the tickers and prices in portfolio contents
+        void print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
+        void print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
+        void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
         double portfolio_value(); // calculate the value of the whole porfolio by price and units in Investor.portfolio table
 
         Portfolio(Portfolio const&) = delete; 
