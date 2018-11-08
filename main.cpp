@@ -56,7 +56,7 @@ int main() {
     cin >> risk_tolerance;
 
     /**
-     * Create Investor object with parameters from user input
+     * Creating Investor object 
     */ 
     Investor investor(name, age, wealth, risk_tolerance, sector);
 
@@ -96,7 +96,9 @@ int main() {
     cout << "ROI: ";
     cin >> risk_requirement; // compare this against their risk capacity
     
-    // creating Market object 
+    /**
+     * Creating Market object 
+    */
 
     Market market(sector_); // creating market object with their sector preference 
 
@@ -114,6 +116,29 @@ int main() {
         cout << "\nYou've selected to move on to your portfolio. Let's check it out!" << endl;
     }
 
+    /** 
+     * Creating Portfolio object 
+    */ 
+
+    cout << "Ready to view your Portfolio? " << endl; 
+    cin >> yes; // break in info
+    Portfolio& portfolio = Portfolio::GetPortfolio(); // singleton implementation 
+
+    cout << "Please select options to view your Portfolio." << endl; 
+    cout << "If you would like to move on to the forecast, enter '5'." << endl; 
+    cout << "Here are your options: " << endl; 
+
+    portfolio.print_options(); 
+    cin >> option; 
+    if(option != 5) {
+        portfolio.portfolio_controller(option);
+    } else {
+        cout << "\nYou've selected to move on to the forecast. Let's see how your money might grow!" << endl; 
+    }
+
+    /** 
+     * This is where the forecast will be implemented
+    */ 
 
 
 

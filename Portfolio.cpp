@@ -18,7 +18,8 @@ using namespace std;
 /** 
  * Constructor ? 
 */ 
-
+Portfolio::Portfolio() {
+}
 /**
  * callback
  * sqlite3 provided function for printing out sql queries 
@@ -69,10 +70,14 @@ void Portfolio::database_controller(int option, sqlite3 *db, char *zErrMsg, cons
         sqlite3_close(db);
     }
     else if(option == 2) {
-        print_by_units(db, zErrMsg, sql, rc);
+        print_by_ticker(db, zErrMsg, sql, rc);
         sqlite3_close(db);
     }
     else if(option == 3) {
+        print_by_units(db, zErrMsg, sql, rc);
+        sqlite3_close(db);
+    }
+    else if(option == 4) {
         print_by_price(db, zErrMsg, sql, rc);
         sqlite3_close(db);
     }
@@ -94,20 +99,27 @@ void Portfolio::portfolio_controller(int option) {
         portfolio_controller(option_); 
     }
     else if(option == 2) {
-        cout << "\nYou chose to view your portfolio in order of units." <<endl;
+        cout << "\nYou chose to view your portfolio in order of ticker." <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 3) {
-        cout << "\nYou chose to view your portfolio in order of price." <<endl;
+        cout << "\nYou chose to view your portfolio in order of units." <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 4) {
+        cout << "\nYou chose to view your portfolio in order of price." <<endl;
+        access_database(option); 
+        print_options();
+        cin>> option_; 
+        portfolio_controller(option_); 
+    }
+    else if(option == 5) {
         cout << "\nYou chose to move on to the forecast." <<endl; 
     }
     else {
@@ -125,9 +137,10 @@ void Portfolio::portfolio_controller(int option) {
 */
 void Portfolio::print_options() {
     cout << "View entire portfolio info (1)." << endl;
-    cout << "View portfolio in order of units (2)." << endl;
-    cout << "View portfolio in order of price (3)." << endl;
-    cout << "Move on to your forecast (4)." << endl;
+    cout << "View portfolio in order of ticker (2)." << endl;
+    cout << "View portfolio in order of units (3)." << endl;
+    cout << "View portfolio in order of price (4)." << endl;
+    cout << "Move on to your forecast (5)." << endl;
 } 
 
 /**
@@ -135,7 +148,7 @@ void Portfolio::print_options() {
  * Prints entire contents of portfolio table
 */
 void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM portfolio";
+    sql = "SELECT ticker, units FROM portfolio";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -146,11 +159,26 @@ void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int
 }
 
 /**
+ * print_by_ticker
+ * Queries db portfolio table by ticker  
+*/
+void Portfolio::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
+    sql = "SELECT ticker, units FROM portfolio ORDER BY ticker ASC";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
+} 
+
+/**
  * print_by_units
  * Prints contents of portfolio table in unit order 
 */ 
 void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM portfolio ORDER BY units DESC";
+    sql = "SELECT ticker, units FROM portfolio ORDER BY units DESC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -162,10 +190,10 @@ void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int 
 
 /**
  * print_by_price
- * Prints contents of portfolio table in price order 
+ * Prints contents of market table in price order of ticker in portfolio table
 */ 
 void Portfolio::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM portfolio ORDER BY price DESC";
+    sql = "SELECT p.ticker, p.units, m.price FROM portfolio p, market m WHERE p.ticker = m.ticker ORDER BY price DESC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);

@@ -50,8 +50,7 @@ void Market::access_database(int option) {
 	int rc;
     
 	rc = sqlite3_open("Investor.db", &db);
-
-	if( rc ) {
+	if(rc) {
 		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
 	} else {
 		fprintf(stdout, "Open database successfully\n\n");
@@ -178,7 +177,7 @@ void Market::print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
  * Queries db market table by name  
 */
 void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market ORDER BY name DESC";
+    sql = "SELECT * FROM market ORDER BY name ASC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -193,7 +192,7 @@ void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) 
  * Queries db market table by ticker  
 */
 void Market::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market ORDER BY ticker DESC";
+    sql = "SELECT * FROM market ORDER BY ticker ASC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);

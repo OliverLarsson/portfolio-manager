@@ -8,7 +8,6 @@
 
 // Libraries
 #include <iostream> 
-#include <vector>
 //#include <Ultralight/Ultralight.h> // include for Ultralight API 
 #include <sqlite3.h> // header file for the SQLite database
 
@@ -19,9 +18,9 @@ using namespace std;
 */ 
 class Portfolio {
     public: 
-        static Portfolio& GetInstance() {
-            static Portfolio instance; 
-            return instance; 
+        static Portfolio& GetPortfolio() {
+            static Portfolio portfolio; 
+            return portfolio; 
         }
 
         // Database handlers 
@@ -33,15 +32,17 @@ class Portfolio {
         void print_options(); 
         void add_contents(); // adds contents to portfolio_contents 
         void print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
+        void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
         void print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
         void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
         double portfolio_value(); // calculate the value of the whole porfolio by price and units in Investor.portfolio table
+
 
         Portfolio(Portfolio const&) = delete; 
         void operator = (Portfolio const&) = delete; 
 
     private: 
-        Portfolio(); // private constructor 
+        Portfolio(); 
 
 }; // class Portfolio
 
