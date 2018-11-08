@@ -24,18 +24,23 @@ class Portfolio {
         }
 
         // Database handlers 
-        static int callback(void *NotUsed, int argc, char **argv, char **azColName);
-        void access_database(int option); 
-        void database_controller(int option, sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
-        void portfolio_controller(int option); 
+        static int callback(void *NotUsed, int argc, char **argv, char **azColName); // done
+        void access_database(int option); // done
+        void database_controller(int option, sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void portfolio_controller(int option); // done
 
-        void print_options(); 
-        void add_contents(); // adds contents to portfolio_contents 
-        void print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
-        void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
-        void print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
-        void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
-        double portfolio_value(); // calculate the value of the whole porfolio by price and units in Investor.portfolio table
+        string get_sector(string sector) { 
+            return sector; 
+        } // done 
+        void print_options(); // done
+        void add_contents(); 
+        void print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        double portfolio_value(); 
+
+
 
 
         Portfolio(Portfolio const&) = delete; 

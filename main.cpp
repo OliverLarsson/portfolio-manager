@@ -123,7 +123,8 @@ int main() {
     cout << "Ready to view your Portfolio? " << endl; 
     cin >> yes; // break in info
     Portfolio& portfolio = Portfolio::GetPortfolio(); // singleton implementation 
-
+    
+    cout << "Your portfolio contains financial assets from the " << portfolio.get_sector(sector_) << " sector." << endl; 
     cout << "Please select options to view your Portfolio." << endl; 
     cout << "If you would like to move on to the forecast, enter '5'." << endl; 
     cout << "Here are your options: " << endl; 
