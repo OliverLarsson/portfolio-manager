@@ -87,28 +87,28 @@ void Portfolio::portfolio_controller(int option) {
 
     int option_;
     if(option == 1) {
-        cout << "\nYou chose to view the entire market information." <<endl; 
+        cout << "\nYou chose to view your entire portfolio information." <<endl; 
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 2) {
-        cout << "\nYou chose to view the market by asset name." <<endl;
+        cout << "\nYou chose to view your portfolio in order of units." <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 3) {
-        cout << "\nYou chose to view the market by asset ticker." <<endl;
+        cout << "\nYou chose to view your portfolio in order of price." <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
-    else if(option == 6) {
-        cout << "\nYou chose to move on." <<endl; 
+    else if(option == 4) {
+        cout << "\nYou chose to move on to the forecast." <<endl; 
     }
     else {
         cout << "\nThat is not an option. Please choose one of the following" << endl;  
