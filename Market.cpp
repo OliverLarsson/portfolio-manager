@@ -24,7 +24,7 @@ int Market::callback(void *NotUsed, int argc, char **argv, char **azColName)
 	int i;
 	for(i=0; i<argc; i++)
 	{
-		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL");
+		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL" << "\n");
 	}
 	cout<<"\n";
 	return 0;
@@ -44,7 +44,6 @@ Market::Market(string sector) {
  * Needed each time market_controller is called to open the database connection 
 */ 
 void Market::access_database(int option) {
-    int option_tmp = option; 
     sqlite3 *db;
 	char *zErrMsg = 0;
 	const char *sql;
@@ -58,7 +57,7 @@ void Market::access_database(int option) {
 		fprintf(stdout, "Open database successfully\n\n");
 	}
 
-    database_controller(option_tmp, db, zErrMsg, sql, rc); 
+    database_controller(option, db, zErrMsg, sql, rc); 
 }
 
 /**

@@ -28,7 +28,7 @@ int Portfolio::callback(void *NotUsed, int argc, char **argv, char **azColName)
 	int i;
 	for(i=0; i<argc; i++)
 	{
-		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL");
+		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL" << "\n");
 	}
 	cout<<"\n";
 	return 0;
@@ -40,7 +40,6 @@ int Portfolio::callback(void *NotUsed, int argc, char **argv, char **azColName)
  * Needed each time market_controller is called to open the database connection 
 */ 
 void Portfolio::access_database(int option) {
-    int option_tmp = option; 
     sqlite3 *db;
 	char *zErrMsg = 0;
 	const char *sql;
