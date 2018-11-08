@@ -24,7 +24,7 @@ int Market::callback(void *NotUsed, int argc, char **argv, char **azColName)
 	int i;
 	for(i=0; i<argc; i++)
 	{
-		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL")<<"\n";
+		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL");
 	}
 	cout<<"\n";
 	return 0;
@@ -164,7 +164,7 @@ void Market::market_controller(int option) {
  * Queries entire db market  
 */
 void Market::print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "select * from market";
+    sql = "SELECT * FROM market";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -179,7 +179,7 @@ void Market::print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
  * Queries db market table by name  
 */
 void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "select * from market";
+    sql = "SELECT * FROM market";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -194,7 +194,7 @@ void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) 
  * Queries db market table by ticker  
 */
 void Market::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "select * from market";
+    sql = "SELECT * FROM market";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -209,7 +209,7 @@ void Market::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc
  * Queries db market table by price  
 */
 void Market::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "select * from market";
+    sql = "SELECT * FROM market";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -224,7 +224,7 @@ void Market::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc)
  * Queries db market table by variance 
 */
 void Market::print_by_variance(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "select * from market";
+    sql = "SELECT * FROM market";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);

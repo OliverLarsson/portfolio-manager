@@ -28,7 +28,7 @@ int Portfolio::callback(void *NotUsed, int argc, char **argv, char **azColName)
 	int i;
 	for(i=0; i<argc; i++)
 	{
-		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL")<<"\n";
+		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL");
 	}
 	cout<<"\n";
 	return 0;
@@ -136,7 +136,7 @@ void Portfolio::print_options() {
  * Prints entire contents of portfolio table
 */
 void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "select * from portfolio";
+    sql = "SELECT * FROM portfolio";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -151,7 +151,7 @@ void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int
  * Prints contents of portfolio table in unit order 
 */ 
 void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "select * from portfolio";
+    sql = "SELECT * FROM portfolio ORDER BY units";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -166,7 +166,7 @@ void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int 
  * Prints contents of portfolio table in price order 
 */ 
 void Portfolio::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "select * from portfolio";
+    sql = "SELECT * FROM portfolio ORDER BY price";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
