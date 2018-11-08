@@ -19,17 +19,17 @@ class Market {
         Market(string sector); // constructor
 
         // Database handlers 
-        static int callback(void *NotUsed, int argc, char **argv, char **azColName);
-        void access_database(int option); 
-        void database_controller(int option, sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
-        void market_controller(int option); 
+        static int callback(void *NotUsed, int argc, char **argv, char **azColName); // done
+        void access_database(int option); // done
+        void database_controller(int option, sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void market_controller(int option); // done
 
-        void print_options();
-        void print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
-        void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
-        void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
-        void print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
-        void print_by_variance(sqlite3 *db, char *zErrMsg, const char *sql, int rc);
+        void print_options(); // done
+        void print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_by_variance(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
 
     private: 
         string sector_; // needed for queries done by price, ticker, name, or variance

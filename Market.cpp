@@ -154,15 +154,18 @@ void Market::market_controller(int option) {
         cin>> option_; 
         market_controller(option_); 
     }
-
 } 
 
 /**
  * print_market
- * Queries entire db market  
+ * Queries entire db market table
 */
 void Market::print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market";
+    if(sector_ == "t") {
+        sql = "SELECT * FROM market WHERE sector = 't'"; 
+    } else {
+        sql = "SELECT * FROM market WHERE sector = 'i'"; 
+    }
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -177,7 +180,11 @@ void Market::print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
  * Queries db market table by name  
 */
 void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market ORDER BY name ASC";
+    if(sector_ == "t") {
+        sql = "SELECT * FROM market WHERE sector = 't' ORDER BY name ASC ";
+    } else {
+        sql = "SELECT * FROM market WHERE sector = 'i' ORDER BY name ASC";
+    }
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -192,7 +199,11 @@ void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) 
  * Queries db market table by ticker  
 */
 void Market::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market ORDER BY ticker ASC";
+    if(sector_ == "t") {
+        sql = "SELECT * FROM market WHERE sector = 't' ORDER BY ticker ASC";
+    } else {
+        sql = "SELECT * FROM market WHERE sector = 'i' ORDER BY ticker ASC";
+    }
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -207,7 +218,11 @@ void Market::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc
  * Queries db market table by price  
 */
 void Market::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market ORDER BY price DESC";
+    if(sector_ == "t") {
+        sql = "SELECT * FROM market WHERE sector = 't' ORDER BY price DESC";
+    } else {
+        sql = "SELECT * FROM market WHERE sector = 'i' ORDER BY price DESC";
+    }
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -222,7 +237,11 @@ void Market::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc)
  * Queries db market table by variance 
 */
 void Market::print_by_variance(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market ORDER BY variance DESC";
+    if(sector_ == "t") {
+        sql = "SELECT * FROM market WHERE sector = 't' ORDER BY variance DESC";
+    } else {
+        sql = "SELECT * FROM market WHERE sector = 'i' ORDER BY variance DESC";
+    }
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
