@@ -18,10 +18,12 @@ class Market {
     public: 
         Market(string sector); // constructor
 
+        // Database handlers 
         static int callback(void *NotUsed, int argc, char **argv, char **azColName);
         void access_database(int option); 
         void database_controller(int option, sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
         void market_controller(int option); 
+
         void print_options(); 
         void print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc);  
         void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 

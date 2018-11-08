@@ -107,10 +107,8 @@ void Market::print_options() {
 /**
  * market_controller
  * Called in main.cpp and directs all other functions in class 
- * Controller for viewing market db 
- * Mainly to declutter main.cpp 
+ * Controller for viewing market table 
 */
-
 void Market::market_controller(int option) {
 
     int option_;
