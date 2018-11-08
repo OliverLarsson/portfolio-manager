@@ -28,7 +28,7 @@ int Portfolio::callback(void *NotUsed, int argc, char **argv, char **azColName)
 	int i;
 	for(i=0; i<argc; i++)
 	{
-		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL" << "\n");
+		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL") << "\n";
 	}
 	cout<<"\n";
 	return 0;
