@@ -9,14 +9,14 @@
 // Libraries 
 #include <iostream> 
 //#include <Ultralight/Ultralight.h> // include for Ultralight API 
-#include "sqlite3.h" // header file for the SQLite database
+#include <sqlite3.h> // header file for the SQLite database
 
 using namespace std;
 
 // Methods 
 
 /** 
- * Constructor
+ * Constructor ? 
 */ 
 
 /**
@@ -121,11 +121,29 @@ void Portfolio::portfolio_controller(int option) {
 } 
 
 /**
+ * print_options
+ * Prints options for viewing the portfolio  
+*/
+void Portfolio::print_options() {
+    cout << "View entire portfolio info (1)." << endl;
+    cout << "View portfolio in order of units (2)." << endl;
+    cout << "View portfolio in order of price (3)." << endl;
+    cout << "Move on to your forecast (4)." << endl;
+} 
+
+/**
  * print_portfolio
  * Prints entire contents of portfolio table
 */
 void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-
+    sql = "select * from portfolio";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
 }
 
 /**
@@ -133,7 +151,14 @@ void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int
  * Prints contents of portfolio table in unit order 
 */ 
 void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-
+    sql = "select * from portfolio";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
 }
 
 /**
@@ -141,5 +166,12 @@ void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int 
  * Prints contents of portfolio table in price order 
 */ 
 void Portfolio::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-
+    sql = "select * from portfolio";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
 }
