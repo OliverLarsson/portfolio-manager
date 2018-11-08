@@ -178,7 +178,7 @@ void Market::print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
  * Queries db market table by name  
 */
 void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market";
+    sql = "SELECT * FROM market ORDER BY name DESC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -193,7 +193,7 @@ void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) 
  * Queries db market table by ticker  
 */
 void Market::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market";
+    sql = "SELECT * FROM market ORDER BY ticker DESC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -208,7 +208,7 @@ void Market::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc
  * Queries db market table by price  
 */
 void Market::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market";
+    sql = "SELECT * FROM market ORDER BY price DESC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -223,7 +223,7 @@ void Market::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc)
  * Queries db market table by variance 
 */
 void Market::print_by_variance(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT * FROM market";
+    sql = "SELECT * FROM market ORDER BY variance DESC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
