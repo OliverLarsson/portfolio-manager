@@ -20,10 +20,6 @@ using namespace std;
 */ 
 Portfolio::Portfolio() {
 }
-/**
- * callback
- * sqlite3 provided function for printing out sql queries 
-*/
 
 /** 
  * callback2
@@ -52,9 +48,9 @@ void Portfolio::add_contents() {
 	}
     // need more queries reliant on Investor data with risk and asset data with price and variance 
     if(sector_ == "t") {
-        sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't'";
+        sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
     } else {
-        sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i'";
+        sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
     }
    
 	rc = sqlite3_exec(db, sql, callback2, 0, &zErrMsg);
@@ -66,6 +62,39 @@ void Portfolio::add_contents() {
     }
     sqlite3_close(db);
 }
+
+/** 
+ * delete_contents
+ * Need to delete the Portfolio table contents each time
+*/ 
+void Portfolio::delete_contents() {
+    sqlite3 *db;
+	char *zErrMsg = 0;
+	const char *sql;
+	int rc;
+    
+	rc = sqlite3_open("Investor.db", &db);
+
+	if( rc ) {
+		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
+	} else {
+		fprintf(stdout, "Open database successfully\n\n");
+	}
+    sql = "DELETE FROM market"; 
+	rc = sqlite3_exec(db, sql, callback2, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
+    sqlite3_close(db);
+}
+
+/**
+ * callback
+ * sqlite3 provided function for printing out sql queries 
+*/
 
 int Portfolio::callback(void *NotUsed, int argc, char **argv, char **azColName)
 {

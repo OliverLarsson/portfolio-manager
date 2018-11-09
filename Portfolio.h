@@ -35,6 +35,7 @@ class Portfolio {
         } // done 
         void print_options(); // done
         void add_contents(); 
+        void delete_contents();
         void print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done

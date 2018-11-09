@@ -162,9 +162,9 @@ void Market::market_controller(int option) {
 */
 void Market::print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
     if(sector_ == "t") {
-        sql = "SELECT * FROM market WHERE sector = 't'"; 
+        sql = "SELECT * FROM market WHERE sector = 't' or sector = 'e'"; 
     } else {
-        sql = "SELECT * FROM market WHERE sector = 'i'"; 
+        sql = "SELECT * FROM market WHERE sector = 'i' or sector = 'e'"; 
     }
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {

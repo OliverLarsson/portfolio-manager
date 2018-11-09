@@ -123,6 +123,12 @@ int main() {
     cout << "Ready to view your Portfolio? " << endl; 
     cin >> yes; // break in info
     Portfolio& portfolio = Portfolio::GetPortfolio(); // singleton implementation 
+
+    portfolio.delete_contents(); // delete portfolio table contents before just in case 
+
+    cout << "Adding" << endl; 
+    portfolio.add_contents(); 
+    cout << "Added" << endl; 
     
     cout << "Your portfolio contains financial assets from the " << portfolio.get_sector(sector_) << " sector." << endl; 
     cout << "Please select options to view your Portfolio." << endl; 
@@ -137,9 +143,7 @@ int main() {
         cout << "\nYou've selected to move on to the forecast. Let's see how your money might grow!" << endl; 
     }
 
-    cout << "Adding fake1" << endl; 
-    portfolio.add_contents(); 
-    cout << "Added" << endl; 
+    portfolio.delete_contents(); // need otherwise Portfolio will keep all contents and add on top forever 
     /** 
      * This is where the forecast will be implemented
     */ 
