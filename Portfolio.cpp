@@ -50,7 +50,7 @@ void Portfolio::add_contents() {
 	} else {
 		fprintf(stdout, "Open database successfully\n\n");
 	}
-
+    // need more queries reliant on Investor data with risk and asset data with price and variance 
     if(sector_ == "t") {
         sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't'";
     } else {

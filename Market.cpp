@@ -238,9 +238,9 @@ void Market::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc)
 */
 void Market::print_by_variance(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
     if(sector_ == "t") {
-        sql = "SELECT * FROM market WHERE sector = 't' ORDER BY variance DESC";
+        sql = "SELECT * FROM market WHERE sector = 't' ORDER BY change DESC";
     } else {
-        sql = "SELECT * FROM market WHERE sector = 'i' ORDER BY variance DESC";
+        sql = "SELECT * FROM market WHERE sector = 'i' ORDER BY change DESC";
     }
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
