@@ -1,0 +1,65 @@
+AAL,American Airlines Gp,36.86,-0.11,37.05,35.97,6884000,i,s
+AAPL,Apple Inc,208.49,-1.46,210.12,206.75,25300201,i,s
+AEP,American Electric Power Company,74.17,-0.96,74.68,73.82,3465900,i,s
+AES,The Aes Corp,15.67,0.07,15.74,15.44,4322200,i,s
+ALK,Alaska Air Group,65.71,-0.48,66.46,65.31,991000,i,s
+AWK,American Water Works,88.89,-1.2,90.16,88.32,819900,i,s
+AXP,American Express Company,108.5,1.19,108.63,107.03,2896700,i,s
+BA,Boeing Company,370.77,-1.25,373.7,365.55,2751800,i,s
+CAR,Avis Budget Group I,32.27,-0.38,33.24,31.77,2037200,i,s
+CAT,Caterpillar Inc,131.39,-3.71,134.7,130.9,6266800,i,s
+CHRW,C.H. Robinson Ww,91.37,0.5,91.45,89.86,877800,i,s
+CNP,Centerpoint Energy Inc,28.06,-0.26,28.67,27.72,6806100,i,s
+CSCO,Cisco Systems Inc,48.44,0.54,48.44,47.87,20853000,i,s
+CSX,CSX Corp,71.67,-0.64,72.77,71.22,3897900,i,s
+CVX,Chevron Corp,119.36,-1.51,121.87,118.96,9260100,i,s
+D,Dominion Resources,71.22,0.04,71.62,70.32,2045600,i,s
+DAL,Delta Air Lines Inc,56.73,-0.06,56.96,55.88,4150300,i,s
+DIS,Walt Disney Company,116,-1.05,117.83,115.21,11046101,i,s
+DUK,Duke Energy Corp,84.33,-0.37,85.02,83.33,3002300,i,s
+DWDP,Dowdupont Inc,59.44,-0.39,60.45,59.2,12217999,i,s
+ED,Consolidated Edison Company of New York,78.17,-0.09,78.56,77.43,1398500,i,s
+EIX,Edison International,69.41,-0.29,70.13,69.1,1499500,i,s
+EXC,Exelon Corp,44.75,0.08,44.79,44.19,5301900,i,s
+EXPD,Expeditors Intl,72.78,-0.58,73.64,71.82,1575900,i,s
+FDX,Fedex Corp,229.4,-1.88,231.8,227.85,1030900,i,s
+FE,Firstenergy Corp,37.7,-0.05,38.03,37.28,3955800,i,s
+GS,Goldman Sachs Group,231.65,0.37,234.06,230.6,2404800,i,s
+HD,Home Depot,188,0.77,188.69,185.72,4038300,i,s
+IBM,International Business Machines,123.38,-1.46,124.4,122.63,10395399,i,s
+INTC,Intel Corp,48.99,0.27,49.29,48.46,26580301,i,s
+JBHT,J B Hunt Transport,109.25,-1.81,111.34,108.48,540000,i,s
+JBLU,Jetblue Airways Cp,18.23,0.03,18.33,17.95,3015800,i,s
+JNJ,Johnson & Johnson,145.3,0.55,145.79,144,5440100,i,s
+JPM,JP Morgan Chase & Co,112.38,0.9,112.93,111,11659399,i,s
+KEX,Kirby Corp,76.86,-0.59,77.95,76.05,336100,i,s
+KO,Coca-Cola Company,49.33,-0.04,49.37,49.1,9601700,i,s
+KSU,Kansas City Southern,104.06,0.46,104.93,103.35,888300,i,s
+LSTR,Landstar System,104.23,-2.38,105.14,101.91,661100,i,s
+LUV,Southwest Airlines Company,52.72,-0.16,53.03,52.34,4633500,i,s
+MATX,Matson Inc,40.84,0.2,40.95,40.16,201700,i,s
+MCD,McDonald's Corp,185.48,1.23,186.04,184.08,3303500,i,s
+MMM,3M Company,204.07,2.78,204.27,200.73,2523100,i,s
+MRK,Merck & Company,75.48,0.4,75.68,74.62,13004500,i,s
+MSFT,Microsoft Corp,111.75,-0.21,112.21,110.91,25481500,i,s
+NEE,Nextera Energy,173.96,0.42,174.02,171.65,1669100,i,s
+NI,NiSource Inc,25.96,-0.2,26.26,25.8,2657900,i,s
+NKE,Nike Inc,77.78,-0.19,78.16,77.24,5388000,i,s
+NSC,Norfolk Southern Corp,172.35,-0.7,173.66,171.21,1518300,i,s
+PCG,Pacific Gas & Electric Co,47.8,-1,49.24,47.06,7941000,i,s
+PEG,Public Service Enterprise Group Inc,52.97,-0.02,53.36,52.6,3313400,i,s
+PFE,Pfizer Inc,43.85,-0.55,44.2,43.47,24381398,i,s
+PG,Procter & Gamble Company,91.36,0.07,91.53,90.67,6616300,i,s
+R,Ryder System,56.91,-0.54,57.68,56.5,591600,i,s
+SO,Southern Company,46.58,-0.43,47.22,46.24,5475500,i,s
+TRV,The Travelers Companies Inc,130.99,0.71,131.51,129.98,1879100,i,s
+UAL,United Continental Holdings,92.56,0.4,92.85,91.53,2460300,i,s
+UNH,Unitedhealth Group Inc,276.65,2.02,278,274.7,3798800,i,s
+UNP,Union Pacific Corp,152.39,-0.48,153.3,151.4,2524000,i,s
+UPS,United Parcel Service,111.5,0.37,111.95,110.75,2566400,i,s
+UTX,United Technologies Corp,131.34,0.79,131.96,130.37,4747500,i,s
+V,Visa Inc,145.23,0.45,145.46,143.65,5923000,i,s
+VZ,Verizon Communications Inc,58.27,0.62,58.44,57.66,12470400,i,s
+WBA,Walgreens Boots Alliance,82.44,0.53,83,81.31,5343800,i,s
+WMT,Wal-Mart Stores,104.88,0.56,105.26,104.03,5895300,i,s
+XOM,Exxon Mobil Corp,81.71,-1.32,83.75,81.54,16862301,i,s
