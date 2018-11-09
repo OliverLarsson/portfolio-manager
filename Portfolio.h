@@ -31,15 +31,18 @@ class Portfolio {
 
         string get_sector(string sector) { 
             sector_ = sector; 
-            return sector; 
+            return sector_; 
         } // done 
         void print_options(); // done
-        void add_contents(); 
+        void add_contents(string sector); 
         void delete_contents();
         void print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_value(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
+        void print_avg_val(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
+        void print_avg_unit(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
         double portfolio_value(); 
 
 

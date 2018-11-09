@@ -33,7 +33,7 @@ int callback2(void *NotUsed, int argc, char **argv, char **azColName) {
  * add_contents
  * Adds assets from the market table to the portfolio table 
 */ 
-void Portfolio::add_contents() {
+void Portfolio::add_contents(string sector) {
     sqlite3 *db;
 	char *zErrMsg = 0;
 	const char *sql;
@@ -47,11 +47,12 @@ void Portfolio::add_contents() {
 		fprintf(stdout, "Open database successfully\n\n");
 	}
     // need more queries reliant on Investor data with risk and asset data with price and variance 
-    if(sector_ == "t") {
+    if(sector == "t") {
         sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
     } else {
         sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
     }
+    cout << sql << endl;
    
 	rc = sqlite3_exec(db, sql, callback2, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
@@ -80,7 +81,7 @@ void Portfolio::delete_contents() {
 	} else {
 		fprintf(stdout, "Open database successfully\n\n");
 	}
-    sql = "DELETE FROM market"; 
+    sql = "DELETE FROM portfolio"; 
 	rc = sqlite3_exec(db, sql, callback2, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -126,7 +127,6 @@ void Portfolio::access_database(int option) {
 		fprintf(stdout, "Open database successfully\n\n");
 	}
 
-
     database_controller(option, db, zErrMsg, sql, rc); 
 }
 
@@ -154,6 +154,18 @@ void Portfolio::database_controller(int option, sqlite3 *db, char *zErrMsg, cons
         print_by_price(db, zErrMsg, sql, rc);
         sqlite3_close(db);
     }
+    else if(option == 5) {
+        print_value(db, zErrMsg, sql, rc);
+        sqlite3_close(db);
+    }
+    else if(option == 6) {
+        print_avg_val(db, zErrMsg, sql, rc);
+        sqlite3_close(db);
+    }
+    else if(option == 7) {
+        print_avg_unit(db, zErrMsg, sql, rc);
+        sqlite3_close(db);
+    }
 }
 
 /**
@@ -163,7 +175,7 @@ void Portfolio::database_controller(int option, sqlite3 *db, char *zErrMsg, cons
 */
 void Portfolio::portfolio_controller(int option) {
 
-    int option_;
+    int option_; 
     if(option == 1) {
         cout << "\nYou chose to view your entire portfolio information." <<endl; 
         access_database(option); 
@@ -193,6 +205,27 @@ void Portfolio::portfolio_controller(int option) {
         portfolio_controller(option_); 
     }
     else if(option == 5) {
+        cout << "\nYou chose to view your portfolio's value." <<endl;
+        access_database(option); 
+        print_options();
+        cin>> option_; 
+        portfolio_controller(option_); 
+    }
+    else if(option == 6) {
+        cout << "\nYou chose to view the average asset price in your portfolio." <<endl;
+        access_database(option); 
+        print_options();
+        cin>> option_; 
+        portfolio_controller(option_); 
+    }
+    else if(option == 7) {
+        cout << "\nYou chose to view the average units held of assets in your portfolio." <<endl;
+        access_database(option); 
+        print_options();
+        cin>> option_; 
+        portfolio_controller(option_); 
+    }
+    else if(option == 8) {
         cout << "\nYou chose to move on to the forecast." <<endl; 
     }
     else {
@@ -213,7 +246,10 @@ void Portfolio::print_options() {
     cout << "View portfolio in order of ticker (2)." << endl;
     cout << "View portfolio in order of units (3)." << endl;
     cout << "View portfolio in order of price (4)." << endl;
-    cout << "Move on to your forecast (5)." << endl;
+    cout << "View your portfolio value (5)." << endl;
+    cout << "View the average asset price (6)." << endl;
+    cout << "View the average units of assets held (7)." << endl;
+    cout << "Move on to your forecast (8)." << endl;
 } 
 
 /**
@@ -267,6 +303,51 @@ void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int 
 */ 
 void Portfolio::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
     sql = "SELECT p.ticker, p.units, m.price FROM portfolio p, market m WHERE p.ticker = m.ticker ORDER BY price DESC";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
+}
+
+/**
+ * print_value
+ * Value of entire portfolio
+*/ 
+void Portfolio::print_value(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
+    sql = "SELECT SUM(p.units * m.price) FROM portfolio p, market m WHERE p.ticker = m.ticker ";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
+}
+
+/**
+ * print_avg_val
+ * Average value of all assets in portfolio
+*/ 
+void Portfolio::print_avg_val(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
+    sql = "SELECT AVG(price) market WHERE portfolio.ticker = m.ticker";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
+}
+
+/** 
+ * print_avg_units
+ * Avg units held
+*/ 
+void Portfolio::print_avg_unit(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
+    sql = "SELECT AVG(units) FROM portfolio";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);

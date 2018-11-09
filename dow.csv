@@ -1,5 +1,4 @@
 AAL,American Airlines Gp,36.86,-0.11,37.05,35.97,6884000,i,s
-AAPL,Apple Inc,208.49,-1.46,210.12,206.75,25300201,i,s
 AEP,American Electric Power Company,74.17,-0.96,74.68,73.82,3465900,i,s
 AES,The Aes Corp,15.67,0.07,15.74,15.44,4322200,i,s
 ALK,Alaska Air Group,65.71,-0.48,66.46,65.31,991000,i,s
@@ -10,7 +9,6 @@ CAR,Avis Budget Group I,32.27,-0.38,33.24,31.77,2037200,i,s
 CAT,Caterpillar Inc,131.39,-3.71,134.7,130.9,6266800,i,s
 CHRW,C.H. Robinson Ww,91.37,0.5,91.45,89.86,877800,i,s
 CNP,Centerpoint Energy Inc,28.06,-0.26,28.67,27.72,6806100,i,s
-CSCO,Cisco Systems Inc,48.44,0.54,48.44,47.87,20853000,i,s
 CSX,CSX Corp,71.67,-0.64,72.77,71.22,3897900,i,s
 CVX,Chevron Corp,119.36,-1.51,121.87,118.96,9260100,i,s
 D,Dominion Resources,71.22,0.04,71.62,70.32,2045600,i,s
@@ -27,7 +25,6 @@ FE,Firstenergy Corp,37.7,-0.05,38.03,37.28,3955800,i,s
 GS,Goldman Sachs Group,231.65,0.37,234.06,230.6,2404800,i,s
 HD,Home Depot,188,0.77,188.69,185.72,4038300,i,s
 IBM,International Business Machines,123.38,-1.46,124.4,122.63,10395399,i,s
-INTC,Intel Corp,48.99,0.27,49.29,48.46,26580301,i,s
 JBHT,J B Hunt Transport,109.25,-1.81,111.34,108.48,540000,i,s
 JBLU,Jetblue Airways Cp,18.23,0.03,18.33,17.95,3015800,i,s
 JNJ,Johnson & Johnson,145.3,0.55,145.79,144,5440100,i,s
@@ -41,7 +38,6 @@ MATX,Matson Inc,40.84,0.2,40.95,40.16,201700,i,s
 MCD,McDonald's Corp,185.48,1.23,186.04,184.08,3303500,i,s
 MMM,3M Company,204.07,2.78,204.27,200.73,2523100,i,s
 MRK,Merck & Company,75.48,0.4,75.68,74.62,13004500,i,s
-MSFT,Microsoft Corp,111.75,-0.21,112.21,110.91,25481500,i,s
 NEE,Nextera Energy,173.96,0.42,174.02,171.65,1669100,i,s
 NI,NiSource Inc,25.96,-0.2,26.26,25.8,2657900,i,s
 NKE,Nike Inc,77.78,-0.19,78.16,77.24,5388000,i,s

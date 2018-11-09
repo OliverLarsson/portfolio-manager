@@ -1,4 +1,3 @@
-AAL,American Airlines Gp,36.86,-0.11,37.05,35.97,6885400,t,s
 AAPL,Apple Inc,208.49,-1.46,210.12,206.75,25350799,t,s
 ADBE,Adobe Systems Inc,249.96,-3.47,254.13,247.74,2401000,t,s
 ADI,Analog Devices,89.93,1.62,90.08,87.59,2551000,t,s
@@ -24,7 +23,6 @@ CHTR,Charter Communicatio,324.65,-3.71,329.91,322.32,1075200,t,s
 CMCSA,Comcast Corp A,38.3,0,38.58,37.9,14327101,t,s
 COST,Costco Wholesale,238.7,-1.67,239.8,237.03,2140600,t,s
 CSCO,Cisco Systems Inc,48.44,0.54,48.44,47.87,21003500,t,s
-CSX,CSX Corp,71.67,-0.64,72.77,71.22,3897900,t,s
 CTAS,Cintas Corp,181.16,-0.24,181.21,178.47,401800,t,s
 CTRP,Ctrip.com Intl Ltd,27.89,-6.55,29.84,27.5,30218502,t,s
 CTSH,Cognizant Tech Sol,71.24,-0.13,71.82,70.93,2103700,t,s
@@ -51,7 +49,6 @@ INCY,Incyte Corp,68.67,-0.36,69.72,67.96,1138300,t,s
 INTC,Intel Corp,48.99,0.27,49.29,48.46,26581602,t,s
 INTU,Intuit Inc,223.24,1.36,223.31,220.07,921500,t,s
 ISRG,Intuitive Surg Inc,540.02,-5.66,544.99,536.31,535700,t,s
-JBHT,J B Hunt Transport,109.25,-1.81,111.34,108.48,540000,t,s
 JD,Jd.com Inc Ads,22.4,-1.67,23.87,22.38,17330000,t,s
 KHC,Kraft Heinz Co,53.31,-0.24,53.6,52.94,5032000,t,s
 KLAC,K L A-Tencor Corp,97.05,0.54,97.47,95.32,1430500,t,s
@@ -94,7 +91,6 @@ ULTA,Ulta Salon Cosmetic,304.49,13.98,308.88,275.11,1955700,t,s
 VOD,Vodafone Grp Plc Ads,19.09,-0.42,19.43,19.01,7163700,t,s
 VRSK,Verisk Analytics Inc,122.72,1.77,122.73,120.41,541300,t,s
 VRTX,Vertex Pharmaceutic,180.26,-3.62,185.57,179.63,1101700,t,s
-WBA,Walgreens Boots Alliance,82.44,0.53,83,81.31,5344400,t,s
 WDAY,Workday Inc,145.99,1.75,146.88,142.37,1629100,t,s
 WDC,Western Digital Cp,47.56,-0.97,48.92,47.32,3998900,t,s
 WYNN,Wynn Resorts Ltd,99.02,-14.97,102.53,97.25,13476400,t,s

@@ -124,26 +124,26 @@ int main() {
     cin >> yes; // break in info
     Portfolio& portfolio = Portfolio::GetPortfolio(); // singleton implementation 
 
-    portfolio.delete_contents(); // delete portfolio table contents before just in case 
-
-    cout << "Adding" << endl; 
-    portfolio.add_contents(); 
-    cout << "Added" << endl; 
+    //portfolio.delete_contents(); // delete portfolio table contents before just in case 
     
+    cout << "Adding" << endl; 
+    portfolio.add_contents(sector_); 
+    cout << "Added" << endl; 
+
     cout << "Your portfolio contains financial assets from the " << portfolio.get_sector(sector_) << " sector." << endl; 
     cout << "Please select options to view your Portfolio." << endl; 
-    cout << "If you would like to move on to the forecast, enter '5'." << endl; 
+    cout << "If you would like to move on to the forecast, enter '8'." << endl; 
     cout << "Here are your options: " << endl; 
 
     portfolio.print_options(); 
     cin >> option; 
-    if(option != 5) {
+    if(option != 8) {
         portfolio.portfolio_controller(option);
     } else {
         cout << "\nYou've selected to move on to the forecast. Let's see how your money might grow!" << endl; 
     }
 
-    portfolio.delete_contents(); // need otherwise Portfolio will keep all contents and add on top forever 
+    portfolio.delete_contents(); 
     /** 
      * This is where the forecast will be implemented
     */ 
