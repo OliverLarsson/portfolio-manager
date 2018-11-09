@@ -124,7 +124,6 @@ int main() {
     cin >> yes; // break in info
     Portfolio& portfolio = Portfolio::GetPortfolio(); // singleton implementation 
 
-    //portfolio.delete_contents(); // delete portfolio table contents before just in case 
     
     cout << "Adding" << endl; 
     portfolio.add_contents(sector_); 
@@ -143,12 +142,20 @@ int main() {
         cout << "\nYou've selected to move on to the forecast. Let's see how your money might grow!" << endl; 
     }
 
-    portfolio.delete_contents(); 
+    portfolio.delete_contents(); // have to delete the portfolio table contents or else they'll stay for next run through of this program 
+    
     /** 
-     * This is where the forecast will be implemented
+     * Creating Forecast object 
     */ 
 
+   // we need to pass some values of the portfolio through to the Forecast object 
+   // double value = portfolio.get_value(); 
+   // double avg_change = portfolio.get_change(); 
+   // double avg_vol = portfolio.get_volatility(); 
 
+   // Forecast forecast(value, avg_change, avg_vol); 
+
+   
 
 
 

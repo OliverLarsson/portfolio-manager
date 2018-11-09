@@ -9,14 +9,14 @@
 // Libraries
 #include <iostream> 
 //#include <Ultralight/Ultralight.h> // include for Ultralight API 
-#include "sqlite3.h" // header file for the SQLite database
+#include <sqlite3.h> // header file for the SQLite database
 
 
 using namespace std; 
 
 class Forecast {
     public: 
-        Forecast(double value, double variance, double risk); 
+        Forecast(double value, double variance, double volatility); 
 
         double calculate_value(); // calculate value of the future portfolio based on current value, variance, and risk 
         double calculate_risk(); // calculate future risk 
