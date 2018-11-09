@@ -30,6 +30,7 @@ class Portfolio {
         void portfolio_controller(int option); // done
 
         string get_sector(string sector) { 
+            sector_ = sector; 
             return sector; 
         } // done 
         void print_options(); // done
@@ -48,6 +49,7 @@ class Portfolio {
 
     private: 
         Portfolio(); 
+        string sector_; 
 
 }; // class Portfolio
 

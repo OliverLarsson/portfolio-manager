@@ -137,6 +137,9 @@ int main() {
         cout << "\nYou've selected to move on to the forecast. Let's see how your money might grow!" << endl; 
     }
 
+    cout << "Adding fake1" << endl; 
+    portfolio.add_contents(); 
+    cout << "Added" << endl; 
     /** 
      * This is where the forecast will be implemented
     */ 

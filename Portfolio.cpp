@@ -16,7 +16,7 @@ using namespace std;
 // Methods 
 
 /** 
- * Constructor ? 
+ * Constructor 
 */ 
 Portfolio::Portfolio() {
 }
@@ -24,6 +24,49 @@ Portfolio::Portfolio() {
  * callback
  * sqlite3 provided function for printing out sql queries 
 */
+
+/** 
+ * callback2
+ * Required for sqlite3_exec function 
+*/ 
+int callback2(void *NotUsed, int argc, char **argv, char **azColName) {
+	return 0;
+}
+
+/** 
+ * add_contents
+ * Adds assets from the market table to the portfolio table 
+*/ 
+void Portfolio::add_contents() {
+    sqlite3 *db;
+	char *zErrMsg = 0;
+	const char *sql;
+	int rc;
+    
+	rc = sqlite3_open("Investor.db", &db);
+
+	if( rc ) {
+		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
+	} else {
+		fprintf(stdout, "Open database successfully\n\n");
+	}
+
+    if(sector_ == "t") {
+        sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't'";
+    } else {
+        sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i'";
+    }
+   
+	rc = sqlite3_exec(db, sql, callback2, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Operation done successfully\n");
+    }
+    sqlite3_close(db);
+}
+
 int Portfolio::callback(void *NotUsed, int argc, char **argv, char **azColName)
 {
 	int i;
@@ -53,6 +96,7 @@ void Portfolio::access_database(int option) {
 	} else {
 		fprintf(stdout, "Open database successfully\n\n");
 	}
+
 
     database_controller(option, db, zErrMsg, sql, rc); 
 }
