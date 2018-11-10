@@ -38,9 +38,63 @@ void Portfolio::add_contents(string sector) {
 	} 
     // need more queries reliant on Investor data with risk and asset data with price and variance 
     if(sector == "t") {
-        sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        if(path_ == 1) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        else if(path_ == 2) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        else if(path_ == 3) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        else if(path_ == 4) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        else if(path_ == 5) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        else if(path_ == 6) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        else if(path_ == 7) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        else if(path_ == 8) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        else{
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        }
+        
     } else {
-        sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        if(path_ == 1) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        else if(path_ == 2) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        else if(path_ == 3) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        else if(path_ == 4) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        else if(path_ == 5) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        else if(path_ == 6) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        else if(path_ == 7) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        else if(path_ == 8) {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        else {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        }
+        
     }
    
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
