@@ -94,3 +94,32 @@ CSCI 3010 - Felix Muzny
 
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/u1.png)
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/u2.png)
+
+*****************
+EVERYTHING ABOVE IS FROM HOMEWORK 3
+*****************
+EVERYTHING BELOW IS FOR HOMEWORK 4 
+*****************
+
+- Some warnings come up on 'make all.' These do not affect the functionality or performance of the application at all, and I can't figure out how to get them to go away. 
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/45.png)
+
+- The beginning of the application is mostly the same, but with some refactoring and edge case handlers to make sure user input is accurate. 
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/44.png)
+
+- For this whole demo the sector chosen is Technology. The functionality is the same for Industrial, but the Market is queried differently and the Porfolio is loaded differently. The first picture belows shows the standard view of the Porfolio contents followed by the view based on the price of the ticker in the Market table. All other screenshots below are the other options. Each option queries the Portfolio table differently. 
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/43.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/42.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/39.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/38.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/37.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/36.png)
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw4/35.png)
+
+
+- This final screenshot shows the action of moving on to the Forecast class, which will be created and implemented in Homework 5. The Portfolio table is deleted at the end of the application. 
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw3/41.png)
