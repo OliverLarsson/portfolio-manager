@@ -328,7 +328,7 @@ void Portfolio::print_avg_unit(sqlite3 *db, char *zErrMsg, const char *sql, int 
  * Sets a path to a sql query based on the risk profile the user provided
 */ 
 void Portfolio::risk_path() {
-    if(risk_tolerance_ >= 0 or risk_tolerance_ <= 3) {
+    if(risk_tolerance_ >= 0 && risk_tolerance_ <= 3) {
         if((risk_capacity_/worth_) >= 0 && (risk_capacity_/worth_) <= .33) {
             path_ = 1;
         }
@@ -339,7 +339,7 @@ void Portfolio::risk_path() {
             path_ = 7; 
         }
     }
-    else if(risk_tolerance_ > 3 or risk_tolerance_ <= 6) {
+    else if(risk_tolerance_ > 3 && risk_tolerance_ <= 6) {
         if((risk_capacity_/worth_) > 0 && (risk_capacity_/worth_) <= .33) {
             path_ = 2; 
         }
@@ -350,7 +350,7 @@ void Portfolio::risk_path() {
             path_ = 8; 
         }
     }
-    else if(risk_tolerance_ > 6 or risk_tolerance_ <= 10) {
+    else if(risk_tolerance_ > 6 && risk_tolerance_ <= 10) {
         if((risk_capacity_/worth_) > 0 && (risk_capacity_/worth_) <= 33) {
             path_ = 3; 
         }
