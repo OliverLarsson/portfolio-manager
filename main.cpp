@@ -25,10 +25,12 @@ int main() {
     
     string name;
     double age;
-    double wealth;
-    double risk_tolerance;
+    string wealth_;
+    double wealth; 
+    double risk_tolerance; 
     Sector sector;
     string sector_;
+    double risk_requirement;
 
     /**
      * Start TextUI 
@@ -37,10 +39,15 @@ int main() {
     cout << "Welcome to your Portfolio Manager! Please provide some more information about yourself." << endl;
     cout << "What is your name? ";
     getline(cin, name);
-    cout << "What is your age? ";
+    cout << "Hi, " << name << ", what is your age? ";
     cin >> age;
+    if(age < 18) {
+        cout << "You are too young to invest!" << endl; 
+        exit(0); 
+    }
     cout << "How much money do you have for your portfolio? (Please exclude $ and commas) ";
-    cin >> wealth;
+    cin >> wealth_;
+    wealth = stod(wealth_); 
     cout << "Would you prefer to invest in technology (t) or industrial (i) businesses? "; 
     cin >> sector_; // cannot cin >> to an enum, so cin to string and assign to enum
     if(sector_ == "t") {
@@ -53,12 +60,25 @@ int main() {
     cout << "Let's talk about risk." << endl;
     cout << "Risk is any uncertainty within investing that may lead to a negative financial impact." << endl;
     cout << "On a whole number scale of 1 to 10, 1 being lowest, how tolerant to investment risk are you? ";
-    cin >> risk_tolerance;
+    cin >> risk_tolerance; 
+    while(risk_tolerance < 1 or risk_tolerance > 10) {
+        cout << "Please enter a value between 1 and 10. " << endl; 
+        cin >> risk_tolerance; 
+    }
+    cout << endl;
+    cout << "On a whole number percentage scale of 0-100, what is your required return on investment (ROI)? " << endl;
+    cout << "Keep in mind that investing is a balance of risk vs reward. What you are requesting to gain, you must be willing to lose." << endl;
+    cout << "ROI: ";
+    cin >> risk_requirement; // compare this against their risk capacity
+    while(risk_requirement < 0 or risk_requirement > 100) {
+        cout << "Please enter a value between 0 and 100. " << endl; 
+        cin >> risk_requirement; 
+    }
 
     /**
      * Creating Investor object 
     */ 
-    Investor investor(name, age, wealth, risk_tolerance, sector);
+    Investor investor(name, age, wealth, risk_tolerance, risk_requirement, sector);
 
     cout << endl;
     cout << "From what you provided, these are your attributes:" << endl;
@@ -70,31 +90,14 @@ int main() {
     cout << endl;
     cout << "Based on the answers you provided: " << endl;
     cout << "   Risk tolerance: " << investor.get_risk_tolerance() << "." << endl;
+    cout << "   Risk requirement: " << investor.get_risk_requirement() << "." << endl; 
     cout << "   Profile size: " << investor.get_wealth() << " dollars." <<endl;
     cout << "   Your age: " << investor.get_age() << " years old." << endl;
     cout << "We decided you have a risk capacity of " << investor.get_risk_capacity() << " dollars." << endl;
-    cout << "We believe you should have a profile with " << investor.risk_profile() << "% securites, " << (100 - investor.risk_profile() - 5) << "% fixed incomes, and 5% cash." << endl;
+    cout << "We believe you should have a profile with " << investor.risk_profile() << "% stocks, " << (100 - investor.risk_profile() - 5) << "% ETFs, and 5% cash." << endl;
     cout << endl;
 
     // Market and Portfolio class implementations 
-
-    // This is just to slow down the Text UI since there's a break in topics/classes 
-    string yes;
-    cout << "Ready to move on to the portfolio? " << endl;
-    cin >> yes;
-
-
-    // risk_requirement will be used in the Porfolio object 
-    double risk_requirement;
-
-    cout << endl;
-    cout << endl;
-    cout << "Now that we know more about you, we'll move on to which assets best fit your needs." << endl;
-    cout << endl;
-    cout << "On a whole number percentage scale of 0-100, what is your required return on investment (ROI)? " << endl;
-    cout << "Keep in mind that investing is a balance of risk vs reward. What you are requesting to gain, you must be willing to lose." << endl;
-    cout << "ROI: ";
-    cin >> risk_requirement; // compare this against their risk capacity
     
     /**
      * Creating Market object 
@@ -103,7 +106,7 @@ int main() {
     Market market(sector_); // creating market object with their sector preference 
 
     int option; 
-    cout << "Earlier you selected " << sector_ << " as your preferred sector." << endl;
+    cout << "Earlier you selected " << investor.get_sector() << " as your preferred sector." << endl;
     cout << "Please select options to view the financial assets in this sector." << endl;
     cout << "If you would like to move on to your Portfolio without viewing the markets, enter '6'. " << endl;
     cout << "Here are your market options: " << endl; 
@@ -119,15 +122,26 @@ int main() {
     /** 
      * Creating Portfolio object 
     */ 
-
+    string yes; 
     cout << "Ready to view your Portfolio? " << endl; 
     cin >> yes; // break in info
     Portfolio& portfolio = Portfolio::GetPortfolio(); // singleton implementation 
 
+    double a = investor.get_risk_capacity();
+    double b = investor.risk_profile(); 
+    portfolio.set_risk_capacity(a); 
+    portfolio.set_risk_profile(b); 
+    portfolio.set_risk_tolerance(risk_tolerance); 
+
+    portfolio.get_worth(wealth_); 
+    portfolio.risk_path(); 
+    cout << "First we're going to match " << investor.risk_profile() << " % of your portfolio with stocks." << endl; 
+    cout << "Because of your risk tolerance of " << investor.get_risk_tolerance() << " and your risk capacity of " << investor.get_risk_capacity() << " ," << endl; 
+    cout << "these stocks will be on a level " << portfolio.get_risk_path() << " risk path, where 1 is the lowest and 9 is the highest." << endl; 
     
-    cout << "Adding" << endl; 
+    cout << "Adding assets. " << endl; 
     portfolio.add_contents(sector_); 
-    cout << "Added" << endl; 
+    cout << "Added assets. " << endl; 
 
     cout << "Your portfolio contains financial assets from the " << portfolio.get_sector(sector_) << " sector." << endl; 
     cout << "Please select options to view your Portfolio." << endl; 
@@ -148,11 +162,7 @@ int main() {
      * Creating Forecast object 
     */ 
 
-   // we need to pass some values of the portfolio through to the Forecast object 
-   // double value = portfolio.get_value(); 
-   // double avg_change = portfolio.get_change(); 
-   // double avg_vol = portfolio.get_volatility(); 
-
+   // need to pass some values of the portfolio through to the Forecast object 
    // Forecast forecast(value, avg_change, avg_vol); 
 
    
