@@ -35,9 +35,7 @@ void Portfolio::add_contents(string sector) {
 
 	if( rc ) {
 		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
-	} else {
-		fprintf(stdout, "Open database successfully\n\n");
-	}
+	} 
     // need more queries reliant on Investor data with risk and asset data with price and variance 
     if(sector == "t") {
         sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
@@ -49,9 +47,7 @@ void Portfolio::add_contents(string sector) {
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
     sqlite3_close(db);
 }
 
@@ -69,17 +65,13 @@ void Portfolio::delete_contents() {
 
 	if( rc ) {
 		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
-	} else {
-		fprintf(stdout, "Open database successfully\n\n");
-	}
+	} 
     sql = "DELETE FROM portfolio"; 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
     sqlite3_close(db);
 }
 
@@ -113,9 +105,7 @@ void Portfolio::access_database(int option) {
 
 	if( rc ) {
 		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
-	} else {
-		fprintf(stdout, "Open database successfully\n\n");
-	}
+	} 
 
     database_controller(option, db, zErrMsg, sql, rc); 
 }
@@ -252,9 +242,7 @@ void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
 }
 
 /**
@@ -267,9 +255,7 @@ void Portfolio::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
 } 
 
 /**
@@ -282,9 +268,7 @@ void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int 
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
 }
 
 /**
@@ -297,9 +281,7 @@ void Portfolio::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int 
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
 }
 
 /**
@@ -312,9 +294,7 @@ void Portfolio::print_value(sqlite3 *db, char *zErrMsg, const char *sql, int rc)
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
 }
 
 /**
@@ -327,9 +307,7 @@ void Portfolio::print_avg_val(sqlite3 *db, char *zErrMsg, const char *sql, int r
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
 }
 
 /** 
@@ -342,9 +320,7 @@ void Portfolio::print_avg_unit(sqlite3 *db, char *zErrMsg, const char *sql, int 
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Operation done successfully\n");
-    }
+    } 
 }
 
 /**
