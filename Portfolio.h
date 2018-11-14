@@ -18,15 +18,11 @@ using namespace std;
 */ 
 class Portfolio {
     public: 
+    
         static Portfolio& GetPortfolio() {
             static Portfolio portfolio; 
             return portfolio; 
         }
-
-        string get_sector(string sector) { 
-            sector_ = sector; 
-            return sector_; 
-        } // done 
         void get_worth(string worth) {
             worth_ = stoi(worth); 
         }

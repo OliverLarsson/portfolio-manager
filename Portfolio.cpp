@@ -38,12 +38,14 @@ void Portfolio::add_contents(string sector) {
 	} 
     /**
      * To-do: Where clause to keep profile below investor's worth
+     *         ASAP: implement risk_profile_ % of stocks first 
      * 
      * DEPENDENT ON: 
+     * subtract 5% from worth_ to account for 5% requirement
      * risk_profile_ * worth_ amount of 't' or 'i' that follow the volume / change track 
      * (100 - risk_profile_) * worth_ amount of 'e' that follow the volume / change track
      * LIMIT = 25 so all portfolios are equally diversified
-     * OFFSET = xx to reflect increasing risk as trade volume and price change increase 
+     * OFFSET = x to reflect increasing risk as trade volume and price change increase 
     */ 
     if(sector == "t") { // markets 't' & 'e' have 159 rows, 159/9 = ~18, so each bracket has 18 assets 
         if(path_ == 1) {
