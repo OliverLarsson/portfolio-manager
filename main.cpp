@@ -18,8 +18,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sqlite3.h> // header file for the SQLite database
+#include <chrono> 
+#include <thread> 
 
 using namespace std;
+using namespace std::this_thread; // sleep_for, sleep_until
+using namespace std::chrono; // ns, us, ms, s, h, etc.
+
 
 int main() {
     
@@ -137,12 +142,26 @@ int main() {
     cout << "Because of your risk tolerance of " << investor.get_risk_tolerance() << " and your risk capacity of $" << investor.get_risk_capacity() << "," << endl; 
     cout << "these stocks will be on a level " << portfolio.get_risk_path() << " risk path, where 1 is the lowest and 9 is the highest." << endl; 
     
-    cout << "Adding assets. " << endl; 
-    portfolio.add_contents(sector_); 
-    cout << "Added assets. " << endl; 
+    cout << "Building your portfolio" << endl; 
 
-    cout << "Your portfolio contains financial assets from the " << portfolio.get_sector(sector_) << " sector." << endl; 
-    cout << "Please select options to view your Portfolio." << endl; 
+    sleep_for(seconds(1));
+
+    cout << "..." << endl;
+
+    sleep_for(seconds(1));
+
+    cout << "..." << endl;
+
+    sleep_for(seconds(1));
+
+    cout << "..." << endl;
+
+    sleep_for(seconds(1));
+    
+    portfolio.add_contents(sector_); 
+    cout << "Done! " << endl; 
+
+    cout << "\nPlease select options to view your Portfolio." << endl; 
     cout << "If you would like to move on to the forecast, enter '8'." << endl; 
     cout << "Here are your options: " << endl; 
 
