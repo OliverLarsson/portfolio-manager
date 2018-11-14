@@ -39,7 +39,7 @@ int main() {
     cout << "Welcome to your Portfolio Manager! Please provide some more information about yourself." << endl;
     cout << "What is your name? ";
     getline(cin, name);
-    cout << "Hi, " << name << ", what is your age? ";
+    cout << "Hi, " << name << ". What is your age? ";
     cin >> age;
     if(age < 18) {
         cout << "You are too young to invest!" << endl; 
@@ -84,16 +84,14 @@ int main() {
     cout << "From what you provided, these are your attributes:" << endl;
     cout << "   Name: " << investor.get_name() << "." << endl;
     cout << "   Age: " << investor.get_age() << "." << endl;
-    cout << "   Wealth: " << investor.get_wealth() << "." << endl;
+    cout << "   Wealth: $" << investor.get_wealth() << "." << endl;
     cout << "   Sector preference: " << investor.get_sector() << "." << endl;
 
     cout << endl;
-    cout << "Based on the answers you provided: " << endl;
+    cout << "Looking at your answers on risk: " << endl;
     cout << "   Risk tolerance: " << investor.get_risk_tolerance() << "." << endl;
     cout << "   Risk requirement: " << investor.get_risk_requirement() << "." << endl; 
-    cout << "   Profile size: " << investor.get_wealth() << " dollars." <<endl;
-    cout << "   Your age: " << investor.get_age() << " years old." << endl;
-    cout << "We decided you have a risk capacity of " << investor.get_risk_capacity() << " dollars." << endl;
+    cout << "We decided you have a risk capacity of $" << investor.get_risk_capacity() << endl;
     cout << "We believe you should have a profile with " << investor.risk_profile() << "% stocks, " << (100 - investor.risk_profile() - 5) << "% ETFs, and 5% cash." << endl;
     cout << endl;
 
@@ -135,8 +133,8 @@ int main() {
 
     portfolio.get_worth(wealth_); 
     portfolio.risk_path(); 
-    cout << "First we're going to match " << investor.risk_profile() << " % of your portfolio with stocks." << endl; 
-    cout << "Because of your risk tolerance of " << investor.get_risk_tolerance() << " and your risk capacity of " << investor.get_risk_capacity() << " ," << endl; 
+    cout << "\nFirst we're going to match " << investor.risk_profile() << "% of your portfolio with stocks." << endl; 
+    cout << "Because of your risk tolerance of " << investor.get_risk_tolerance() << " and your risk capacity of $" << investor.get_risk_capacity() << "," << endl; 
     cout << "these stocks will be on a level " << portfolio.get_risk_path() << " risk path, where 1 is the lowest and 9 is the highest." << endl; 
     
     cout << "Adding assets. " << endl; 
