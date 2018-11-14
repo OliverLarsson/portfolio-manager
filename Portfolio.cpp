@@ -3,7 +3,7 @@
  * Deals with all information related to the the portfolio of financial assets 
 */ 
 
-// Header file
+// Header file  
 #include "Portfolio.h" 
 
 // Libraries 
@@ -36,65 +36,73 @@ void Portfolio::add_contents(string sector) {
 	if( rc ) {
 		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
 	} 
-    // need more queries reliant on Investor data with risk and asset data with price and variance 
-    if(sector == "t") {
+    /**
+     * To-do: Where clause to keep profile below investor's worth
+     * 
+     * DEPENDENT ON: 
+     * risk_profile_ * worth_ amount of 't' or 'i' that follow the volume / change track 
+     * (100 - risk_profile_) * worth_ amount of 'e' that follow the volume / change track
+     * LIMIT = 25 so all portfolios are equally diversified
+     * OFFSET = xx to reflect increasing risk as trade volume and price change increase 
+    */ 
+    if(sector == "t") { // markets 't' & 'e' have 159 rows, 159/9 = ~18, so each bracket has 18 assets 
         if(path_ == 1) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 0"; 
         }
-        else if(path_ == 2) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        else if(path_ == 2) {  
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 18";
         }
         else if(path_ == 3) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 36";
         }
         else if(path_ == 4) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 54";
         }
         else if(path_ == 5) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 72";
         }
         else if(path_ == 6) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 90";
         }
         else if(path_ == 7) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 108";
         }
         else if(path_ == 8) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 126";
         }
-        else{
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 't' or sector = 'e'";
+        else {
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 141";  
         }
         
     } else {
-        if(path_ == 1) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+        if(path_ == 1) { // markets 'i' & 'e' have 122 rows, 122/9 = ~14, so each bracket has 14 assets 
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 0";
         }
         else if(path_ == 2) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 14";
         }
         else if(path_ == 3) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 28";
         }
         else if(path_ == 4) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 42";
         }
         else if(path_ == 5) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 56";
         }
         else if(path_ == 6) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 70";
         }
         else if(path_ == 7) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 84";
         }
         else if(path_ == 8) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 98";
         }
         else {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, (price/10) FROM market WHERE sector = 'i' or sector = 'e'";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 108";
         }
-        
+
     }
    
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
@@ -104,7 +112,6 @@ void Portfolio::add_contents(string sector) {
     } 
     sqlite3_close(db);
 }
-
 /** 
  * delete_contents
  * Need to delete the Portfolio table contents each time
@@ -211,59 +218,59 @@ void Portfolio::portfolio_controller(int option) {
 
     int option_; 
     if(option == 1) {
-        cout << "\nYou chose to view your entire portfolio information." <<endl; 
+        cout << "\nYou chose to view your entire portfolio information.\n" <<endl; 
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 2) {
-        cout << "\nYou chose to view your portfolio in order of ticker." <<endl;
+        cout << "\nYou chose to view your portfolio in order of ticker.\n" <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 3) {
-        cout << "\nYou chose to view your portfolio in order of units." <<endl;
+        cout << "\nYou chose to view your portfolio in order of units.\n" <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 4) {
-        cout << "\nYou chose to view your portfolio in order of price." <<endl;
+        cout << "\nYou chose to view your portfolio in order of price.\n" <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 5) {
-        cout << "\nYou chose to view your portfolio's value." <<endl;
+        cout << "\nYou chose to view your portfolio's value.\n" <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 6) {
-        cout << "\nYou chose to view the average asset price in your portfolio." <<endl;
+        cout << "\nYou chose to view the average asset price in your portfolio.\n" <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 7) {
-        cout << "\nYou chose to view the average units held of assets in your portfolio." <<endl;
+        cout << "\nYou chose to view the average units held of assets in your portfolio.\n" <<endl;
         access_database(option); 
         print_options();
         cin>> option_; 
         portfolio_controller(option_); 
     }
     else if(option == 8) {
-        cout << "\nYou chose to move on to the forecast." <<endl; 
+        cout << "\nYou chose to move on to the forecast.\n" <<endl; 
     }
     else {
-        cout << "\nThat is not an option. Please choose one of the following" << endl;  
+        cout << "\nThat is not an option. Please choose one of the following:" << endl;  
         print_options(); 
         cin>> option_; 
         portfolio_controller(option_); 
@@ -291,7 +298,7 @@ void Portfolio::print_options() {
  * Prints entire contents of portfolio table
 */
 void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT ticker, units FROM portfolio";
+    sql = "SELECT m.name, p.ticker, p.units FROM portfolio p, market m WHERE p.ticker = m.ticker";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -304,7 +311,7 @@ void Portfolio::print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int
  * Queries db portfolio table by ticker  
 */
 void Portfolio::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT ticker, units FROM portfolio ORDER BY ticker ASC";
+    sql = "SELECT m.name, p.ticker, p.units FROM portfolio p, market m WHERE p.ticker = m.ticker ORDER BY p.ticker ASC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -317,7 +324,7 @@ void Portfolio::print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int
  * Prints contents of portfolio table in unit order 
 */ 
 void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT ticker, units FROM portfolio ORDER BY units DESC";
+    sql = "SELECT m.name, p.ticker, p.units FROM portfolio p, market m WHERE p.ticker = m.ticker ORDER BY p.units DESC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -330,7 +337,7 @@ void Portfolio::print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int 
  * Prints contents of market table in price order of ticker in portfolio table
 */ 
 void Portfolio::print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
-    sql = "SELECT p.ticker, p.units, m.price FROM portfolio p, market m WHERE p.ticker = m.ticker ORDER BY price DESC";
+    sql = "SELECT m.name, p.ticker, p.units, m.price FROM portfolio p, market m WHERE p.ticker = m.ticker ORDER BY m.price DESC";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
