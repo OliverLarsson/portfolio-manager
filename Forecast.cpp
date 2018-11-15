@@ -30,4 +30,7 @@ Forecast * Forecast::Create(forecast_method type) {
     else if(type == econometric) {
         return new Econometric(); 
     }
+    else {
+        return NULL; 
+    }
 }

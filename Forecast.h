@@ -22,7 +22,9 @@ using namespace std;
 
 enum forecast_method{industry, solo, econometric}; 
 
-// Base class
+/**
+ *  Base class
+*/ 
 class Forecast {
     public: 
         virtual void print_forecast() = 0; 
@@ -30,7 +32,17 @@ class Forecast {
 
 }; 
 
-// Derived classes 
+/** Derived classes
+ * 
+ * Industry: 
+ *  - creates forecast based on the entire Market
+ * 
+ * Solo: 
+ *  - creates forecast based on just the Portfolio 
+ * 
+ * Econometric: 
+ *  - creates forecast based on both Market and Portfolio 
+*/ 
 
 class Industry: public Forecast {
     public: 
@@ -53,18 +65,14 @@ class Econometric: public Forecast {
         }
 }; 
 
-// Client class 
+/**
+ *  Client class 
+*/ 
 
 class Client {
     public: 
         Client(forecast_method type) {
             f_select = Forecast::Create(type); 
-        }
-        ~Client() {
-            if(f_select) {
-                delete[] f_select;
-                f_select = NULL; 
-            }
         }
         Forecast* get_forecast() {
             return f_select; 

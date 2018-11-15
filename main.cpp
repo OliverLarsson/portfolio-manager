@@ -172,17 +172,24 @@ int main() {
     } else {
         cout << "\nYou've selected to move on to the forecast. Let's see how your money might grow!" << endl; 
     }
-
-    portfolio.delete_contents(); // have to delete the portfolio table contents or else they'll stay for next run through of this program 
     
     /** 
      * Creating Forecast object 
     */ 
 
-    
     Client *f_client = new Client(industry); 
     Forecast * f_select = f_client->get_forecast(); 
     f_select->print_forecast();
 
+    f_client = new Client(solo);
+    f_select = f_client->get_forecast();
+    f_select->print_forecast(); 
+
+    f_client = new Client(econometric);
+    f_select = f_client->get_forecast();
+    f_select->print_forecast(); 
+
+
+    portfolio.delete_contents(); 
     return 0;
 }
