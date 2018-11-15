@@ -14,19 +14,65 @@
 
 using namespace std; 
 
+/** Forecasting methods (classes) include:
+ * Industry-wide (Industry class)
+ * Porfolio-specific (Solo class)
+ * Econometric (Econometric class)
+*/ 
+
+enum forecast_method{industry, solo, econometric}; 
+
+// Base class
 class Forecast {
     public: 
-        Forecast(double value, double variance, double volatility); 
+        virtual void print_forecast() = 0; 
+        static Forecast* Create(forecast_method);
 
-        double calculate_value(); // calculate value of the future portfolio based on current value, variance, and risk 
-        double calculate_risk(); // calculate future risk 
-        double calculate_growth(); // calculate future growth 
+}; 
 
+// Derived classes 
+
+class Industry: public Forecast {
+    public: 
+        void print_forecast() {
+            cout << "Industry forecast method" << endl; 
+        }
+}; 
+
+class Solo: public Forecast {
+    public: 
+        void print_forecast() {
+            cout << "Solo forecast method" << endl; 
+        }
+};
+
+class Econometric: public Forecast {
+    public: 
+        void print_forecast() {
+            cout << "Econometric forecast method" << endl; 
+        }
+}; 
+
+// Client class 
+
+class Client {
+    public: 
+        Client(forecast_method type) {
+            f_select = Forecast::Create(type); 
+        }
+        ~Client() {
+            if(f_select) {
+                delete[] f_select;
+                f_select = NULL; 
+            }
+        }
+        Forecast* get_forecast() {
+            return f_select; 
+        }
     private: 
-        double value_; 
-        double variance_; 
-        double risk_; 
+        Forecast *f_select; 
+};
 
-}; // class Forecast
+
 
 #endif //_FORECAST_H_

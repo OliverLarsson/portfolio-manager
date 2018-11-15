@@ -16,3 +16,18 @@
 using namespace std; 
 
 // Methods 
+
+/**
+ * Factory method to create object
+*/ 
+Forecast * Forecast::Create(forecast_method type) {
+    if(type == industry) {
+        return new Industry(); 
+    }
+    else if(type == solo) {
+        return new Solo(); 
+    }
+    else if(type == econometric) {
+        return new Econometric(); 
+    }
+}
