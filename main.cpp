@@ -179,17 +179,10 @@ int main() {
      * Creating Forecast object 
     */ 
 
-   // need to pass some values of the portfolio through to the Forecast object 
-   // Forecast forecast(value, avg_change, avg_vol); 
-
-   
-
-
-
-
-
-
-
+    
+    Client *f_client = new Client(industry); 
+    Forecast * f_select = f_client->get_forecast(); 
+    f_select->print_forecast();
 
     return 0;
 }
