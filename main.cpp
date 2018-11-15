@@ -177,8 +177,21 @@ int main() {
      * Creating Forecast object 
     */ 
 
-    Client *f_client = new Client(industry); 
-    Forecast * f_select = f_client->get_forecast(); 
+    Client *f_client = nullptr;
+    Forecast * f_select = nullptr;
+
+    cout << "Forecasting can be done through a variety of methods. To learn more about each method, select its number. " << endl; 
+    f_select->print_options(); 
+    cin >> option; 
+    if(option != 4) {
+        f_select->print_info(option);
+    } else {
+        cout << "\nYou've selected to move on" << endl; 
+    }
+    
+
+    f_client = new Client(industry); 
+    f_select = f_client->get_forecast(); 
     f_select->print_forecast();
 
     f_client = new Client(solo);

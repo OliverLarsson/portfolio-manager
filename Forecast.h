@@ -30,6 +30,9 @@ class Forecast {
         virtual void print_forecast() = 0; 
         static Forecast* Create(forecast_method);
 
+        void print_options(); 
+        void print_info(int option); 
+
 }; 
 
 /** Derived classes
@@ -80,7 +83,6 @@ class Client {
     private: 
         Forecast *f_select; 
 };
-
 
 
 #endif //_FORECAST_H_

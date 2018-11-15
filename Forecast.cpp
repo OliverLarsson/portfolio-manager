@@ -34,3 +34,49 @@ Forecast * Forecast::Create(forecast_method type) {
         return NULL; 
     }
 }
+
+/**
+ * print_options
+ * Prints options for viewing the portfolio  
+*/
+void Forecast::print_options() {
+    cout << "   1. Forecasting by market" << endl; 
+    cout << "   2. Forecasting by portfolio" << endl; 
+    cout << "   3. Forecasting by entire economy" << endl; 
+    cout << "   4. Move on " << endl; 
+} 
+
+/**
+ * print_info
+ * Prints info on user request 
+*/ 
+void Forecast::print_info(int option) {
+    int option_; 
+    if(option == 1) {
+        cout << "Info on Market forecast" << endl;
+        print_options(); 
+        cin>>option_; 
+        print_info(option_); 
+    }
+    else if(option == 2) { 
+        cout << "Info on Solo forecast" << endl;
+        print_options(); 
+        cin>>option_; 
+        print_info(option_); 
+    }
+    else if(option == 3) {
+        cout << "Info on Econometric forecast" << endl; 
+        print_options(); 
+        cin>>option_; 
+        print_info(option_); 
+    }
+    else if(option == 4) {
+        cout << "Moving on" << endl; 
+    }
+    else {
+        cout << "That is not an option. Please enter again." << endl; 
+        print_options(); 
+        cin >> option_; 
+        print_info(option_); 
+    }
+}
