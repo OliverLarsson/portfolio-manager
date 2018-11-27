@@ -42,6 +42,7 @@ class Portfolio {
         void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_units(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_price(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
+        void print_avg_change(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_value(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_avg_val(sqlite3 *db, char *zErrMsg, const char *sql, int rc); 
         void print_avg_unit(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done 

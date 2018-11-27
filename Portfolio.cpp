@@ -209,6 +209,10 @@ void Portfolio::database_controller(int option, sqlite3 *db, char *zErrMsg, cons
         print_avg_unit(db, zErrMsg, sql, rc);
         sqlite3_close(db);
     }
+    else if(option == 8) {
+        print_avg_change(db, zErrMsg, sql, rc);
+        sqlite3_close(db);
+    }
 }
 
 /**
@@ -269,6 +273,13 @@ void Portfolio::portfolio_controller(int option) {
         portfolio_controller(option_); 
     }
     else if(option == 8) {
+        cout << "\nYou chose to view the average change of assets in your portfolio.\n" <<endl;
+        access_database(option); 
+        print_options();
+        cin>> option_; 
+        portfolio_controller(option_); 
+    }
+    else if(option == 9) {
         cout << "\nYou chose to move on to the forecast.\n" <<endl; 
     }
     else {
@@ -292,7 +303,8 @@ void Portfolio::print_options() {
     cout << "View your portfolio value (5)." << endl;
     cout << "View the average asset price (6)." << endl;
     cout << "View the average units of assets held (7)." << endl;
-    cout << "Move on to your forecast (8)." << endl;
+    cout << "View the average change of assets held (8)." << endl;
+    cout << "Move on to your forecast (9)." << endl;
 } 
 
 /**
@@ -366,6 +378,19 @@ void Portfolio::print_value(sqlite3 *db, char *zErrMsg, const char *sql, int rc)
 */ 
 void Portfolio::print_avg_val(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
     sql = "SELECT AVG(m.price) AS AvgPrice FROM market m, portfolio p WHERE p.ticker = m.ticker";
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } 
+}
+
+/**
+ * print_avg_change
+ * Average value of all assets in portfolio
+*/ 
+void Portfolio::print_avg_change(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
+    sql = "SELECT AVG(m.change) AS AvgChange FROM market m, portfolio p WHERE p.ticker = m.ticker";
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);

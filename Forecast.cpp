@@ -18,6 +18,21 @@ using namespace std;
 // Methods 
 
 /**
+ * callback
+ * sqlite3 provided function for printing out sql queries 
+*/
+int Forecast::callback(void *NotUsed, int argc, char **argv, char **azColName)
+{
+	int i;
+	for(i=0; i<argc; i++)
+	{
+		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL") << "\n";
+	}
+	cout<<"\n";
+	return 0;
+}
+
+/**
  * Factory method to create object
 */ 
 Forecast * Forecast::Create(forecast_method type) {

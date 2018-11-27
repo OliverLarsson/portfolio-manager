@@ -162,12 +162,12 @@ int main() {
     cout << "Done! " << endl; 
 
     cout << "\nPlease select options to view your Portfolio." << endl; 
-    cout << "If you would like to move on to the forecast, enter '8'." << endl; 
+    cout << "If you would like to move on to the forecast, enter '9'." << endl; 
     cout << "Here are your options: " << endl; 
 
     portfolio.print_options(); 
     cin >> option; 
-    if(option != 8) {
+    if(option != 9) {
         portfolio.portfolio_controller(option);
     } else {
         cout << "\nYou've selected to move on to the forecast. Let's see how your money might grow!" << endl; 
@@ -188,20 +188,26 @@ int main() {
     } else {
         cout << "\nYou've selected to move on" << endl; 
     }
+
+    cout << "Which forecast method would you like to use? " << endl; 
+    f_select->print_options(); 
+    cin>> option; 
+    if(option == 1) {
+        f_client = new Client(industry); 
+        f_select = f_client->get_forecast(); 
+        f_select->print_forecast();
+    }
+    else if(option == 2) {
+        f_client = new Client(solo);
+        f_select = f_client->get_forecast();
+        f_select->print_forecast(); 
+    }
+    else if(option == 3) {
+        f_client = new Client(solo);
+        f_select = f_client->get_forecast();
+        f_select->print_forecast(); 
+    }
     
-
-    f_client = new Client(industry); 
-    f_select = f_client->get_forecast(); 
-    f_select->print_forecast();
-
-    f_client = new Client(solo);
-    f_select = f_client->get_forecast();
-    f_select->print_forecast(); 
-
-    f_client = new Client(econometric);
-    f_select = f_client->get_forecast();
-    f_select->print_forecast(); 
-
 
     portfolio.delete_contents(); 
     return 0;
