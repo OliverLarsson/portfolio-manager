@@ -92,12 +92,12 @@ void Market::database_controller(int option, sqlite3 *db, char *zErrMsg, const c
  * Prints options for viewing the market  
 */
 void Market::print_options() {
-    cout << "View entire market info (1)." << endl;
-    cout << "View market by asset name (2)." << endl;
-    cout << "View market by asset ticker (3)." << endl;
-    cout << "View market by asset price (4)." << endl;
-    cout << "View market by asset variance (5)." << endl;
-    cout << "Move on to your portfolio (6)." << endl;
+    cout << "   1. View entire market info" << endl;
+    cout << "   2. View market by asset name" << endl;
+    cout << "   3. View market by asset ticker" << endl;
+    cout << "   4. View market by asset price" << endl;
+    cout << "   5. View market by asset variance" << endl;
+    cout << "   6. Move on to your portfolio" << endl;
 } 
 
 /**

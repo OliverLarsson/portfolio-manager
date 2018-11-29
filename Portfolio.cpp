@@ -296,15 +296,15 @@ void Portfolio::portfolio_controller(int option) {
  * Prints options for viewing the portfolio  
 */
 void Portfolio::print_options() {
-    cout << "View entire portfolio info (1)." << endl;
-    cout << "View portfolio in order of ticker (2)." << endl;
-    cout << "View portfolio in order of units (3)." << endl;
-    cout << "View portfolio in order of price (4)." << endl;
-    cout << "View your portfolio value (5)." << endl;
-    cout << "View the average asset price (6)." << endl;
-    cout << "View the average units of assets held (7)." << endl;
-    cout << "View the average change of assets held (8)." << endl;
-    cout << "Move on to your forecast (9)." << endl;
+    cout << "   1. View entire portfolio info" << endl;
+    cout << "   2. View portfolio in order of ticker" << endl;
+    cout << "   3. View portfolio in order of units" << endl;
+    cout << "   4. View portfolio in order of price" << endl;
+    cout << "   5. View your portfolio value" << endl;
+    cout << "   6. View the average asset price" << endl;
+    cout << "   7. View the average units of assets held" << endl;
+    cout << "   8. View the average change of assets held" << endl;
+    cout << "   9. Move on to your forecast" << endl;
 } 
 
 /**

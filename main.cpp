@@ -203,7 +203,7 @@ int main() {
         f_select->print_forecast(); 
     }
     else if(option == 3) {
-        f_client = new Client(solo);
+        f_client = new Client(econometric);
         f_select = f_client->get_forecast();
         f_select->print_forecast(); 
     }

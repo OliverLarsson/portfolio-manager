@@ -57,137 +57,17 @@ class Forecast {
 */ 
 class Industry: public Forecast {
     public: 
-        void print_forecast() {
-            sqlite3 *db;
-            char *zErrMsg = 0;
-            const char *sql;
-            int rc;
-            rc = sqlite3_open("Investor.db", &db);
-            if( rc ) {
-                fprintf(stderr, "Can't open database: %s\n", zErrMsg);
-            } 
-            int option; 
-            cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
-            cout << "   1. 99%" << endl; 
-            cout << "   2. 95%" << endl; 
-            cout << "   3. 90%" << endl; 
-            cin >> option; 
-
-            if(option == 1) { 
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-            else if(option == 2) {
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-            else if(option == 3) {
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-        }
+        void print_forecast(); 
 }; 
 
 class Solo: public Forecast {
     public: 
-        void print_forecast() {
-            sqlite3 *db;
-            char *zErrMsg = 0;
-            const char *sql;
-            int rc;
-            rc = sqlite3_open("Investor.db", &db);
-            if( rc ) {
-                fprintf(stderr, "Can't open database: %s\n", zErrMsg);
-            } 
-            int option; 
-            cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
-            cout << "   1. 99%" << endl; 
-            cout << "   2. 95%" << endl; 
-            cout << "   3. 90%" << endl; 
-            cin >> option; 
-
-            if(option == 1) { 
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-            else if(option == 2) {
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-            else if(option == 3) {
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-        }
+        void print_forecast(); 
 };
 
 class Econometric: public Forecast {
     public: 
-        void print_forecast() {
-            sqlite3 *db;
-            char *zErrMsg = 0;
-            const char *sql;
-            int rc;
-            rc = sqlite3_open("Investor.db", &db);
-            if( rc ) {
-                fprintf(stderr, "Can't open database: %s\n", zErrMsg);
-            } 
-            int option; 
-            cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
-            cout << "   1. 99%" << endl; 
-            cout << "   2. 95%" << endl; 
-            cout << "   3. 90%" << endl; 
-            cin >> option; 
-
-            if(option == 1) { 
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-            else if(option == 2) {
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-            else if(option == 3) {
-                sql = "SELECT "; 
-                rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-                if( rc != SQLITE_OK ) {
-                    fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                    sqlite3_free(zErrMsg);
-                } 
-            }
-        }
+        void print_forecast();
 }; 
 
 /**

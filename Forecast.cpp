@@ -95,3 +95,144 @@ void Forecast::print_info(int option) {
         print_info(option_); 
     }
 }
+
+/**
+ * Industry::print_forecast()
+ * 
+ * Industry class' forecast
+*/ 
+void Industry::print_forecast() {
+    sqlite3 *db;
+    char *zErrMsg = 0;
+    const char *sql;
+    int rc;
+    rc = sqlite3_open("Investor.db", &db);
+    if( rc ) {
+        fprintf(stderr, "Can't open database: %s\n", zErrMsg);
+    } 
+    int option; 
+    cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
+    cout << "   1. 99%" << endl; 
+    cout << "   2. 95%" << endl; 
+    cout << "   3. 90%" << endl; 
+    cin >> option; 
+
+    if(option == 1) { 
+        sql = "SELECT AVG(change/price) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+    else if(option == 2) {
+        sql = "SELECT AVG(change/price) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+    else if(option == 3) {
+        sql = "SELECT AVG(change/price) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+}
+
+/**
+ * Solo::print_forecast()
+ * 
+ * Solo class' forecast
+*/ 
+void Solo::print_forecast() {
+    sqlite3 *db;
+    char *zErrMsg = 0;
+    const char *sql;
+    int rc;
+    rc = sqlite3_open("Investor.db", &db);
+    if( rc ) {
+        fprintf(stderr, "Can't open database: %s\n", zErrMsg);
+    } 
+    int option; 
+    cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
+    cout << "   1. 99%" << endl; 
+    cout << "   2. 95%" << endl; 
+    cout << "   3. 90%" << endl; 
+    cin >> option; 
+
+    if(option == 1) { 
+        sql = "SELECT AVG(m.change/m.price) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+    else if(option == 2) {
+        sql = "SELECT AVG(m.change/m.price) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+    else if(option == 3) {
+        sql = "SELECT AVG(m.change/m.price) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+}
+
+/**
+ * Econometric::print_forecast()
+ * 
+ * Econometric class' forecast
+*/ 
+void Econometric::print_forecast() {
+    sqlite3 *db;
+    char *zErrMsg = 0;
+    const char *sql;
+    int rc;
+    rc = sqlite3_open("Investor.db", &db);
+    if( rc ) {
+        fprintf(stderr, "Can't open database: %s\n", zErrMsg);
+    } 
+    int option; 
+    cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
+    cout << "   1. 99%" << endl; 
+    cout << "   2. 95%" << endl; 
+    cout << "   3. 90%" << endl; 
+    cin >> option; 
+
+    if(option == 1) { 
+        sql = "SELECT AVG(change/price) AS Change FROM market"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+    else if(option == 2) {
+        sql = "SELECT AVG(change/price) AS Change FROM market"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+    else if(option == 3) {
+        sql = "SELECT AVG(change/price) AS Change FROM market"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ) {
+            fprintf(stderr, "SQL error: %s\n", zErrMsg);
+            sqlite3_free(zErrMsg);
+        } 
+    }
+}
