@@ -77,7 +77,7 @@ class Econometric: public Forecast {
 class Client {
     public: 
         Client(forecast_method type) {
-            f_select = Forecast::Create(type); 
+            f_select = Forecast::Create(type);
         }
         Forecast* get_forecast() {
             return f_select; 

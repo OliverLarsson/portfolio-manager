@@ -118,7 +118,7 @@ void Industry::print_forecast() {
     cin >> option; 
 
     if(option == 1) { 
-        sql = "SELECT AVG(change/price) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
+        sql = "SELECT AVG(change/price) + 2.576*( (SELECT MAX(change/price))-(SELECT MIN(change/price))/(SELECT count(*) FROM portfolio)) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -126,7 +126,7 @@ void Industry::print_forecast() {
         } 
     }
     else if(option == 2) {
-        sql = "SELECT AVG(change/price) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
+        sql = "SELECT AVG(change/price) + 1.96*( (SELECT MAX(change/price))-(SELECT MIN(change/price))/(SELECT count(*) FROM portfolio)) AS Change FROM market WHERE sector = 't' or sector = 'e' ORDER BY "; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -134,7 +134,7 @@ void Industry::print_forecast() {
         } 
     }
     else if(option == 3) {
-        sql = "SELECT AVG(change/price) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
+        sql = "SELECT AVG(change/price) + 1.645*( (SELECT MAX(change/price))-(SELECT MIN(change/price))/(SELECT count(*) FROM portfolio)) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -165,7 +165,7 @@ void Solo::print_forecast() {
     cin >> option; 
 
     if(option == 1) { 
-        sql = "SELECT AVG(m.change/m.price) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
+        sql = "SELECT AVG(m.change/m.price) + 2.576*( (SELECT MAX(m.change/m.price))-(SELECT MIN(m.change/m.price))/(SELECT count(*) FROM portfolio)) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -173,7 +173,7 @@ void Solo::print_forecast() {
         } 
     }
     else if(option == 2) {
-        sql = "SELECT AVG(m.change/m.price) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
+        sql = "SELECT AVG(m.change/m.price) + 1.96*( (SELECT MAX(m.change/m.price))-(SELECT MIN(m.change/m.price))/(SELECT count(*) FROM portfolio)) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -181,7 +181,7 @@ void Solo::print_forecast() {
         } 
     }
     else if(option == 3) {
-        sql = "SELECT AVG(m.change/m.price) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
+        sql = "SELECT AVG(m.change/m.price) + 1.645*( (SELECT MAX(m.change/m.price))-(SELECT MIN(m.change/m.price))/(SELECT count(*) FROM portfolio)) AS Change FROM market m, portfolio p WHERE m.ticker = p.ticker"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -212,7 +212,7 @@ void Econometric::print_forecast() {
     cin >> option; 
 
     if(option == 1) { 
-        sql = "SELECT AVG(change/price) AS Change FROM market"; 
+        sql = "SELECT AVG(change/price) + 2.576*( (SELECT MAX(change/price))-(SELECT MIN(change/price))/(SELECT count(*) FROM portfolio)) AS Change FROM market"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -220,7 +220,7 @@ void Econometric::print_forecast() {
         } 
     }
     else if(option == 2) {
-        sql = "SELECT AVG(change/price) AS Change FROM market"; 
+        sql = "SELECT AVG(change/price) + 1.96*( (SELECT MAX(change/price))-(SELECT MIN(change/price))/(SELECT count(*) FROM portfolio)) AS Change FROM market"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -228,7 +228,7 @@ void Econometric::print_forecast() {
         } 
     }
     else if(option == 3) {
-        sql = "SELECT AVG(change/price) AS Change FROM market"; 
+        sql = "SELECT AVG(change/price) + 1.645*( (SELECT MAX(change/price))-(SELECT MIN(change/price))/(SELECT count(*) FROM portfolio)) AS Change FROM market"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
