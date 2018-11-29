@@ -188,7 +188,7 @@ int main() {
     } else {
         cout << "\nYou've selected to move on" << endl; 
     }
-
+    
     cout << "Which forecast method would you like to use? " << endl; 
     f_select->print_options(); 
     cin>> option; 

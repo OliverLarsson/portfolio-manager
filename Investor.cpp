@@ -61,7 +61,7 @@ double Investor::risk_profile() {
             return 90.0; 
         }
         else {
-            return 100.0; 
+            return 95.0; 
         }
     }
     else if(age_ >= 40 && age_ < 60) {
