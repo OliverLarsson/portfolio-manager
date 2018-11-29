@@ -142,21 +142,21 @@ int main() {
     cout << "Because of your risk tolerance of " << investor.get_risk_tolerance() << " and your risk capacity of $" << investor.get_risk_capacity() << "," << endl; 
     cout << "these stocks will be on a level " << portfolio.get_risk_path() << " risk path, where 1 is the lowest and 9 is the highest." << endl; 
     
-    cout << "Building your portfolio" << endl; 
+    cout << "\nBuilding your portfolio" << endl; 
 
-    sleep_for(seconds(1));
-
-    cout << "..." << endl;
-
-    sleep_for(seconds(1));
+    sleep_for(milliseconds(500));
 
     cout << "..." << endl;
 
-    sleep_for(seconds(1));
+    sleep_for(milliseconds(500));
 
     cout << "..." << endl;
 
-    sleep_for(seconds(1));
+    sleep_for(milliseconds(500));
+
+    cout << "..." << endl;
+
+    sleep_for(milliseconds(500));
     
     portfolio.add_contents(sector_); 
     cout << "Done! " << endl; 
@@ -207,7 +207,6 @@ int main() {
         f_select = f_client->get_forecast();
         f_select->print_forecast(); 
     }
-    
 
     portfolio.delete_contents(); 
     return 0;

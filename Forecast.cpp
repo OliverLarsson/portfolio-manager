@@ -47,7 +47,7 @@ int Forecast::callback(void *NotUsed, int argc, char **argv, char **azColName)
 	int i;
 	for(i=0; i<argc; i++)
 	{
-		cout<< (argv[i] ? argv[i] : "NULL");
+		cout << (argv[i] ? argv[i] : "NULL");
 	}
 	
 	return 0;
@@ -89,33 +89,33 @@ void Forecast::print_options() {
 void Forecast::print_info(int option) {
     int option_; 
     if(option == 1) {
-        cout << "The market forecast takes all the financial assets within the sector that you chose to invest into account." << endl;
-        cout << "This style of forecasting offers insight into how the rest of the industry is acting and the possible growth in your portfolio. " << endl; 
+        cout << "\nThe market forecast takes all the financial assets within the sector that you chose to invest into account." << endl;
+        cout << "This style of forecasting offers insight into how the rest of the industry is acting and the possible growth in your portfolio.\n" << endl; 
         print_options(); 
         cin>>option_; 
         print_info(option_); 
     }
     else if(option == 2) { 
-        cout << "The solo forecast takes only the financial assets within your portfolio into account. " << endl;
-        cout << "This style of forecasting offers insight into how your portfolio has acted in the past and how it could grow in the future." << endl; 
+        cout << "\nThe solo forecast takes only the financial assets within your portfolio into account. " << endl;
+        cout << "This style of forecasting offers insight into how your portfolio has acted in the past and how it could grow in the future.\n" << endl; 
         print_options(); 
         cin>>option_; 
         print_info(option_); 
     }
     else if(option == 3) {
-        cout << "The econometric forecast takes the entire economy into account. This includes all financial assets within all sectors." << endl; 
+        cout << "\nThe econometric forecast takes the entire economy into account. This includes all financial assets within all sectors." << endl; 
         cout << "This style of forecasting offers insight into how your portfolio might grow based on how the entire economy has acted. " << endl; 
         cout << "Since big shifts in the economy (recessions, depressions, booms, etc.) affect all industries, this is an important forecast ";
-        cout << "to conduct from a broad view. " << endl; 
+        cout << "to conduct from a broad view.\n" << endl; 
         print_options(); 
         cin>>option_; 
         print_info(option_); 
     }
     else if(option == 4) {
-        cout << "Moving on to your forecasting choice." << endl; 
+        cout << "\nMoving on to your forecasting choice." << endl; 
     }
     else {
-        cout << "That is not an option. Please enter again." << endl; 
+        cout << "\nThat is not an option. Please enter again.\n" << endl; 
         print_options(); 
         cin >> option_; 
         print_info(option_); 
@@ -137,7 +137,7 @@ void Industry::print_forecast() {
         fprintf(stderr, "Can't open database: %s\n", zErrMsg);
     }
     int option;
-    cout << "Please enter an option (without '%') for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
+    cout << "\nPlease enter an option (without '%') for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
     cout << "   - 99%" << endl; 
     cout << "   - 95%" << endl; 
     cout << "   - 90%" << endl; 
@@ -241,7 +241,7 @@ void Econometric::print_forecast() {
     cout << "will change between the following percentages in the next year:\n[";
 
     if(option == 99) { 
-        sql = "SELECT (SELECT ROUND(SELECT (SELECT AVG(market.change) - 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
+        sql = "SELECT (SELECT (SELECT (SELECT AVG(market.change) - 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         cout << ",";
         sql = "SELECT (SELECT (SELECT AVG(market.change) + 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
@@ -252,7 +252,7 @@ void Econometric::print_forecast() {
         } 
     }
     else if(option == 95) {
-        sql = "SELECT (SELECT ROUND(SELECT (SELECT AVG(market.change) - 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
+        sql = "SELECT (SELECT (SELECT (SELECT AVG(market.change) - 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         cout << ",";
         sql = "SELECT (SELECT (SELECT AVG(market.change) + 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
@@ -263,7 +263,7 @@ void Econometric::print_forecast() {
         } 
     }
     else if(option == 90) {
-        sql = "SELECT (SELECT ROUND(SELECT (SELECT AVG(market.change) - 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
+        sql = "SELECT (SELECT (SELECT (SELECT AVG(market.change) - 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         cout << ",";
         sql = "SELECT (SELECT (SELECT AVG(market.change) + 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
