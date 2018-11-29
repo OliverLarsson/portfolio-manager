@@ -47,9 +47,9 @@ int Forecast::callback(void *NotUsed, int argc, char **argv, char **azColName)
 	int i;
 	for(i=0; i<argc; i++)
 	{
-		cout<<azColName[i]<<" = " << (argv[i] ? argv[i] : "NULL") << "\n";
+		cout<< (argv[i] ? argv[i] : "NULL");
 	}
-	cout<<"\n";
+	
 	return 0;
 }
 
@@ -137,13 +137,13 @@ void Industry::print_forecast() {
         fprintf(stderr, "Can't open database: %s\n", zErrMsg);
     }
     int option;
-    cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
-    cout << "   1. 99%" << endl; 
-    cout << "   2. 95%" << endl; 
-    cout << "   3. 90%" << endl; 
+    cout << "Please enter an option (without '%') for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
+    cout << "   - 99%" << endl; 
+    cout << "   - 95%" << endl; 
+    cout << "   - 90%" << endl; 
     cin >> option; 
     int res = sqlite3_create_function(db, "POWER", 2, SQLITE_UTF8, NULL, &sqlite_power, NULL, NULL);
-    if(option == 1) { 
+    if(option == 99) { 
         sql = "SELECT (SELECT (SELECT AVG(market.change) + 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market) AS ChangeTop"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
@@ -151,7 +151,7 @@ void Industry::print_forecast() {
             sqlite3_free(zErrMsg);
         } 
     }
-    else if(option == 2) {
+    else if(option == 95) {
         sql = "SELECT (SELECT (SELECT AVG(market.change) + 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market) AS ChangeTop"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
@@ -159,7 +159,7 @@ void Industry::print_forecast() {
             sqlite3_free(zErrMsg);
         } 
     }
-    else if(option == 3) {
+    else if(option == 90) {
         sql = "SELECT (AVG(change/price) + 1.645*((MAX(change) - MIN(change))/count(*))) AS Change FROM market WHERE sector = 't' or sector = 'e'"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
@@ -184,13 +184,13 @@ void Solo::print_forecast() {
         fprintf(stderr, "Can't open database: %s\n", zErrMsg);
     } 
     int option; 
-    cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
-    cout << "   1. 99%" << endl; 
-    cout << "   2. 95%" << endl; 
-    cout << "   3. 90%" << endl; 
+    cout << "Please enter an option (without '%') for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
+    cout << "   - 99%" << endl; 
+    cout << "   - 95%" << endl; 
+    cout << "   - 90%" << endl; 
     cin >> option; 
 
-    if(option == 1) { 
+    if(option == 99) { 
         sql = "SELECT (AVG(m.change/m.price) + 2.576*((MAX(m.change) - MIN(m.change))/(SELECT count(*) FROM portfolio))) AS Change FROM market m, portfolio p WHERE p.ticker = m.ticker"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
@@ -198,7 +198,7 @@ void Solo::print_forecast() {
             sqlite3_free(zErrMsg);
         } 
     }
-    else if(option == 2) {
+    else if(option == 95) {
         sql = "SELECT (AVG(m.change/m.price) + 1.96*((MAX(m.change) - MIN(m.change))/(SELECT count(*) FROM portfolio))) AS Change FROM market m, portfolio p WHERE p.ticker = m.ticker"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
@@ -206,7 +206,7 @@ void Solo::print_forecast() {
             sqlite3_free(zErrMsg);
         } 
     }
-    else if(option == 3) {
+    else if(option == 90) {
         sql = "SELECT (AVG(m.change/m.price) + 1.645*((MAX(m.change) - MIN(m.change))/(SELECT count(*) FROM portfolio))) AS Change FROM market m, portfolio p WHERE p.ticker = m.ticker"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
@@ -232,34 +232,46 @@ void Econometric::print_forecast() {
     } 
     int res = sqlite3_create_function(db, "POWER", 2, SQLITE_UTF8, NULL, &sqlite_power, NULL, NULL);
     int option; 
-    cout << "Please enter an option for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
-    cout << "   1. 99%" << endl; 
-    cout << "   2. 95%" << endl; 
-    cout << "   3. 90%" << endl; 
+    cout << "\nPlease enter an option (without '%') for confidence level. \nThe higher the confidence, the wider the range of portfolio value." << endl; 
+    cout << "   - 99%" << endl; 
+    cout << "   - 95%" << endl; 
+    cout << "   - 90%" << endl; 
     cin >> option; 
+    cout << "\nGiven the current economic standing, we are " << option << "% confident that your portfolio's value" << endl;
+    cout << "will change between the following percentages in the next year:\n[";
 
-    if(option == 1) { 
-        sql = "SELECT (SELECT (SELECT AVG(market.change) - 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market) UNION SELECT (SELECT (SELECT AVG(market.change) + 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+    if(option == 99) { 
+        sql = "SELECT (SELECT ROUND(SELECT (SELECT AVG(market.change) - 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        cout << ",";
+        sql = "SELECT (SELECT (SELECT AVG(market.change) + 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
             sqlite3_free(zErrMsg);
         } 
     }
-    else if(option == 2) {
-        sql = "SELECT (SELECT (SELECT AVG(market.change) - 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market) UNION SELECT (SELECT (SELECT AVG(market.change) + 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+    else if(option == 95) {
+        sql = "SELECT (SELECT ROUND(SELECT (SELECT AVG(market.change) - 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        cout << ",";
+        sql = "SELECT (SELECT (SELECT AVG(market.change) + 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
             sqlite3_free(zErrMsg);
         } 
     }
-    else if(option == 3) {
-        sql = "SELECT (SELECT (SELECT AVG(market.change) - 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market) UNION SELECT (SELECT (SELECT AVG(market.change) + 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+    else if(option == 90) {
+        sql = "SELECT (SELECT ROUND(SELECT (SELECT AVG(market.change) - 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / ROUND(POWER(COUNT(*),.5) FROM market))"; 
+        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+        cout << ",";
+        sql = "SELECT (SELECT (SELECT AVG(market.change) + 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market) AS sub) / POWER(COUNT(*),.5) FROM market)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
             sqlite3_free(zErrMsg);
         } 
     }
+    cout << "]." << endl; 
 }
