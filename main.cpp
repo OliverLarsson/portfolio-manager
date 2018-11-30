@@ -41,7 +41,7 @@ int main() {
      * Start TextUI 
      * Gather user input for Investor object instantiation
     */ 
-    cout << "Welcome to your Portfolio Manager! Please provide some more information about yourself." << endl;
+    cout << "\n\nWelcome to your Portfolio Manager! Please provide some more information about yourself." << endl;
     cout << "What is your name? ";
     getline(cin, name);
     cout << "Hi, " << name << ". What is your age? ";

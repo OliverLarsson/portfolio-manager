@@ -439,7 +439,7 @@ void Portfolio::risk_path() {
         }
     }
     else if(risk_tolerance_ > 6 && risk_tolerance_ <= 10) {
-        if((risk_capacity_/worth_) > 0 && (risk_capacity_/worth_) <= 33) {
+        if((risk_capacity_/worth_) > 0 && (risk_capacity_/worth_) <= .33) {
             path_ = 3; 
         }
         else if((risk_capacity_/worth_) >= .33 && (risk_capacity_/worth_) <= .66) {
