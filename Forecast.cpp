@@ -118,6 +118,7 @@ void Forecast::forecast_handler(int option, string sector) {
     }
     else {
         cout << "\nYou've selected to wrap things up." << endl; 
+        cout << "\n\nThanks for playing! " << endl; 
     }
 }
 

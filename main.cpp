@@ -180,7 +180,6 @@ int main() {
     */ 
 
     // These have to be created beforehand but set to null since they aren't used immediately 
-    Client *f_client = nullptr;
     Forecast * f_select = nullptr;
 
     cout << "Forecasting can be done through a variety of methods. To learn more about each method, select its number. " << endl;
@@ -200,30 +199,13 @@ int main() {
     f_select->print_create(); 
     cin >> option; 
     if(option != 4) {
-        f_select->print_create(); 
+        f_select->forecast_handler(option, sector_);
     } else {
         cout << "\nYou've selected to wrap things up." << endl; 
     }
-    
-    if(option == 1) {
-        f_client = new Client(industry, sector_); 
-        f_select = f_client->get_forecast(); 
-        f_select->print_forecast();
-    }
-    else if(option == 2) {
-        f_client = new Client(solo, sector_);
-        f_select = f_client->get_forecast();
-        f_select->print_forecast(); 
-    }
-    else if(option == 3) {
-        f_client = new Client(econometric, sector_);
-        f_select = f_client->get_forecast();
-        f_select->print_forecast(); 
-    }
-    else {
-        cout << "\nYou've selected to wrap things up." << endl; 
-    }
 
+    cout << "\n\nThanks for playing!\n\n"; 
+ 
     portfolio.delete_contents(); 
     return 0;
 }
