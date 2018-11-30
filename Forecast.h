@@ -28,7 +28,7 @@ enum forecast_method{industry, solo, econometric};
 class Forecast {
     public: 
         virtual void print_forecast() = 0; 
-        static Forecast* Create(forecast_method);
+        static Forecast* Create(forecast_method, string);
         static int callback(void *NotUsed, int argc, char **argv, char **azColName); // done
         void print_options(); 
         void print_create(); 
@@ -61,11 +61,16 @@ class Forecast {
 */ 
 class Industry: public Forecast {
     public: 
+        Industry(string sector) {
+            sector_ = sector; // This is the only forecast constructor that needs to be dealt with because of sector 
+        }
         void print_forecast(); 
+    private: 
+        string sector_; 
 }; 
 
 class Solo: public Forecast {
-    public: 
+    public:  
         void print_forecast(); 
 };
 
@@ -80,14 +85,14 @@ class Econometric: public Forecast {
 
 class Client {
     public: 
-        Client(forecast_method type) {
-            f_select = Forecast::Create(type);
+        Client(forecast_method type, string sector) {
+            f_select = Forecast::Create(type, sector);
         }
         Forecast* get_forecast() {
             return f_select; 
         }
     private: 
-        Forecast *f_select; 
+        Forecast *f_select;  
 };
 
 

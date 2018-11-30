@@ -195,17 +195,17 @@ int main() {
     f_select->print_create(); 
     cin>> option; 
     if(option == 1) {
-        f_client = new Client(industry); 
+        f_client = new Client(industry, sector_); 
         f_select = f_client->get_forecast(); 
         f_select->print_forecast();
     }
     else if(option == 2) {
-        f_client = new Client(solo);
+        f_client = new Client(solo, sector_);
         f_select = f_client->get_forecast();
         f_select->print_forecast(); 
     }
     else if(option == 3) {
-        f_client = new Client(econometric);
+        f_client = new Client(econometric, sector_);
         f_select = f_client->get_forecast();
         f_select->print_forecast(); 
     }
