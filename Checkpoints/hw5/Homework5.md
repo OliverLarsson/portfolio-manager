@@ -5,7 +5,7 @@ CSCI 3010 - Felix Muzny
 1) The initial plan for Homework 5 in the project proposal:  
 - Create forecasting class: This class will use the historical financial asset data within the current portfolio to create a new object of a possible future state of that portfolio. It likely won’t involve very complex financial modeling since that involves variables that aren’t present in the data, but it will be moderate and reasonable nonetheless. 
 - Create a pretty UI: The final piece to this is turning the text UI into a better interface with Ultralight. This will likely be an extensive portion of this phase since it’s a tool I am not familiar with. 
-- What knowledge will I need to know? Everything from this semester. How to implement a forecasting algorithm into the data from the database and present it as an object. How to use Ultralight to create a nice UI with BI data visualizations. 
+- What will I need to know? Everything from this semester. How to implement a forecasting algorithm into the data from the database and present it as an object. How to use Ultralight to create a nice UI with BI data visualizations. 
 - What will I need to learn? New to Ultralight so more research will have to go into that along with the initial studying in the first phase. Also will need research into how to best implement a forecasting strategy. 
 - Additionally: I'll need to sort out the issue of filling the portfolio table with data from the market table based on the investor's wealth. I was more focused on the functionality of the Market and Portfolio methods in Homework 4, so it should be a quick fix when I dedicate more time to it.
 
@@ -15,12 +15,29 @@ CSCI 3010 - Felix Muzny
 - Create a pretty UI: The final piece to this is turning the text UI into a better interface with Ultralight. This will likely be an extensive portion of this phase since it’s a tool I am not familiar with. 
     - I spoke with you briefly in class about this that I was questioning Ultralight because of poor documentation of their example GUI. I decided to still create the HTML/CSS skeleton to reflect the functionality of the app and will work hard the next two weeks to make sure that the application links with the skeleton through Ultralight. We spoke about the possibility of the GUI step bleeding into Homework 6 at our check-in after Homework 4 and that is the case. This does mean that this step wasn't fully completed, but it will give me more to do in the final weeks other than testing. Additionally the feedback I recieved from those who tested my mock-up will add to the creation of the GUI. 
 - Mockup reflection / User testing: 
-    - I walked through the mockup with my two roommates that aren't CS related at all, so it was nice to get some good feedback from outsiders. I also ran through it with my twin who does private wealth management at Morgan Stanley and got some good tips on how his actual job compares to this program. Summed up in a few points: 
-        - Point 1
-        - Point 2
-        - Point 3
-        - Point 4 
-- What knowledge will I need to know? Everything from this semester. How to implement a forecasting algorithm into the data from the database and present it as an object. How to use Ultralight to create a nice UI with BI data visualizations. 
+    - I walked through the mockup with my two roommates that aren't CS related at all, so it was nice to get some good feedback from outsiders. I also ran through it with my twin who does private wealth management at Morgan Stanley and got some good tips on how his actual job compares to this program. Summed up and generalized in a few points: 
+        - User tasks conducted: 
+            - Enter your personal information.
+            - View DJIA and NASDAQ pages.
+            - Complete portfolio and create the forecast.
+        - The Good: 
+            - Clean design.
+            - Easy to follow step-by-step.
+            - User input doesn't require much financial literacy.
+            - Portfolio distribution graphics & stats are useful.
+        - The Bad: 
+            - "Click on either market" screen of mockup is busy.
+            - Market screens wouldn't mean a lot without explanation of what they're looking at.
+            - No "back" buttons.
+        - The Confusing: 
+            - Market screens could be confusing if you don't know what financial markets mean.
+            - Forecasting screen terminology isn't totally clear.
+            - How did forecasting happen and is there only one model? 
+                - This is specifically addressed already in the Text UI.
+            - Does input get saved when user clicks on the "next step" button? 
+        - Other notes: 
+            - Since each page really only has one button that advances to the next step, users never had a problem completing tasks.
+- What will I need to know? Everything from this semester. How to implement a forecasting algorithm into the data from the database and present it as an object. How to use Ultralight to create a nice UI with BI data visualizations. 
     - The forecasting algorithm was definitely a learning process but it worked out better than I had hoped. I also understand the Factory design pattern much better after implementing it and am 100% sure it was the right choice to change the Forecast class to Factory from Iterator. Ultralight… is… unique. The HTML/CSS skeleton provides a necessary backbone for the time being so the final step will be connecting it to the program. 
 - What will I need to learn? New to Ultralight so more research will have to go into that along with the initial studying in the first phase. Also will need research into how to best implement a forecasting strategy. 
     - Ultralight is a learning process for sure. I'm excited to create the final product though.

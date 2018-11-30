@@ -129,6 +129,7 @@ int main() {
     cout << "Ready to view your Portfolio? " << endl; 
     cin >> yes; // break in info
     Portfolio& portfolio = Portfolio::GetPortfolio(); // singleton implementation 
+    portfolio.delete_contents(); // in case user quit out early on last play 
 
     double a = investor.get_risk_capacity();
     double b = investor.risk_profile(); 
