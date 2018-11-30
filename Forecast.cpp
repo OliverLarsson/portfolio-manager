@@ -122,6 +122,7 @@ void Forecast::print_info(int option) {
     }
 }
 
+// DONE
 /**
  * Industry::print_forecast()
  * 
@@ -207,10 +208,10 @@ void Solo::print_forecast() {
     cout << "will change between the following percentages in the next year:\n[";
 
     if(option == 99) { 
-        sql = "SELECT (SELECT (SELECT AVG(market.change) - 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market WHERE market.sector = 't' or market.sector = 'e') AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+        sql = "SELECT (SELECT (SELECT AVG(market.change) - 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, portfolio, (SELECT AVG(change) AS a FROM market, portfolio WHERE market.ticker = portfolio.ticker) AS sub) / POWER(COUNT(*),.5) FROM portfolio)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         cout << ",";
-        sql = "SELECT (SELECT (SELECT AVG(market.change) + 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market WHERE market.sector = 't' or market.sector = 'e') AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+        sql = "SELECT (SELECT (SELECT AVG(market.change) + 2.576 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, portfolio, (SELECT AVG(change) AS a FROM market, portfolio WHERE market.ticker = portfolio.ticker) AS sub) / POWER(COUNT(*),.5) FROM portfolio)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -218,10 +219,10 @@ void Solo::print_forecast() {
         } 
     }
     else if(option == 95) {
-        sql = "SELECT (SELECT (SELECT AVG(market.change) - 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market WHERE market.sector = 't' or market.sector = 'e') AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+        sql = "SELECT (SELECT (SELECT AVG(market.change) - 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, portfolio, (SELECT AVG(change) AS a FROM market, portfolio WHERE market.ticker = portfolio.ticker) AS sub) / POWER(COUNT(*),.5) FROM portfolio)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         cout << ",";
-        sql = "SELECT (SELECT (SELECT AVG(market.change) + 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market WHERE market.sector = 't' or market.sector = 'e') AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+        sql = "SELECT (SELECT (SELECT AVG(market.change) + 1.96 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, portfolio, (SELECT AVG(change) AS a FROM market, portfolio WHERE market.ticker = portfolio.ticker) AS sub) / POWER(COUNT(*),.5) FROM portfolio)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -229,10 +230,10 @@ void Solo::print_forecast() {
         } 
     }
     else if(option == 90) {
-        sql = "SELECT (SELECT (SELECT AVG(market.change) - 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market WHERE market.sector = 't' or market.sector = 'e') AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+        sql = "SELECT (SELECT (SELECT AVG(market.change) - 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, portfolio, (SELECT AVG(change) AS a FROM market, portfolio WHERE market.ticker = portfolio.ticker) AS sub) / POWER(COUNT(*),.5) FROM portfolio)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         cout << ",";
-        sql = "SELECT (SELECT (SELECT AVG(market.change) + 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, (SELECT AVG(change) AS a FROM market WHERE market.sector = 't' or market.sector = 'e') AS sub) / POWER(COUNT(*),.5) FROM market)"; 
+        sql = "SELECT (SELECT (SELECT AVG(market.change) + 1.645 * AVG((market.change-sub.a) * (market.change-sub.a)) AS var FROM market, portfolio, (SELECT AVG(change) AS a FROM market, portfolio WHERE market.ticker = portfolio.ticker) AS sub) / POWER(COUNT(*),.5) FROM portfolio)"; 
         rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
         if( rc != SQLITE_OK ) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
