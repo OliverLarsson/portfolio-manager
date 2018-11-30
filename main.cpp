@@ -161,6 +161,8 @@ int main() {
     portfolio.add_contents(sector_); 
     cout << "Done! " << endl; 
 
+    sleep_for(milliseconds(500));
+
     cout << "\nPlease select options to view your Portfolio." << endl; 
     cout << "If you would like to move on to the forecast, enter '9'." << endl; 
     cout << "Here are your options: " << endl; 
