@@ -168,6 +168,10 @@ EVERYTHING BELOW IS FOR HOMEWORK 5
 
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw5/59.png)
 
+- The initial mockup of the forecasting. I had planned to have only one forecasting method, but this changed in the process following mockup. 
+
+![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw5/60.png)
+
 *****************
 Thanks for following along! 
 *****************
