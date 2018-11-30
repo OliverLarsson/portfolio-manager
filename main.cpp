@@ -179,7 +179,7 @@ int main() {
      * Creating Forecast object 
     */ 
 
-    // These have to be created beforehand but set to null since they aren't used immediately 
+    // null assignment until user's input is processed 
     Forecast * f_select = nullptr;
 
     cout << "Forecasting can be done through a variety of methods. To learn more about each method, select its number. " << endl;
