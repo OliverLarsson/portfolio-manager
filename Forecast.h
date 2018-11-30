@@ -33,7 +33,7 @@ class Forecast {
         void print_options(); 
         void print_create(); 
         void print_info(int option); 
-        void forecast_handler(int option); 
+        void forecast_handler(int option, string sector); 
 }; 
 
 /** Derived classes
@@ -71,12 +71,22 @@ class Industry: public Forecast {
 
 class Solo: public Forecast {
     public:  
+        Solo(string sector) {
+            sector_ = sector; 
+        }
         void print_forecast(); 
+    private: 
+        string sector_; 
 };
 
 class Econometric: public Forecast {
     public: 
+        Econometric(string sector) {
+            sector_ = sector; 
+        }
         void print_forecast();
+    private: 
+        string sector_; 
 }; 
 
 /**

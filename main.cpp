@@ -161,7 +161,7 @@ int main() {
     portfolio.add_contents(sector_); 
     cout << "Done! " << endl; 
 
-    sleep_for(milliseconds(500));
+    sleep_for(milliseconds(1000));
 
     cout << "\nPlease select options to view your Portfolio." << endl; 
     cout << "If you would like to move on to the forecast, enter '9'." << endl; 
@@ -179,21 +179,32 @@ int main() {
      * Creating Forecast object 
     */ 
 
+    // These have to be created beforehand but set to null since they aren't used immediately 
     Client *f_client = nullptr;
     Forecast * f_select = nullptr;
 
-    cout << "Forecasting can be done through a variety of methods. To learn more about each method, select its number. " << endl; 
+    cout << "Forecasting can be done through a variety of methods. To learn more about each method, select its number. " << endl;
+    cout << "If you would like to move on to your choice, enter '4'." << endl; 
+    cout << "Method information:" << endl; 
     f_select->print_options(); 
     cin >> option; 
     if(option != 4) {
         f_select->print_info(option);
     } else {
-        cout << "\nYou've selected to move on" << endl; 
+        cout << "\nYou've selected to move on to the forecast choice." << endl; 
     }
     
     cout << "Which forecast method would you like to use? " << endl; 
+    cout << "If you would like to wrap things up, enter '4'." << endl; 
+    cout << "Forecasts:" << endl; 
     f_select->print_create(); 
-    cin>> option; 
+    cin >> option; 
+    if(option != 4) {
+        f_select->print_create(); 
+    } else {
+        cout << "\nYou've selected to wrap things up." << endl; 
+    }
+    
     if(option == 1) {
         f_client = new Client(industry, sector_); 
         f_select = f_client->get_forecast(); 
@@ -208,6 +219,9 @@ int main() {
         f_client = new Client(econometric, sector_);
         f_select = f_client->get_forecast();
         f_select->print_forecast(); 
+    }
+    else {
+        cout << "\nYou've selected to wrap things up." << endl; 
     }
 
     portfolio.delete_contents(); 

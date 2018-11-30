@@ -41,6 +41,7 @@ void sqlite_power(sqlite3_context *context, int argc, sqlite3_value **argv) {
 /**
  * callback
  * sqlite3 provided function for printing out sql queries 
+ * Manipulated in this file to reflect printing in brackets 
 */
 int Forecast::callback(void *NotUsed, int argc, char **argv, char **azColName)
 {
@@ -61,10 +62,10 @@ Forecast * Forecast::Create(forecast_method type, string sector) {
         return new Industry(sector); 
     }
     else if(type == solo) {
-        return new Solo(); 
+        return new Solo(sector); 
     }
     else if(type == econometric) {
-        return new Econometric(); 
+        return new Econometric(sector); 
     }
     else {
         return NULL; 
@@ -82,11 +83,42 @@ void Forecast::print_options() {
     cout << "   4. Move on to your forecasting choice." << endl; 
 } 
 
+/**
+ * print_create
+ * Forecast creation options 
+*/ 
 void Forecast::print_create() {
     cout << "   1. Create forecasting by market." << endl; 
     cout << "   2. Create forecasting by portfolio." << endl; 
     cout << "   3. Create forecasting by entire economy." << endl; 
     cout << "   4. Close out appointment." << endl; 
+}
+
+/**
+ * forecast_handler
+ * Creates forecast on user's input  
+*/ 
+void Forecast::forecast_handler(int option, string sector) {
+    Client *f_client = nullptr;
+    Forecast * f_select = nullptr;
+    if(option == 1) {
+        f_client = new Client(industry, sector); 
+        f_select = f_client->get_forecast(); 
+        f_select->print_forecast(); 
+    }
+    else if(option == 2) {
+        f_client = new Client(solo, sector);
+        f_select = f_client->get_forecast();
+        f_select->print_forecast(); 
+    }
+    else if(option == 3) {
+        f_client = new Client(econometric, sector);
+        f_select = f_client->get_forecast();
+        f_select->print_forecast(); 
+    }
+    else {
+        cout << "\nYou've selected to wrap things up." << endl; 
+    }
 }
 
 /**
@@ -98,14 +130,16 @@ void Forecast::print_info(int option) {
     if(option == 1) {
         cout << "\nThe market forecast takes all the financial assets within the sector that you chose to invest into account." << endl;
         cout << "This style of forecasting offers insight into how the rest of the industry is acting and the possible growth in your portfolio.\n" << endl; 
-        print_create(); 
+        cout << "Do you want to learn about other methods?" << endl;
+        print_options(); 
         cin>>option_; 
         print_info(option_); 
     }
     else if(option == 2) { 
         cout << "\nThe solo forecast takes only the financial assets within your portfolio into account. " << endl;
         cout << "This style of forecasting offers insight into how your portfolio has acted in the past and how it could grow in the future.\n" << endl; 
-        print_create(); 
+        cout << "Do you want to learn about other methods?" << endl;
+        print_options();  
         cin>>option_; 
         print_info(option_); 
     }
@@ -114,7 +148,8 @@ void Forecast::print_info(int option) {
         cout << "This style of forecasting offers insight into how your portfolio might grow based on how the entire economy has acted. " << endl; 
         cout << "Since big shifts in the economy (recessions, depressions, booms, etc.) affect all industries, this is an important forecast ";
         cout << "to conduct from a broad view.\n" << endl; 
-        print_create(); 
+        cout << "Do you want to learn about other methods?" << endl; 
+        print_options(); 
         cin>>option_; 
         print_info(option_); 
     }
@@ -225,8 +260,13 @@ void Industry::print_forecast() {
         }
     }
     cout << "]." << endl; // closing bracket for confidence interval 
+    cout << "\nDo you want to view other forecasts?" << endl;
+    print_create(); 
+    cin >> option;
+    forecast_handler(option, sector_); 
 }
 
+// DONE
 /**
  * Solo::print_forecast()
  * 
@@ -285,6 +325,10 @@ void Solo::print_forecast() {
         } 
     }
     cout << "]." << endl; // closing bracket for confidence interval 
+    cout << "\nDo you want to view other forecasts?" << endl;
+    print_create(); 
+    cin >> option; 
+    forecast_handler(option, sector_); 
 }
 
 // DONE 
@@ -347,4 +391,8 @@ void Econometric::print_forecast() {
         } 
     }
     cout << "]." << endl; // closing bracket for confidence interval 
+    cout << "\nDo you want to view other forecasts?" << endl;
+    print_create(); 
+    cin >> option; 
+    forecast_handler(option, sector_); 
 }
