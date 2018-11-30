@@ -39,16 +39,14 @@ class Forecast {
 /** Derived classes
  * 
  * Each forecast takes a desired confidence interval and returns three optional growth predictions
+ * Confidence intervals in this context are the interval in which we would expect the true forecasted growth to fall in xx% of the time
+ * Confidence Interval = Sample Mean +/- Z-score * (Standard Deviation / sqrt(Sample Size))
  * 
  * Z-scores: 
  *      - 99% = 2.576
  *      - 95% = 1.96
  *      - 90% = 1.645
  * Z-score is a standardized stat that accounts for sample size and the desired confidence interval 
- * 
- * Confidence Interval = Sample Mean +/- Z-score * (Standard Deviation / sqrt(Sample Size))
- * 
- * Confidence interval will give a portfolio growth estimate based on historical stats
  * 
  * Industry: 
  *  - creates forecast based on the industry you chose 

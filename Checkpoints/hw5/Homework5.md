@@ -137,7 +137,7 @@ EVERYTHING BELOW IS FOR HOMEWORK 5
 
 ![alt text](https://github.com/OliverLarsson/portfolio-manager/blob/master/Checkpoints/hw5/53.png)
 
-- When the user selects a method to forecast with, the Factory design pattern will work its magic and create an instance of that method. Below are the three confidence intervals (99%, 95%, 90%) pertaining to the first method by market. Confidence intervals are created using the sample mean (sample here is all applicable rows queried), a Z-statistic (standardized stat given confidence level and sample size) and the standard deviation of the data set. The higher a confidence level the larger the bracket of possible values will be. This is reflected in all the examples below. 
+- When the user selects a method to forecast with, the Factory design pattern will work its magic and create an instance of that method. Below are the three confidence intervals (99%, 95%, 90%) pertaining to the first method by market. Confidence intervals in this context are the interval in which we would expect the true forecasted growth to fall in xx% of the time. They are created using the sample mean (sample here is all applicable rows queried), a Z-statistic (standardized stat given confidence level and sample size), the standard deviation (in my SQL query I computed sqrt(variance) which equals stdev) of the data set, and the sample size. The higher a confidence level the larger the bracket of possible values will be. This is reflected in all the examples below. 
 
 - Forecast by market: Considers all data from the industry that the user selected (tech or industrial)
 
