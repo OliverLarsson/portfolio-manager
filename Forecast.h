@@ -31,29 +31,33 @@ class Forecast {
         static Forecast* Create(forecast_method);
         static int callback(void *NotUsed, int argc, char **argv, char **azColName); // done
         void print_options(); 
+        void print_create(); 
         void print_info(int option); 
+        void forecast_handler(int option); 
 }; 
 
 /** Derived classes
  * 
  * Each forecast takes a desired confidence interval and returns three optional growth predictions
+ * 
  * Z-scores: 
  *      - 99% = 2.576
  *      - 95% = 1.96
  *      - 90% = 1.645
+ * Z-score is a standardized stat that accounts for sample size and the desired confidence interval 
  * 
  * Confidence Interval = Sample Mean +/- Z-score * (Standard Deviation / sqrt(Sample Size))
  * 
- * Condifence interval will give a portfolio growth estimate and then multiply by current value 
+ * Confidence interval will give a portfolio growth estimate based on historical stats
  * 
  * Industry: 
- *  - creates forecast based on the entire Market
+ *  - creates forecast based on the industry you chose 
  * 
  * Solo: 
- *  - creates forecast based on just the Portfolio 
+ *  - creates forecast based on just your portfolio 
  * 
  * Econometric: 
- *  - creates forecast based on both Markets and Portfolio 
+ *  - creates forecast based on all industries aka entire "market" table
 */ 
 class Industry: public Forecast {
     public: 

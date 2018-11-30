@@ -192,7 +192,7 @@ int main() {
     }
     
     cout << "Which forecast method would you like to use? " << endl; 
-    f_select->print_options(); 
+    f_select->print_create(); 
     cin>> option; 
     if(option == 1) {
         f_client = new Client(industry); 
