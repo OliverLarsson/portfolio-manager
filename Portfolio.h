@@ -23,8 +23,8 @@ class Portfolio {
             static Portfolio portfolio; 
             return portfolio; 
         }
-        void get_worth(string worth) {
-            worth_ = stoi(worth); 
+        void get_worth(double worth) {
+            worth_ = worth; 
         }
 
         // Database handlers 
@@ -61,7 +61,7 @@ class Portfolio {
     private: 
         Portfolio(); 
         string sector_; 
-        int worth_; 
+        double worth_; 
         double risk_capacity_; 
         double risk_tolerance_; 
         double risk_profile_; 

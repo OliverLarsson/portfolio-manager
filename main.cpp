@@ -51,8 +51,7 @@ int main() {
         exit(0); 
     }
     cout << "How much money do you have for your portfolio? (Please exclude $ and commas) ";
-    cin >> wealth_;
-    wealth = stod(wealth_); 
+    cin >> wealth;
     cout << "Would you prefer to invest in technology (t) or industrial (i) businesses? "; 
     cin >> sector_; // cannot cin >> to an enum, so cin to string and assign to enum
     if(sector_ == "t") {
@@ -137,7 +136,7 @@ int main() {
     portfolio.set_risk_profile(b); 
     portfolio.set_risk_tolerance(risk_tolerance); 
 
-    portfolio.get_worth(wealth_); 
+    portfolio.get_worth(wealth); 
     portfolio.risk_path(); 
     cout << "\nFirst we're going to match " << investor.risk_profile() << "% of your portfolio with stocks." << endl; 
     cout << "Because of your risk tolerance of " << investor.get_risk_tolerance() << " and your risk capacity of $" << investor.get_risk_capacity() << "," << endl; 
