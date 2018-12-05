@@ -37,7 +37,6 @@ int main() {
     string sector_;
     double risk_requirement;
 
-
     /**
      * Start TextUI 
      * Gather user input for Investor object instantiation

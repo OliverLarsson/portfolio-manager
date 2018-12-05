@@ -27,8 +27,9 @@ Portfolio::Portfolio() {
 */ 
 void Portfolio::add_contents(string sector) {
     sqlite3 *db;
+    sqlite3_stmt *stmt = NULL; 
 	char *zErrMsg = 0;
-	const char *sql;
+	char *sql;
 	int rc;
     
 	rc = sqlite3_open("Investor.db", &db);
@@ -46,72 +47,235 @@ void Portfolio::add_contents(string sector) {
      * (100 - risk_profile_) * worth_ amount of 'e' that follow the volume / change track
      * LIMIT = 25 so all portfolios are equally diversified
      * OFFSET = x to reflect increasing risk as trade volume and price change increase 
+     * 
+     * NEW OFFSET to reflect only t, i, or e
     */ 
-    if(sector == "t") { // markets 't' & 'e' have 159 rows, 159/9 = ~18, so each bracket has 18 assets 
+
+    int t_stocks = (risk_profile_/100)*18; 
+    int t_etf = 18 - t_stocks; 
+    int i_stocks = (risk_profile_/100)*14; 
+    int i_etf = 14 - i_stocks; 
+    if(sector == "t") { // markets 't' & 'e' have 159 rows, 159/9 = ~18, so each bracket has ~18 assets 
         if(path_ == 1) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 0"; 
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 0"; 
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 0";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 2) {  
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 18";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 11";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 6";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 3) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 36";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 22";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 12";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 4) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 54";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 33"; //54
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 18";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 5) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 72";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 44";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 24";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 6) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 90";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 55";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 30";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 7) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 108";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 66";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 36";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 8) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 126";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 77";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 42";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' or sector = 'e' ORDER BY volume, change ASC LIMIT 18 OFFSET 141";  
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 't' ORDER BY volume, change ASC LIMIT ? OFFSET 88"; 
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 48";   
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, t_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         
     } else {
-        if(path_ == 1) { // markets 'i' & 'e' have 122 rows, 122/9 = ~14, so each bracket has 14 assets 
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 0";
+        if(path_ == 1) { // markets 'i' & 'e' have 122 rows, 122/9 = ~14, so each bracket has ~14 assets 
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 0";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 0";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 2) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 14";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 6";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 6";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 3) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 28";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 12";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 12";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 4) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 42";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 18";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 18";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 5) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 56";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 24";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 24";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 6) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 70";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 30";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 30";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 7) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 84";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 36";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 36";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else if(path_ == 8) {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 98";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 42";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 42";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
         else {
-            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' or sector = 'e' ORDER BY volume, change ASC LIMIT 14 OFFSET 108";
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'i' ORDER BY volume, change ASC LIMIT ? OFFSET 48";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_stocks);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
+            sql = "INSERT INTO portfolio (ticker, units) SELECT ticker, 1 FROM market WHERE sector = 'e' ORDER BY volume, change ASC LIMIT ? OFFSET 48";
+            rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+            rc = sqlite3_bind_int(stmt, 1, i_etf);
+            rc = sqlite3_step(stmt);
+            sqlite3_finalize(stmt);
         }
 
     }
-   
-	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-    if( rc != SQLITE_OK ) {
-        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-        sqlite3_free(zErrMsg);
-    } 
     sqlite3_close(db);
 }
 
@@ -128,34 +292,21 @@ void Portfolio::set_units(double wealth) {
 
     // ? represets the variable needed to bind
     char *sql = "UPDATE PORTFOLIO set units = CAST( ? / (SELECT SUM(p.units * m.price) AS Value FROM portfolio p, market m WHERE p.ticker = m.ticker) AS int)";
-
     rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
-    if (rc != SQLITE_OK) {
-        printf("Failed to prepare statement: %s\n\r", sqlite3_errstr(rc));
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
     } 
-    else {
-        printf("SQL statement prepared: OK\n\n\r");
-    }
-
     rc = sqlite3_bind_int(stmt, 1, wealth);
-    if (rc != SQLITE_OK) {
-        printf("Failed to bind parameter: %s\n\r", sqlite3_errstr(rc));
+    if( rc != SQLITE_OK ) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
     } 
-    else {
-        printf("SQL bind integer param: OK\n\n\r");
-    }
     rc = sqlite3_step(stmt);
-    // other successful return codes are possible...
-    if (rc != SQLITE_DONE) {
-        printf("Failed to execute statement: %s\n\r", sqlite3_errstr(rc));
-    }
-
-    // deallocate/finalize the prepared statement when you no longer need it.
-    // you may also place this in any error handling sections.
     sqlite3_finalize(stmt);
-
     sqlite3_close(db); 
 }
+
 /** 
  * delete_contents
  * Need to delete the Portfolio table contents each time
