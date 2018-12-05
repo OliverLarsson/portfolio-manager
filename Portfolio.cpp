@@ -37,10 +37,8 @@ void Portfolio::add_contents(string sector) {
 	if( rc ) {
 		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
 	} 
+
     /**
-     * To-do: Where clause to keep profile below investor's worth
-     *         ASAP: implement risk_profile_ % of stocks first 
-     * 
      * DEPENDENT ON: 
      * subtract 5% from worth_ to account for 5% requirement
      * risk_profile_ * worth_ amount of 't' or 'i' that follow the volume / change track 
@@ -48,12 +46,9 @@ void Portfolio::add_contents(string sector) {
      * LIMIT = 25 so all portfolios are equally diversified
      * OFFSET = x to reflect increasing risk as trade volume and price change increase 
      * 
-     * NEW OFFSET to reflect only t, i, or e
     */ 
    
     int t_stocks = static_cast<int>((risk_profile_/100)*18); 
-    cout << risk_profile_ << endl; 
-    cout << t_stocks << endl; 
     int t_etf = 18 - t_stocks; 
     int i_stocks = static_cast<int>((risk_profile_/100)*14); 
     int i_etf = 14 - i_stocks; 
