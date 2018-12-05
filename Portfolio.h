@@ -37,6 +37,7 @@ class Portfolio {
         int get_value(); 
         void print_options(); // done
         void add_contents(string sector); 
+        void set_units(double wealth); 
         void delete_contents(); // done
         void print_portfolio(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_ticker(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done

@@ -165,49 +165,7 @@ int main() {
     portfolio.add_contents(sector_); 
     cout << "Done! " << endl; 
 
-    int rc; 
-    sqlite3 *db; 
-    sqlite3_stmt *stmt = NULL; 
-    char *zErrMsg = 0; 
-    rc = sqlite3_open("Investor.db", &db);
-
-	if( rc ) {
-		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
-	} 
-    char *sql = "UPDATE PORTFOLIO set units = CAST( ? / (SELECT SUM(p.units * m.price) AS Value FROM portfolio p, market m WHERE p.ticker = m.ticker) AS int)";
-
-    rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
-    if (rc != SQLITE_OK) {
-        printf("Failed to prepare statement: %s\n\r", sqlite3_errstr(rc));
-        sqlite3_close(db);
-        return 1;
-    } 
-    else {
-        printf("SQL statement prepared: OK\n\n\r");
-    }
-
-    rc = sqlite3_bind_int(stmt, 1, wealth);
-    if (rc != SQLITE_OK) {
-        printf("Failed to bind parameter: %s\n\r", sqlite3_errstr(rc));
-        sqlite3_close(db);
-        return 1;
-    } 
-    else {
-        printf("SQL bind integer param: OK\n\n\r");
-    }
-    rc = sqlite3_step(stmt);
-    // other successful return codes are possible...
-    if (rc != SQLITE_DONE) {
-        printf("Failed to execute statement: %s\n\r", sqlite3_errstr(rc));
-        sqlite3_close(db);
-        return 1;
-    }
-
-    // deallocate/finalize the prepared statement when you no longer need it.
-    // you may also place this in any error handling sections.
-    sqlite3_finalize(stmt);
-
-    sqlite3_close(db); 
+    portfolio.set_units(wealth); 
 
     sleep_for(milliseconds(1000));
 

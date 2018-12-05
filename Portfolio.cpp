@@ -114,6 +114,48 @@ void Portfolio::add_contents(string sector) {
     } 
     sqlite3_close(db);
 }
+
+/** 
+ * set_units
+ * Set the units of stocks in portfolio based on wealth 
+*/ 
+void Portfolio::set_units(double wealth) {
+    int rc; 
+    sqlite3 *db; 
+    sqlite3_stmt *stmt = NULL; 
+    char *zErrMsg = 0; 
+    rc = sqlite3_open("Investor.db", &db);
+
+    // ? represets the variable needed to bind
+    char *sql = "UPDATE PORTFOLIO set units = CAST( ? / (SELECT SUM(p.units * m.price) AS Value FROM portfolio p, market m WHERE p.ticker = m.ticker) AS int)";
+
+    rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+    if (rc != SQLITE_OK) {
+        printf("Failed to prepare statement: %s\n\r", sqlite3_errstr(rc));
+    } 
+    else {
+        printf("SQL statement prepared: OK\n\n\r");
+    }
+
+    rc = sqlite3_bind_int(stmt, 1, wealth);
+    if (rc != SQLITE_OK) {
+        printf("Failed to bind parameter: %s\n\r", sqlite3_errstr(rc));
+    } 
+    else {
+        printf("SQL bind integer param: OK\n\n\r");
+    }
+    rc = sqlite3_step(stmt);
+    // other successful return codes are possible...
+    if (rc != SQLITE_DONE) {
+        printf("Failed to execute statement: %s\n\r", sqlite3_errstr(rc));
+    }
+
+    // deallocate/finalize the prepared statement when you no longer need it.
+    // you may also place this in any error handling sections.
+    sqlite3_finalize(stmt);
+
+    sqlite3_close(db); 
+}
 /** 
  * delete_contents
  * Need to delete the Portfolio table contents each time
