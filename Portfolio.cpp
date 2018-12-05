@@ -50,10 +50,12 @@ void Portfolio::add_contents(string sector) {
      * 
      * NEW OFFSET to reflect only t, i, or e
     */ 
-
-    int t_stocks = (risk_profile_/100)*18; 
+   
+    int t_stocks = static_cast<int>((risk_profile_/100)*18); 
+    cout << risk_profile_ << endl; 
+    cout << t_stocks << endl; 
     int t_etf = 18 - t_stocks; 
-    int i_stocks = (risk_profile_/100)*14; 
+    int i_stocks = static_cast<int>((risk_profile_/100)*14); 
     int i_etf = 14 - i_stocks; 
     if(sector == "t") { // markets 't' & 'e' have 159 rows, 159/9 = ~18, so each bracket has ~18 assets 
         if(path_ == 1) {

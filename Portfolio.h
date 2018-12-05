@@ -50,7 +50,7 @@ class Portfolio {
 
         void set_risk_capacity(double risk_capacity) { risk_capacity_ = risk_capacity; }
         void set_risk_tolerance(double risk_tolerance) { risk_tolerance_ = risk_tolerance; }
-        void set_risk_profile(double risk_profile) { risk_profile = risk_profile_; }
+        void set_risk_profile(double risk_profile) { risk_profile_ = risk_profile; }
         void risk_path(); 
         int get_risk_path() {
             return path_; 
