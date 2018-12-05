@@ -31,6 +31,11 @@ class Market {
         void print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
         void print_by_variance(sqlite3 *db, char *zErrMsg, const char *sql, int rc); // done
 
+        // For testing only 
+        string get_sector() {
+            return sector_; 
+        }
+
     private: 
         string sector_; // needed for queries done by price, ticker, name, or variance
 

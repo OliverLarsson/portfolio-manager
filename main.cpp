@@ -37,6 +37,7 @@ int main() {
     string sector_;
     double risk_requirement;
 
+
     /**
      * Start TextUI 
      * Gather user input for Investor object instantiation
@@ -50,8 +51,12 @@ int main() {
         cout << "You are too young to invest!" << endl; 
         exit(0); 
     }
-    cout << "How much money do you have for your portfolio? (Please exclude $ and commas) ";
+    cout << "How much money do you have for your portfolio? \nWe have a minimum of $11k to ensure proper diversification. (Please exclude $ and commas) ";
     cin >> wealth;
+    if(wealth < 11000) {
+        cout << "Sorry, your investment doesn't reach our minimum." << endl; 
+        exit(0); 
+    }
     cout << "Would you prefer to invest in technology (t) or industrial (i) businesses? "; 
     cin >> sector_; // cannot cin >> to an enum, so cin to string and assign to enum
     if(sector_ == "t") {
@@ -135,8 +140,7 @@ int main() {
     portfolio.set_risk_capacity(a); 
     portfolio.set_risk_profile(b); 
     portfolio.set_risk_tolerance(risk_tolerance); 
-
-    portfolio.get_worth(wealth); 
+    portfolio.get_worth(wealth - (wealth * .05)); // account for cash in portfolio 
     portfolio.risk_path(); 
     cout << "\nFirst we're going to match " << investor.risk_profile() << "% of your portfolio with stocks." << endl; 
     cout << "Because of your risk tolerance of " << investor.get_risk_tolerance() << " and your risk capacity of $" << investor.get_risk_capacity() << "," << endl; 
@@ -160,6 +164,50 @@ int main() {
     
     portfolio.add_contents(sector_); 
     cout << "Done! " << endl; 
+
+    int rc; 
+    sqlite3 *db; 
+    sqlite3_stmt *stmt = NULL; 
+    char *zErrMsg = 0; 
+    rc = sqlite3_open("Investor.db", &db);
+
+	if( rc ) {
+		fprintf(stderr, "Can't open database: %s\n", zErrMsg);
+	} 
+    char *sql = "UPDATE PORTFOLIO set units = CAST( ? / (SELECT SUM(p.units * m.price) AS Value FROM portfolio p, market m WHERE p.ticker = m.ticker) AS int)";
+
+    rc = sqlite3_prepare_v2(db, sql, strlen(sql)+1, &stmt, NULL);
+    if (rc != SQLITE_OK) {
+        printf("Failed to prepare statement: %s\n\r", sqlite3_errstr(rc));
+        sqlite3_close(db);
+        return 1;
+    } 
+    else {
+        printf("SQL statement prepared: OK\n\n\r");
+    }
+
+    rc = sqlite3_bind_int(stmt, 1, wealth);
+    if (rc != SQLITE_OK) {
+        printf("Failed to bind parameter: %s\n\r", sqlite3_errstr(rc));
+        sqlite3_close(db);
+        return 1;
+    } 
+    else {
+        printf("SQL bind integer param: OK\n\n\r");
+    }
+    rc = sqlite3_step(stmt);
+    // other successful return codes are possible...
+    if (rc != SQLITE_DONE) {
+        printf("Failed to execute statement: %s\n\r", sqlite3_errstr(rc));
+        sqlite3_close(db);
+        return 1;
+    }
+
+    // deallocate/finalize the prepared statement when you no longer need it.
+    // you may also place this in any error handling sections.
+    sqlite3_finalize(stmt);
+
+    sqlite3_close(db); 
 
     sleep_for(milliseconds(1000));
 

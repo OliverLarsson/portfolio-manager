@@ -29,7 +29,7 @@ TEST_CASE("Investor class methods", "[Investor]") {
     REQUIRE( investor.get_age() == 21 );  
     REQUIRE( investor.get_wealth() == 500000 );  
     REQUIRE( investor.get_risk_tolerance() == 2 ); 
-    REQUIRE( investor.get_risk_capacity() == 45); 
+    REQUIRE( investor.get_risk_capacity() == 235000.0); 
     REQUIRE( investor.get_sector() == "Technology" );  
   }
 
@@ -43,3 +43,25 @@ TEST_CASE("Investor class methods", "[Investor]") {
     REQUIRE( investor.risk_profile() == 70.0);
   }
 }
+
+TEST_CASE("Market class methods", "[Market]") {
+  
+  // Create object 
+  Market market("t"); 
+
+  SECTION("Constructor check") {
+    REQUIRE( market.get_sector() == "t"); 
+  }
+
+}
+
+TEST_CASE("Portfolio class methods", "[Portfolio]") {
+
+
+}
+
+TEST_CASE("Forecast class methods", "[Forecast]") {
+  
+
+}
+
