@@ -19,6 +19,9 @@ public:
     explicit Forecast(string name, int age, double wealth, double risk_t, double risk_r, string sector, QWidget *parent = nullptr);
     ~Forecast();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Forecast *ui;
 
@@ -31,6 +34,7 @@ private:
     double risk_profile_;
 
     int choice_;
+    int c_i_; // confidence interval
 };
 
 #endif // FORECAST_H

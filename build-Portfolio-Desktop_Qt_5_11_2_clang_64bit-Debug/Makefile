@@ -848,20 +848,77 @@ market.o: ../Portfolio/market.cpp ../Portfolio/market.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		ui_market.h \
-		../Portfolio/portfolio.h
+		../Portfolio/portfolio.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/QtSql \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/QtDebug \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o market.o ../Portfolio/market.cpp
 
 portfolio.o: ../Portfolio/portfolio.cpp ../Portfolio/portfolio.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		ui_portfolio.h \
-		../Portfolio/forecast.h
+		../Portfolio/forecast.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/QtSql \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/QtDebug \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o portfolio.o ../Portfolio/portfolio.cpp
 
 forecast.o: ../Portfolio/forecast.cpp ../Portfolio/forecast.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		ui_forecast.h
+		ui_forecast.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/QtSql \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/QtDebug \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o forecast.o ../Portfolio/forecast.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

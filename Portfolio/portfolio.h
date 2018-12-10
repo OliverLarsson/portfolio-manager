@@ -15,11 +15,17 @@ class Portfolio : public QDialog
     Q_OBJECT
 
 public:
-    explicit Portfolio(string name, int age, double wealth, double risk_t, double risk_r, string sector, QWidget *parent = nullptr);
+    explicit Portfolio(string name, int age, double wealth, double risk_t, double risk_r, string sector, double risk_profile, QWidget *parent = nullptr);
     ~Portfolio();
+
+    void risk_path();
+    void add_contents();
+    void set_units();
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Portfolio *ui;
@@ -31,6 +37,9 @@ private:
     string sector_;
     double risk_requirement_;
     double risk_profile_;
+
+    double risk_capacity_;
+    int path_;
 
     int choice_;
 };

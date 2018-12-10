@@ -15,7 +15,7 @@ class Market : public QDialog
     Q_OBJECT
 
 public:
-    explicit Market(string name, int age, double wealth, double risk_t, double risk_r, string sector, QWidget *parent = nullptr);
+    explicit Market(string name, int age, double wealth, double risk_t, double risk_r, string sector, double risk_profile, QWidget *parent = nullptr);
     ~Market();
 
 private slots:

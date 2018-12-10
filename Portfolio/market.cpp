@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Market::Market(string name, int age, double wealth, double risk_t, double risk_r, string sector, QWidget *parent) :
+Market::Market(string name, int age, double wealth, double risk_t, double risk_r, string sector, double risk_profile, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Market)
 {
@@ -18,6 +18,7 @@ Market::Market(string name, int age, double wealth, double risk_t, double risk_r
     risk_tolerance_ = risk_t;
     risk_requirement_ = risk_r;
     sector_ = sector;
+    risk_profile_ = risk_profile;
 
     ui->setupUi(this);
 
@@ -31,6 +32,9 @@ Market::~Market()
 
 void Market::on_pushButton_clicked()
 {
+    ui->label_8->setText("Choice:");
+    ui->label_8->repaint();
+
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
     if(!db.open()) {
@@ -40,43 +44,104 @@ void Market::on_pushButton_clicked()
 
     qDebug("Connected");
 
-    QSqlQuery query;
+    QSqlQueryModel * modal = new QSqlQueryModel();
+
+    QSqlQuery * query = new QSqlQuery(db);
 
     choice_ = ui->lineEdit->text().toInt();
+
     if(choice_ == 1) {
-        if(sector_ == "t"){
-            query.exec("SELECT ticker, price FROM market WHERE sector = 't'");
+        if(sector_ == "Technology"){
+            query->prepare("SELECT * FROM market WHERE sector = 't' OR sector = 'e'");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
         }
         else {
-            query.exec("SELECT ticker, price FROM market WHERE sector = 'i'");
+            query->prepare("SELECT * FROM market WHERE ticker = 'i' OR sector = 'e'");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
         }
     }
     else if(choice_ == 2) {
-        query.exec("SELECT * FROM market WHERE sector = 't' ORDER BY name ASC");
+        if(sector_ == "Technology"){
+            query->prepare("SELECT * FROM market WHERE sector = 't' OR sector = 'e' ORDER BY name ASC");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
+        }
+        else {
+            query->prepare("SELECT * FROM market WHERE sector = 'i' OR sector = 'e' ORDER BY name ASC");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
+        }
     }
     else if(choice_ == 3) {
-        query.exec("SELECT * FROM market WHERE sector = 't' ORDER BY ticker ASC");
+        if(sector_ == "Technology"){
+            query->prepare("SELECT * FROM market WHERE sector = 't' OR sector = 'e' ORDER BY ticker ASC");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
+        }
+        else {
+            query->prepare("SELECT * FROM market WHERE sector = 'i' OR sector = 'e' ORDER BY ticker ASC");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
+        }
     }
     else if(choice_ == 4) {
-        query.exec("SELECT * FROM market WHERE sector = 't' ORDER BY price DESC");
+        if(sector_ == "Technology"){
+            query->prepare("SELECT * FROM market WHERE sector = 't' OR sector = 'e' ORDER BY price DESC");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
+        }
+        else {
+            query->prepare("SELECT * FROM market WHERE sector = 'i' OR sector = 'e' ORDER BY price DESC");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
+        }
     }
     else if(choice_ == 5) {
-        query.exec("SELECT * FROM market WHERE sector = 't' ORDER BY change DESC");
+        if(sector_ == "Technology"){
+            query->prepare("SELECT * FROM market WHERE sector = 't' OR sector = 'e' ORDER BY change DESC");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
+        }
+        else {
+            query->prepare("SELECT * FROM market WHERE sector = 'i' OR sector = 'e' ORDER BY change DESC");
+            query->exec();
+            modal->setQuery(*query);
+            ui->tableView->setModel(modal);
+            ui->tableView->repaint();
+        }
     }
     else {
         ui->label_8->setText("Try again!");
+        ui->label_8->repaint();
     }
-    ui->label_8->repaint();
-    while (query.next()) {
-            QString ticker = query.value(0).toString();
-            int price = query.value(1).toInt();
-            qDebug() << ticker << price;
-    }
+
+    qDebug() << (modal->rowCount());
+    db.close();
 }
 
 void Market::on_pushButton_2_clicked()
 {
-    Portfolio portfolio(name_, age_, wealth_, risk_tolerance_, risk_requirement_, sector_);
+    Portfolio portfolio(name_, age_, wealth_, risk_tolerance_, risk_requirement_, sector_, risk_profile_);
     portfolio.setModal(true);
     portfolio.exec();
 }

@@ -12,9 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -38,36 +40,40 @@ public:
     QLabel *label_10;
     QLabel *label_9;
     QPushButton *pushButton_2;
+    QTableView *tableView;
+    QLabel *label_33;
 
     void setupUi(QDialog *Market)
     {
         if (Market->objectName().isEmpty())
             Market->setObjectName(QStringLiteral("Market"));
-        Market->resize(722, 459);
+        Market->resize(1155, 718);
+        Market->setStyleSheet(QLatin1String("color: white; \n"
+"background-color: rgb(17, 17, 17)"));
         label = new QLabel(Market);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(70, 20, 161, 41));
+        label->setGeometry(QRect(330, 140, 161, 41));
         label_2 = new QLabel(Market);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(200, 20, 81, 41));
+        label_2->setGeometry(QRect(460, 140, 81, 41));
         label_3 = new QLabel(Market);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(280, 20, 391, 41));
+        label_3->setGeometry(QRect(540, 140, 391, 41));
         label_4 = new QLabel(Market);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(70, 40, 551, 41));
+        label_4->setGeometry(QRect(330, 180, 551, 41));
         label_8 = new QLabel(Market);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(80, 210, 60, 16));
+        label_8->setGeometry(QRect(410, 460, 60, 16));
         lineEdit = new QLineEdit(Market);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(150, 210, 113, 24));
+        lineEdit->setGeometry(QRect(480, 460, 113, 24));
         pushButton = new QPushButton(Market);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(270, 210, 71, 24));
+        pushButton->setGeometry(QRect(600, 460, 71, 24));
         layoutWidget = new QWidget(Market);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(140, 90, 207, 106));
+        layoutWidget->setGeometry(QRect(470, 340, 207, 106));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -98,7 +104,16 @@ public:
 
         pushButton_2 = new QPushButton(Market);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(470, 130, 181, 41));
+        pushButton_2->setGeometry(QRect(760, 360, 211, 61));
+        tableView = new QTableView(Market);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(380, 500, 631, 201));
+        label_33 = new QLabel(Market);
+        label_33->setObjectName(QStringLiteral("label_33"));
+        label_33->setGeometry(QRect(100, 20, 421, 91));
+        label_33->setStyleSheet(QLatin1String("font-size: 100pt; \n"
+"font-weight: bold; \n"
+"color: rgb(0, 148, 193);"));
 
         retranslateUi(Market);
 
@@ -120,6 +135,7 @@ public:
         label_10->setText(QApplication::translate("Market", "4. View market by asset price", nullptr));
         label_9->setText(QApplication::translate("Market", "5. View market by asset variance ", nullptr));
         pushButton_2->setText(QApplication::translate("Market", "Move on to the portfolio", nullptr));
+        label_33->setText(QApplication::translate("Market", "Market", nullptr));
     } // retranslateUi
 
 };

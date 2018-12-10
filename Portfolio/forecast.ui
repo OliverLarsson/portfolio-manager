@@ -1,17 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Forecast</class>
- <widget name="Forecast" class="QDialog">
+ <widget class="QDialog" name="Forecast">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1254</width>
+    <height>748</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">color: white; 
+background-color: rgb(17, 17, 17)
+</string>
+  </property>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>610</y>
+     <width>71</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: black; </string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>640</y>
+     <width>71</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: black; </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>610</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Forecasting Method:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>640</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Confidence Level:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>680</y>
+     <width>16</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>,</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>150</y>
+     <width>681</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Forecasting can be done through a variety of methods. To learn more about each method we use, read below:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>170</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>1. Econometric forecasting</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>270</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>2. Sector forecasting</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>370</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>3. Portfolio forecasting</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>290</y>
+     <width>591</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>This is done by using the assets within the sector you chose to invest. While it isn't as precise </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>310</y>
+     <width>591</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>as the Portfolio forecasting, it is more precise than Econometric. The biggest advantage in this</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>330</y>
+     <width>591</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>330</y>
+     <width>591</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>is that your assets are leveled against the performance of others in the same sector. This </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>350</y>
+     <width>591</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ensures that the forecast follows the performance trends of the whole sector. </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>210</y>
+     <width>601</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>since it involves assets that may not be closely related to your portfolio's assets. However, it gives</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>190</y>
+     <width>585</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>This is done by using the assets from the entire economy. This method is the least precise of all</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>230</y>
+     <width>8</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>230</y>
+     <width>595</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>insight into how the rest of the economy is performing, and since big shifts in the economy affect</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>250</y>
+     <width>565</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>nearly all sectors, it can be valuable in predicting how big events could affect your portfolio. </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>410</y>
+     <width>601</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>all the methods and will give you the most reasonable range of performance, assuming the sector</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>390</y>
+     <width>601</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>This is done by using only the assets within your portfolio. For this reason it's the most precise of</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>430</y>
+     <width>591</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_21">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>430</y>
+     <width>591</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>and economy don't face big shifts. This method is also important to conduct as it provides the </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_22">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>450</y>
+     <width>611</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>largest confidence interval range, reflecting the investor's risk path. The larger their risk, the larger</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_23">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>470</y>
+     <width>611</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>the portfolio's volume and variance, and thus the larger its possible risk or reward. </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_25">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>500</y>
+     <width>731</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>We use confidence intervals with our forecasting methods to best predict the degree of uncertainty in portfolio value.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_26">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>520</y>
+     <width>751</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>For example, given a 99% confidence level, we would expect the average change in portfolio value to fall between some</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_27">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>540</y>
+     <width>701</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>range of the current average 99% of the time. The larger the confidence, the larger the interval will be. </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_28">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>580</y>
+     <width>611</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Select a forecasting method from the list above and a confidence level of 99, 95, or 90 percent.</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>620</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 124, 0);
+</string>
+   </property>
+   <property name="text">
+    <string>Go</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_24">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>610</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_29">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>640</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_30">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>680</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_31">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>680</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_32">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>680</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Confidence Interval:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_33">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>0</y>
+     <width>571</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 100pt; 
+font-weight: bold; 
+color: rgb(0, 148, 193);</string>
+   </property>
+   <property name="text">
+    <string>Forecasting</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

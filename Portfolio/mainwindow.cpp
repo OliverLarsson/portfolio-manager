@@ -26,6 +26,8 @@ void MainWindow::on_allDone_clicked()
     risk_tolerance = ui->lineEdit_4->text().toDouble();
     risk_requirement = ui->lineEdit_5->text().toDouble();
     sector = ui->lineEdit_6->text().toStdString();
+
+    ui->allDone->setText("Set!");
 }
 
 

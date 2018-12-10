@@ -14,7 +14,12 @@ Investor::Investor(string name, int age, double wealth, double risk_t, double ri
     wealth_ = wealth;
     risk_tolerance_ = risk_t;
     risk_requirement_ = risk_r;
-    sector_ = sector;
+    if(sector == "t") {
+        sector_ = "Technology";
+    }
+    else {
+        sector_ = "Industrial";
+    }
 
 
     ui->setupUi(this);
@@ -40,7 +45,7 @@ Investor::~Investor()
 
 void Investor::on_pushButton_clicked()
 {
-    Market market(name_, age_, wealth_, risk_tolerance_, risk_requirement_, sector_);
+    Market market(name_, age_, wealth_, risk_tolerance_, risk_requirement_, sector_, risk_profile_);
     market.setModal(true);
     market.exec();
 }

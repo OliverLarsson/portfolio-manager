@@ -177,7 +177,7 @@ void Market::print_market(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
 */
 void Market::print_by_name(sqlite3 *db, char *zErrMsg, const char *sql, int rc) {
     if(sector_ == "t") {
-        sql = "SELECT * FROM market WHERE sector = 't' ORDER BY name ASC ";
+        sql = "SELECT * FROM market WHERE sector = 't' ORDER BY name ASC";
     } else {
         sql = "SELECT * FROM market WHERE sector = 'i' ORDER BY name ASC";
     }
