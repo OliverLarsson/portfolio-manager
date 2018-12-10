@@ -30,13 +30,14 @@ public:
     QLabel *label_8;
     QLineEdit *lineEdit;
     QPushButton *pushButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label_5;
     QLabel *label_7;
     QLabel *label_6;
     QLabel *label_10;
     QLabel *label_9;
+    QPushButton *pushButton_2;
 
     void setupUi(QDialog *Market)
     {
@@ -60,41 +61,44 @@ public:
         label_8->setGeometry(QRect(80, 210, 60, 16));
         lineEdit = new QLineEdit(Market);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(140, 210, 113, 24));
+        lineEdit->setGeometry(QRect(150, 210, 113, 24));
         pushButton = new QPushButton(Market);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(260, 210, 71, 24));
-        widget = new QWidget(Market);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(140, 90, 207, 106));
-        verticalLayout = new QVBoxLayout(widget);
+        pushButton->setGeometry(QRect(270, 210, 71, 24));
+        layoutWidget = new QWidget(Market);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(140, 90, 207, 106));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
 
         verticalLayout->addWidget(label_5);
 
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         verticalLayout->addWidget(label_7);
 
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         verticalLayout->addWidget(label_6);
 
-        label_10 = new QLabel(widget);
+        label_10 = new QLabel(layoutWidget);
         label_10->setObjectName(QStringLiteral("label_10"));
 
         verticalLayout->addWidget(label_10);
 
-        label_9 = new QLabel(widget);
+        label_9 = new QLabel(layoutWidget);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         verticalLayout->addWidget(label_9);
 
+        pushButton_2 = new QPushButton(Market);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(470, 130, 181, 41));
 
         retranslateUi(Market);
 
@@ -115,6 +119,7 @@ public:
         label_6->setText(QApplication::translate("Market", "3. View market by asset ticker ", nullptr));
         label_10->setText(QApplication::translate("Market", "4. View market by asset price", nullptr));
         label_9->setText(QApplication::translate("Market", "5. View market by asset variance ", nullptr));
+        pushButton_2->setText(QApplication::translate("Market", "Move on to the portfolio", nullptr));
     } // retranslateUi
 
 };

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,17 +28,23 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     investor.cpp \
-    market.cpp
+    market.cpp \
+    portfolio.cpp \
+    forecast.cpp
 
 HEADERS += \
         mainwindow.h \
     investor.h \
-    market.h
+    market.h \
+    portfolio.h \
+    forecast.h
 
 FORMS += \
         mainwindow.ui \
     investor.ui \
-    market.ui
+    market.ui \
+    portfolio.ui \
+    forecast.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

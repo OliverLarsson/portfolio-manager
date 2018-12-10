@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = /Library/Developer/CommandLineTools/usr/bin/clang
 CXX           = /Library/Developer/CommandLineTools/usr/bin/clang++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.11 -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.11 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I../Portfolio -I. -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib
+INCPATH       = -I../Portfolio -I. -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib
 QMAKE         = /Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -38,7 +38,7 @@ DISTNAME      = Portfolio1.0.0
 DISTDIR = /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/.tmp/Portfolio1.0.0
 LINK          = /Library/Developer/CommandLineTools/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.11 -Wl,-rpath,@executable_path/Frameworks -Wl,-rpath,/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib
-LIBS          = $(SUBLIBS) -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL 
+LIBS          = $(SUBLIBS) -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework QtSql -framework OpenGL -framework AGL 
 AR            = /Library/Developer/CommandLineTools/usr/bin/ar cq
 RANLIB        = /Library/Developer/CommandLineTools/usr/bin/ranlib -s
 SED           = sed
@@ -53,16 +53,24 @@ OBJECTS_DIR   = ./
 SOURCES       = ../Portfolio/main.cpp \
 		../Portfolio/mainwindow.cpp \
 		../Portfolio/investor.cpp \
-		../Portfolio/market.cpp moc_mainwindow.cpp \
+		../Portfolio/market.cpp \
+		../Portfolio/portfolio.cpp \
+		../Portfolio/forecast.cpp moc_mainwindow.cpp \
 		moc_investor.cpp \
-		moc_market.cpp
+		moc_market.cpp \
+		moc_portfolio.cpp \
+		moc_forecast.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		investor.o \
 		market.o \
+		portfolio.o \
+		forecast.o \
 		moc_mainwindow.o \
 		moc_investor.o \
-		moc_market.o
+		moc_market.o \
+		moc_portfolio.o \
+		moc_forecast.o
 DIST          = /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/spec_pre.prf \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/qdevice.pri \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/device_config.prf \
@@ -254,10 +262,14 @@ DIST          = /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/sp
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/lex.prf \
 		../Portfolio/Portfolio.pro ../Portfolio/mainwindow.h \
 		../Portfolio/investor.h \
-		../Portfolio/market.h ../Portfolio/main.cpp \
+		../Portfolio/market.h \
+		../Portfolio/portfolio.h \
+		../Portfolio/forecast.h ../Portfolio/main.cpp \
 		../Portfolio/mainwindow.cpp \
 		../Portfolio/investor.cpp \
-		../Portfolio/market.cpp
+		../Portfolio/market.cpp \
+		../Portfolio/portfolio.cpp \
+		../Portfolio/forecast.cpp
 QMAKE_TARGET  = Portfolio
 DESTDIR       = 
 TARGET        = Portfolio.app/Contents/MacOS/Portfolio
@@ -274,7 +286,7 @@ include /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_investor.h ui_market.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_investor.h ui_market.h ui_portfolio.h ui_forecast.h $(OBJECTS)  
 	@test -d Portfolio.app/Contents/MacOS/ || mkdir -p Portfolio.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -470,6 +482,7 @@ Makefile: ../Portfolio/Portfolio.pro /Volumes/OliverExternal/CSCI/5.11.2/clang_6
 		../Portfolio/Portfolio.pro \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/QtGui.prl \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/QtSql.prl \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/QtCore.prl
 	$(QMAKE) -o Makefile ../Portfolio/Portfolio.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
 /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/spec_pre.prf:
@@ -664,6 +677,7 @@ Makefile: ../Portfolio/Portfolio.pro /Volumes/OliverExternal/CSCI/5.11.2/clang_6
 ../Portfolio/Portfolio.pro:
 /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
 /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/QtGui.prl:
+/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/QtSql.prl:
 /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/QtCore.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../Portfolio/Portfolio.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
@@ -695,9 +709,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Portfolio/mainwindow.h ../Portfolio/investor.h ../Portfolio/market.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Portfolio/main.cpp ../Portfolio/mainwindow.cpp ../Portfolio/investor.cpp ../Portfolio/market.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Portfolio/mainwindow.ui ../Portfolio/investor.ui ../Portfolio/market.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Portfolio/mainwindow.h ../Portfolio/investor.h ../Portfolio/market.h ../Portfolio/portfolio.h ../Portfolio/forecast.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Portfolio/main.cpp ../Portfolio/mainwindow.cpp ../Portfolio/investor.cpp ../Portfolio/market.cpp ../Portfolio/portfolio.cpp ../Portfolio/forecast.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Portfolio/mainwindow.ui ../Portfolio/investor.ui ../Portfolio/market.ui ../Portfolio/portfolio.ui ../Portfolio/forecast.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -729,37 +743,51 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/data/dummy.cpp
 	/Library/Developer/CommandLineTools/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.11 -Wall -W -dM -E -o moc_predefs.h /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_investor.cpp moc_market.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_investor.cpp moc_market.cpp moc_portfolio.cpp moc_forecast.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_investor.cpp moc_market.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_investor.cpp moc_market.cpp moc_portfolio.cpp moc_forecast.cpp
 moc_mainwindow.cpp: /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../Portfolio/mainwindow.h \
 		moc_predefs.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc
-	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/mainwindow.h -o moc_mainwindow.cpp
+	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/mainwindow.h -o moc_mainwindow.cpp
 
 moc_investor.cpp: /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../Portfolio/investor.h \
 		moc_predefs.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc
-	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/investor.h -o moc_investor.cpp
+	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/investor.h -o moc_investor.cpp
 
 moc_market.cpp: /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../Portfolio/market.h \
 		moc_predefs.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc
-	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/market.h -o moc_market.cpp
+	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/market.h -o moc_market.cpp
+
+moc_portfolio.cpp: /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Portfolio/portfolio.h \
+		moc_predefs.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc
+	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/portfolio.h -o moc_portfolio.cpp
+
+moc_forecast.cpp: /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Portfolio/forecast.h \
+		moc_predefs.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc
+	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/forecast.h -o moc_forecast.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_investor.h ui_market.h
+compiler_uic_make_all: ui_mainwindow.h ui_investor.h ui_market.h ui_portfolio.h ui_forecast.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_investor.h ui_market.h
+	-$(DEL_FILE) ui_mainwindow.h ui_investor.h ui_market.h ui_portfolio.h ui_forecast.h
 ui_mainwindow.h: ../Portfolio/mainwindow.ui \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/uic
 	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/uic ../Portfolio/mainwindow.ui -o ui_mainwindow.h
@@ -771,6 +799,14 @@ ui_investor.h: ../Portfolio/investor.ui \
 ui_market.h: ../Portfolio/market.ui \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/uic
 	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/uic ../Portfolio/market.ui -o ui_market.h
+
+ui_portfolio.h: ../Portfolio/portfolio.ui \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/uic
+	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/uic ../Portfolio/portfolio.ui -o ui_portfolio.h
+
+ui_forecast.h: ../Portfolio/forecast.ui \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/uic
+	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/uic ../Portfolio/forecast.ui -o ui_forecast.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -811,8 +847,22 @@ investor.o: ../Portfolio/investor.cpp ../Portfolio/investor.h \
 market.o: ../Portfolio/market.cpp ../Portfolio/market.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		ui_market.h
+		ui_market.h \
+		../Portfolio/portfolio.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o market.o ../Portfolio/market.cpp
+
+portfolio.o: ../Portfolio/portfolio.cpp ../Portfolio/portfolio.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_portfolio.h \
+		../Portfolio/forecast.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o portfolio.o ../Portfolio/portfolio.cpp
+
+forecast.o: ../Portfolio/forecast.cpp ../Portfolio/forecast.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_forecast.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o forecast.o ../Portfolio/forecast.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
@@ -822,6 +872,12 @@ moc_investor.o: moc_investor.cpp
 
 moc_market.o: moc_market.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_market.o moc_market.cpp
+
+moc_portfolio.o: moc_portfolio.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_portfolio.o moc_portfolio.cpp
+
+moc_forecast.o: moc_forecast.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_forecast.o moc_forecast.cpp
 
 ####### Install
 

@@ -1,5 +1,5 @@
-#ifndef MARKET_H
-#define MARKET_H
+#ifndef PORTFOLIO_H
+#define PORTFOLIO_H
 
 #include <QDialog>
 #include <iostream>
@@ -7,24 +7,22 @@
 using namespace std;
 
 namespace Ui {
-class Market;
+class Portfolio;
 }
 
-class Market : public QDialog
+class Portfolio : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Market(string name, int age, double wealth, double risk_t, double risk_r, string sector, QWidget *parent = nullptr);
-    ~Market();
+    explicit Portfolio(string name, int age, double wealth, double risk_t, double risk_r, string sector, QWidget *parent = nullptr);
+    ~Portfolio();
 
 private slots:
     void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
-
 private:
-    Ui::Market *ui;
+    Ui::Portfolio *ui;
 
     string name_;
     int age_;
@@ -37,4 +35,4 @@ private:
     int choice_;
 };
 
-#endif // MARKET_H
+#endif // PORTFOLIO_H
