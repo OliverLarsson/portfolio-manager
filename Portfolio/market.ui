@@ -15,14 +15,15 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: white; 
-background-color: rgb(17, 17, 17)</string>
+background-color: rgb(17, 17, 17);
+font-size: 20pt; </string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>140</y>
-     <width>161</width>
+     <x>150</x>
+     <y>110</y>
+     <width>181</width>
      <height>41</height>
     </rect>
    </property>
@@ -33,9 +34,9 @@ background-color: rgb(17, 17, 17)</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>140</y>
-     <width>81</width>
+     <x>330</x>
+     <y>110</y>
+     <width>101</width>
      <height>41</height>
     </rect>
    </property>
@@ -46,9 +47,9 @@ background-color: rgb(17, 17, 17)</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>140</y>
-     <width>391</width>
+     <x>440</x>
+     <y>110</y>
+     <width>531</width>
      <height>41</height>
     </rect>
    </property>
@@ -59,9 +60,9 @@ background-color: rgb(17, 17, 17)</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>180</y>
-     <width>551</width>
+     <x>150</x>
+     <y>150</y>
+     <width>221</width>
      <height>41</height>
     </rect>
    </property>
@@ -72,10 +73,10 @@ background-color: rgb(17, 17, 17)</string>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>460</y>
-     <width>60</width>
-     <height>16</height>
+     <x>550</x>
+     <y>320</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -85,21 +86,27 @@ background-color: rgb(17, 17, 17)</string>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>460</y>
+     <x>660</x>
+     <y>320</y>
      <width>113</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: black; </string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>460</y>
+     <x>780</x>
+     <y>320</y>
      <width>71</width>
-     <height>24</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(66, 66, 66);</string>
    </property>
    <property name="text">
     <string>Go</string>
@@ -108,10 +115,10 @@ background-color: rgb(17, 17, 17)</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>340</y>
-     <width>207</width>
-     <height>106</height>
+     <x>230</x>
+     <y>200</y>
+     <width>290</width>
+     <height>146</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -155,11 +162,14 @@ background-color: rgb(17, 17, 17)</string>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>360</y>
-     <width>211</width>
-     <height>61</height>
+     <x>920</x>
+     <y>660</y>
+     <width>221</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 124, 0);</string>
    </property>
    <property name="text">
     <string>Move on to the portfolio</string>
@@ -168,18 +178,22 @@ background-color: rgb(17, 17, 17)</string>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>500</y>
-     <width>631</width>
-     <height>201</height>
+     <x>80</x>
+     <y>360</y>
+     <width>991</width>
+     <height>281</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(196, 196, 196); 
+color: black; </string>
    </property>
   </widget>
   <widget class="QLabel" name="label_33">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>20</y>
+     <x>180</x>
+     <y>10</y>
      <width>421</width>
      <height>91</height>
     </rect>

@@ -44,10 +44,10 @@ void Forecast::on_pushButton_clicked()
     choice_ = ui->lineEdit->text().toInt();
     c_i_ = ui->lineEdit_2->text().toInt();
 
-    ui->label_24->setText("");
-    ui->label_24->repaint();
-    ui->label_29->setText("");
-    ui->label_29->repaint();
+    ui->label->setText("Forecasting Method:");
+    ui->label->repaint();
+    ui->label_2->setText("Confidence Level:");
+    ui->label_2->repaint();
 
     if(sector_ == "Technology") {
         // z-scores :
@@ -120,8 +120,8 @@ void Forecast::on_pushButton_clicked()
                 ui->label_31->repaint();
             }
             else {
-                ui->label_29->setText("Try Again!");
-                ui->label_29->repaint();
+                ui->label_2->setText("Try Again!");
+                ui->label_2->repaint();
             }
         }
         else if(choice_ == 2) {
@@ -190,8 +190,8 @@ void Forecast::on_pushButton_clicked()
                 ui->label_31->repaint();
             }
             else {
-                ui->label_29->setText("Try Again!");
-                ui->label_29->repaint();
+                ui->label_2->setText("Try Again!");
+                ui->label_2->repaint();
             }
         }
         else if(choice_ == 3) {
@@ -260,13 +260,13 @@ void Forecast::on_pushButton_clicked()
                 ui->label_31->repaint();
             }
             else {
-                ui->label_29->setText("Try Again!");
-                ui->label_29->repaint();
+                ui->label_2->setText("Try Again!");
+                ui->label_2->repaint();
             }
         }
         else {
-            ui->label_24->setText("Try Again!");
-            ui->label_24->repaint();
+            ui->label->setText("Try Again!");
+            ui->label->repaint();
         }
     }
     else {
@@ -340,8 +340,8 @@ void Forecast::on_pushButton_clicked()
                 ui->label_31->repaint();
             }
             else {
-                ui->label_29->setText("Try Again!");
-                ui->label_29->repaint();
+                ui->label_2->setText("Try Again!");
+                ui->label_2->repaint();
             }
         }
         else if(choice_ == 2) {
@@ -410,8 +410,8 @@ void Forecast::on_pushButton_clicked()
                 ui->label_31->repaint();
             }
             else {
-                ui->label_29->setText("Try Again!");
-                ui->label_29->repaint();
+                ui->label_2->setText("Try Again!");
+                ui->label_2->repaint();
             }
         }
         else if(choice_ == 3) {
@@ -480,23 +480,31 @@ void Forecast::on_pushButton_clicked()
                 ui->label_31->repaint();
             }
             else {
-                ui->label_29->setText("Try Again!");
-                ui->label_29->repaint();
+                ui->label_2->setText("Try Again!");
+                ui->label_2->repaint();
             }
         }
         else {
-            ui->label_24->setText("Try Again!");
-            ui->label_24->repaint();
+            ui->label->setText("Try Again!");
+            ui->label->repaint();
         }
     }
     db.close();
 }
 
 
+void Forecast::on_pushButton_2_clicked()
+{
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
+    if(!db.open()) {
+        qDebug() << db.lastError();
+        qFatal("Failed to connect");
+    }
 
+    qDebug("Connected");
 
+    QSqlQuery * query = new QSqlQuery(db);
 
-
-
-
-
+    query->exec("DELETE FROM portfolio");
+}

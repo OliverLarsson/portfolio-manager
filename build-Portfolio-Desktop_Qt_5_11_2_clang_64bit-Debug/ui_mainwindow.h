@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -53,28 +52,21 @@ public:
     QLabel *label_24;
     QLabel *label_25;
     QLabel *label_26;
-    QWidget *widget;
-    QHBoxLayout *horizontalLayout;
-    QLabel *label_3;
-    QLineEdit *lineEdit;
-    QWidget *widget1;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *label_2;
-    QLineEdit *lineEdit_2;
-    QWidget *widget2;
-    QHBoxLayout *horizontalLayout_6;
-    QLabel *label_7;
-    QLineEdit *lineEdit_6;
+    QFrame *line;
+    QFrame *line_2;
+    QLabel *label_27;
     QPushButton *allDone;
-    QWidget *widget3;
-    QHBoxLayout *horizontalLayout_4;
+    QLineEdit *lineEdit_5;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLineEdit *lineEdit_6;
+    QLabel *label_4;
+    QLineEdit *lineEdit;
     QLabel *label_5;
     QLineEdit *lineEdit_4;
-    QWidget *widget4;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label_4;
     QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_2;
+    QLabel *label_7;
     QLabel *label_6;
     QMenuBar *menuBar;
     QMenu *menuPortfolio_Manager;
@@ -92,18 +84,18 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         marketGo = new QPushButton(centralWidget);
         marketGo->setObjectName(QStringLiteral("marketGo"));
-        marketGo->setGeometry(QRect(750, 550, 151, 61));
+        marketGo->setGeometry(QRect(630, 570, 121, 41));
         marketGo->setStyleSheet(QLatin1String("background-color: rgb(186, 124, 0);\n"
 "font-size: 20pt; "));
         label_33 = new QLabel(centralWidget);
         label_33->setObjectName(QStringLiteral("label_33"));
-        label_33->setGeometry(QRect(110, 0, 571, 131));
+        label_33->setGeometry(QRect(100, 0, 571, 131));
         label_33->setStyleSheet(QLatin1String("font-size: 100pt; \n"
 "font-weight: bold; \n"
 "color: rgb(0, 148, 193);"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(290, 550, 441, 51));
+        label->setGeometry(QRect(180, 560, 441, 51));
         label->setStyleSheet(QStringLiteral("font-size: 30pt; "));
         label_8 = new QLabel(centralWidget);
         label_8->setObjectName(QStringLiteral("label_8"));
@@ -111,15 +103,13 @@ public:
         label_8->setStyleSheet(QStringLiteral("font-size: 18pt; "));
         label_9 = new QLabel(centralWidget);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(150, 190, 581, 41));
+        label_9->setGeometry(QRect(150, 180, 581, 41));
         label_9->setStyleSheet(QStringLiteral("font-size: 18pt; "));
         frame = new QFrame(centralWidget);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(820, 40, 301, 471));
+        frame->setGeometry(QRect(860, 110, 301, 451));
         frame->setStyleSheet(QLatin1String("background-color:   rgb(12, 12, 12); \n"
-"border-styler: solid;\n"
-"border-width: 10px;\n"
-"border-color: white;"));
+""));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         label_10 = new QLabel(frame);
@@ -175,122 +165,76 @@ public:
         label_24->setGeometry(QRect(40, 350, 221, 21));
         label_25 = new QLabel(frame);
         label_25->setObjectName(QStringLiteral("label_25"));
-        label_25->setGeometry(QRect(30, 410, 251, 21));
+        label_25->setGeometry(QRect(40, 410, 251, 21));
         label_26 = new QLabel(frame);
         label_26->setObjectName(QStringLiteral("label_26"));
-        label_26->setGeometry(QRect(30, 430, 251, 21));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(349, 281, 195, 26));
-        horizontalLayout = new QHBoxLayout(widget);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(widget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setStyleSheet(QStringLiteral("font-size: 20pt; "));
-
-        horizontalLayout->addWidget(label_3);
-
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setStyleSheet(QStringLiteral("color: black; "));
-
-        horizontalLayout->addWidget(lineEdit);
-
-        widget1 = new QWidget(centralWidget);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(349, 313, 178, 26));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(widget1);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setStyleSheet(QStringLiteral("font-size: 20pt; "));
-
-        horizontalLayout_2->addWidget(label_2);
-
-        lineEdit_2 = new QLineEdit(widget1);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setStyleSheet(QStringLiteral("color: black; "));
-
-        horizontalLayout_2->addWidget(lineEdit_2);
-
-        widget2 = new QWidget(centralWidget);
-        widget2->setObjectName(QStringLiteral("widget2"));
-        widget2->setGeometry(QRect(349, 441, 289, 26));
-        horizontalLayout_6 = new QHBoxLayout(widget2);
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        horizontalLayout_6->setContentsMargins(0, 0, 0, 0);
-        label_7 = new QLabel(widget2);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setStyleSheet(QStringLiteral("font-size: 20pt; "));
-
-        horizontalLayout_6->addWidget(label_7);
-
-        lineEdit_6 = new QLineEdit(widget2);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
-        lineEdit_6->setStyleSheet(QStringLiteral("color: black; "));
-
-        horizontalLayout_6->addWidget(lineEdit_6);
-
+        label_26->setGeometry(QRect(40, 430, 251, 21));
+        line = new QFrame(centralWidget);
+        line->setObjectName(QStringLiteral("line"));
+        line->setGeometry(QRect(-20, 580, 20, 61));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
+        line_2 = new QFrame(centralWidget);
+        line_2->setObjectName(QStringLiteral("line_2"));
+        line_2->setGeometry(QRect(10, 460, 3, 61));
+        line_2->setFrameShape(QFrame::VLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+        label_27 = new QLabel(centralWidget);
+        label_27->setObjectName(QStringLiteral("label_27"));
+        label_27->setGeometry(QRect(50, 120, 731, 16));
+        label_27->setStyleSheet(QStringLiteral("color: rgb(0, 148, 193);"));
         allDone = new QPushButton(centralWidget);
         allDone->setObjectName(QStringLiteral("allDone"));
-        allDone->setGeometry(QRect(420, 480, 141, 41));
+        allDone->setGeometry(QRect(359, 480, 121, 32));
         allDone->setStyleSheet(QLatin1String("font-size: 20pt; \n"
 "background-color:rgb(66, 66, 66);"));
-        widget3 = new QWidget(centralWidget);
-        widget3->setObjectName(QStringLiteral("widget3"));
-        widget3->setGeometry(QRect(349, 377, 259, 26));
-        horizontalLayout_4 = new QHBoxLayout(widget3);
-        horizontalLayout_4->setSpacing(6);
-        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        label_5 = new QLabel(widget3);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setStyleSheet(QStringLiteral("font-size: 20pt; "));
-
-        horizontalLayout_4->addWidget(label_5);
-
-        lineEdit_4 = new QLineEdit(widget3);
-        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
-        lineEdit_4->setStyleSheet(QStringLiteral("color: black; "));
-
-        horizontalLayout_4->addWidget(lineEdit_4);
-
-        widget4 = new QWidget(centralWidget);
-        widget4->setObjectName(QStringLiteral("widget4"));
-        widget4->setGeometry(QRect(349, 345, 199, 26));
-        horizontalLayout_3 = new QHBoxLayout(widget4);
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(widget4);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setStyleSheet(QStringLiteral("font-size: 20pt; "));
-
-        horizontalLayout_3->addWidget(label_4);
-
-        lineEdit_3 = new QLineEdit(widget4);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setStyleSheet(QStringLiteral("color: black; "));
-
-        horizontalLayout_3->addWidget(lineEdit_3);
-
         lineEdit_5 = new QLineEdit(centralWidget);
         lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
-        lineEdit_5->setGeometry(QRect(506, 410, 125, 24));
+        lineEdit_5->setGeometry(QRect(459, 401, 61, 24));
         lineEdit_5->setStyleSheet(QStringLiteral("color: black; "));
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(301, 280, 45, 24));
+        label_2->setStyleSheet(QStringLiteral("font-size: 20pt; "));
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(301, 240, 62, 24));
+        label_3->setStyleSheet(QStringLiteral("font-size: 20pt; "));
+        lineEdit_6 = new QLineEdit(centralWidget);
+        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        lineEdit_6->setGeometry(QRect(469, 440, 61, 24));
+        lineEdit_6->setStyleSheet(QStringLiteral("color: black; "));
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(301, 320, 66, 24));
+        label_4->setStyleSheet(QStringLiteral("font-size: 20pt; "));
+        lineEdit = new QLineEdit(centralWidget);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(369, 240, 131, 24));
+        lineEdit->setStyleSheet(QStringLiteral("color: black; "));
+        label_5 = new QLabel(centralWidget);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(301, 360, 126, 24));
+        label_5->setStyleSheet(QStringLiteral("font-size: 20pt; "));
+        lineEdit_4 = new QLineEdit(centralWidget);
+        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        lineEdit_4->setGeometry(QRect(433, 360, 71, 24));
+        lineEdit_4->setStyleSheet(QStringLiteral("color: black; "));
+        lineEdit_3 = new QLineEdit(centralWidget);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        lineEdit_3->setGeometry(QRect(373, 320, 131, 24));
+        lineEdit_3->setStyleSheet(QStringLiteral("color: black; "));
+        lineEdit_2 = new QLineEdit(centralWidget);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(352, 280, 71, 24));
+        lineEdit_2->setStyleSheet(QStringLiteral("color: black; "));
+        label_7 = new QLabel(centralWidget);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(304, 440, 159, 24));
+        label_7->setStyleSheet(QStringLiteral("font-size: 20pt; "));
         label_6 = new QLabel(centralWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(350, 410, 150, 24));
+        label_6->setGeometry(QRect(300, 400, 150, 24));
         label_6->setStyleSheet(QStringLiteral("font-size: 20pt; "));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -328,7 +272,7 @@ public:
         label_14->setText(QApplication::translate("MainWindow", "Risk requirement", nullptr));
         label_15->setText(QApplication::translate("MainWindow", "Sector", nullptr));
         label_16->setText(QApplication::translate("MainWindow", "We like to be on a first name basis :)", nullptr));
-        label_17->setText(QApplication::translate("MainWindow", "To the nearest year", nullptr));
+        label_17->setText(QApplication::translate("MainWindow", "Enter age to the nearest year.", nullptr));
         label_18->setText(QApplication::translate("MainWindow", "To properly diversify, please invest", nullptr));
         label_19->setText(QApplication::translate("MainWindow", "at least $11,000. Enter a number ", nullptr));
         label_20->setText(QApplication::translate("MainWindow", "without characters. ", nullptr));
@@ -338,12 +282,13 @@ public:
         label_24->setText(QApplication::translate("MainWindow", "Enter a whole number from 1-100.", nullptr));
         label_25->setText(QApplication::translate("MainWindow", "Do you want to invest in the Technology", nullptr));
         label_26->setText(QApplication::translate("MainWindow", "or Industrial sector? Enter t or i. ", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "Name: ", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "Age: ", nullptr));
-        label_7->setText(QApplication::translate("MainWindow", "Sector preference:", nullptr));
+        label_27->setText(QApplication::translate("MainWindow", "______________________________________________________________________________________________________________________________", nullptr));
         allDone->setText(QApplication::translate("MainWindow", "Set profile", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "Risk tolerance:", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Age: ", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Name: ", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "Wealth:", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "Risk tolerance:", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "Sector preference:", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "Risk requirement:", nullptr));
         menuPortfolio_Manager->setTitle(QApplication::translate("MainWindow", "Portfolio Manager ", nullptr));
     } // retranslateUi
