@@ -35,7 +35,11 @@ Once you have cloned the repo and have QT Creator installed, navigate:
 
 Once QT Creator launches, press the green arrow in the bottom left and you're good to go. 
 
+****************
+
 Have fun! 
+
+***************
 
 Additional information on functionality, features, dependencies, etc. 
 
