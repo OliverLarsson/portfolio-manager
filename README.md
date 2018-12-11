@@ -11,6 +11,10 @@ That being said... have fun with it! To download the game, follow these steps on
     1. git clone https://github.com/OliverLarsson/portfolio-manager 
     2. cd portfolio-manager
 
+**************
+Text UI Instructions
+**************
+
 Once you complete the downloading steps, it's time to play. To run the game, make sure you are in the portfolio-manager directory, then follow these steps on the command line: 
 
     1. make all
@@ -21,9 +25,17 @@ If you want to test the game, follow these steps on the command line:
     1. make all 
     2. ./test
 
-Have fun! 
+*****************
+QT Instructions
+*****************
 
-********************
+Once you have cloned the repo and have QT Creator installed, navigate:
+    
+    portfolio-manager > Portfolio > Portfolio.pro
+
+Once QT Creator launches, press the green arrow in the bottom left and you're good to go. 
+
+Have fun! 
 
 Additional information on functionality, features, dependencies, etc. 
 
@@ -49,18 +61,13 @@ Back-end:
 - I went with a SQLite database. The two tables, Market and Portfolio, will be loaded with the CSV file mentioned above. It's linked to the application by the sqlite3 header file. sqlite3 is standard on MacOS, so there is no installation process if you are running on a Mac. 
 
 Front-End: 
-- The front-end is currently a Text UI. Once the application is near completion it will be changed to an HTML UI with the Ultralight HTML UI Engine. Ultralight is implemented within the C++ application. 
-- All documentation on Ultralight and how to set up is here: https://github.com/ultralight-ux/ultralight/blob/1.9.1/README.md#getting-started
-- It requires: 
-    - Cmake 2.8.12 or later
-    - OpenGL 3.2 or later 
-    - Compiler with C++11 or later 
-    - XCode 8.0
-- An example of Ultralight is under the Ultralight directory in the portfolio-manager repo. To run it, navigate: 
-    - /Ultralight/build/samples/Browser/Browser (open second browser)
-- https://ultralig.ht/
+- The front-end is currently a Text UI and a QT application. Directions for loading both are at the top of this doc. 
+
+QT: 
+- To run the QT application, you have to have QT downloaded. The rest of the instructions are up top! I'm fairly sure QT runs cross-platform, but SQLite is only standard on MacOS, so that will have to be installed if you're not on a Mac. 
+- QT: https://www.qt.io/download
 
 Testing: 
-- Testing in the current state is done with Catch2. This is implemented in the C++ application using a Catch2 header file. 
+- Testing the functionality behind the scenes is done with Catch2. This is implemented in the C++ application using a Catch2 header file. 
 - https://github.com/catchorg/Catch2
 
