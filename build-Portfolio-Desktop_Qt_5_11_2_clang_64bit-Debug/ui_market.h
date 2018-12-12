@@ -62,21 +62,21 @@ public:
         label_3->setGeometry(QRect(440, 110, 531, 41));
         label_4 = new QLabel(Market);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(150, 150, 221, 41));
+        label_4->setGeometry(QRect(150, 140, 221, 41));
         label_8 = new QLabel(Market);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(550, 320, 91, 31));
+        label_8->setGeometry(QRect(550, 300, 91, 31));
         lineEdit = new QLineEdit(Market);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(660, 320, 113, 24));
+        lineEdit->setGeometry(QRect(660, 300, 113, 24));
         lineEdit->setStyleSheet(QStringLiteral("color: black; "));
         pushButton = new QPushButton(Market);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(780, 320, 71, 31));
+        pushButton->setGeometry(QRect(780, 300, 71, 31));
         pushButton->setStyleSheet(QStringLiteral("background-color:rgb(66, 66, 66);"));
         layoutWidget = new QWidget(Market);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(230, 200, 290, 146));
+        layoutWidget->setGeometry(QRect(230, 180, 290, 146));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -107,11 +107,11 @@ public:
 
         pushButton_2 = new QPushButton(Market);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(920, 660, 221, 51));
+        pushButton_2->setGeometry(QRect(920, 640, 221, 51));
         pushButton_2->setStyleSheet(QStringLiteral("background-color: rgb(186, 124, 0);"));
         tableView = new QTableView(Market);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(80, 360, 991, 281));
+        tableView->setGeometry(QRect(80, 340, 991, 281));
         tableView->setStyleSheet(QLatin1String("background-color: rgb(196, 196, 196); \n"
 "color: black; "));
         label_33 = new QLabel(Market);

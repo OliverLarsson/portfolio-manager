@@ -507,4 +507,5 @@ void Forecast::on_pushButton_2_clicked()
     QSqlQuery * query = new QSqlQuery(db);
 
     query->exec("DELETE FROM portfolio");
+    db.close();
 }

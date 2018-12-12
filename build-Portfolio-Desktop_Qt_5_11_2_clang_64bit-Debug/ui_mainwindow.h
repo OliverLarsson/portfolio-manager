@@ -202,7 +202,7 @@ public:
         label_3->setStyleSheet(QStringLiteral("font-size: 20pt; "));
         lineEdit_6 = new QLineEdit(centralWidget);
         lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
-        lineEdit_6->setGeometry(QRect(469, 440, 61, 24));
+        lineEdit_6->setGeometry(QRect(469, 440, 51, 24));
         lineEdit_6->setStyleSheet(QStringLiteral("color: black; "));
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
@@ -210,7 +210,7 @@ public:
         label_4->setStyleSheet(QStringLiteral("font-size: 20pt; "));
         lineEdit = new QLineEdit(centralWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(369, 240, 131, 24));
+        lineEdit->setGeometry(QRect(369, 240, 151, 24));
         lineEdit->setStyleSheet(QStringLiteral("color: black; "));
         label_5 = new QLabel(centralWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
@@ -218,15 +218,15 @@ public:
         label_5->setStyleSheet(QStringLiteral("font-size: 20pt; "));
         lineEdit_4 = new QLineEdit(centralWidget);
         lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(433, 360, 71, 24));
+        lineEdit_4->setGeometry(QRect(433, 360, 91, 24));
         lineEdit_4->setStyleSheet(QStringLiteral("color: black; "));
         lineEdit_3 = new QLineEdit(centralWidget);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(373, 320, 131, 24));
+        lineEdit_3->setGeometry(QRect(373, 320, 151, 24));
         lineEdit_3->setStyleSheet(QStringLiteral("color: black; "));
         lineEdit_2 = new QLineEdit(centralWidget);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(352, 280, 71, 24));
+        lineEdit_2->setGeometry(QRect(352, 280, 171, 24));
         lineEdit_2->setStyleSheet(QStringLiteral("color: black; "));
         label_7 = new QLabel(centralWidget);
         label_7->setObjectName(QStringLiteral("label_7"));

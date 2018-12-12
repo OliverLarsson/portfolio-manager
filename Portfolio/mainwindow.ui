@@ -469,7 +469,7 @@ background-color:rgb(66, 66, 66);</string>
      <rect>
       <x>469</x>
       <y>440</y>
-      <width>61</width>
+      <width>51</width>
       <height>24</height>
      </rect>
     </property>
@@ -498,7 +498,7 @@ background-color:rgb(66, 66, 66);</string>
      <rect>
       <x>369</x>
       <y>240</y>
-      <width>131</width>
+      <width>151</width>
       <height>24</height>
      </rect>
     </property>
@@ -527,7 +527,7 @@ background-color:rgb(66, 66, 66);</string>
      <rect>
       <x>433</x>
       <y>360</y>
-      <width>71</width>
+      <width>91</width>
       <height>24</height>
      </rect>
     </property>
@@ -540,7 +540,7 @@ background-color:rgb(66, 66, 66);</string>
      <rect>
       <x>373</x>
       <y>320</y>
-      <width>131</width>
+      <width>151</width>
       <height>24</height>
      </rect>
     </property>
@@ -553,7 +553,7 @@ background-color:rgb(66, 66, 66);</string>
      <rect>
       <x>352</x>
       <y>280</y>
-      <width>71</width>
+      <width>171</width>
       <height>24</height>
      </rect>
     </property>
