@@ -30,7 +30,8 @@ SOURCES += \
     investor.cpp \
     market.cpp \
     portfolio.cpp \
-    forecast.cpp
+    forecast.cpp \
+    test.cpp
 
 HEADERS += \
         mainwindow.h \

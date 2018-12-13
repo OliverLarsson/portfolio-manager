@@ -55,7 +55,8 @@ SOURCES       = ../Portfolio/main.cpp \
 		../Portfolio/investor.cpp \
 		../Portfolio/market.cpp \
 		../Portfolio/portfolio.cpp \
-		../Portfolio/forecast.cpp moc_mainwindow.cpp \
+		../Portfolio/forecast.cpp \
+		../Portfolio/test.cpp moc_mainwindow.cpp \
 		moc_investor.cpp \
 		moc_market.cpp \
 		moc_portfolio.cpp \
@@ -66,6 +67,7 @@ OBJECTS       = main.o \
 		market.o \
 		portfolio.o \
 		forecast.o \
+		test.o \
 		moc_mainwindow.o \
 		moc_investor.o \
 		moc_market.o \
@@ -269,7 +271,8 @@ DIST          = /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/sp
 		../Portfolio/investor.cpp \
 		../Portfolio/market.cpp \
 		../Portfolio/portfolio.cpp \
-		../Portfolio/forecast.cpp
+		../Portfolio/forecast.cpp \
+		../Portfolio/test.cpp
 QMAKE_TARGET  = Portfolio
 DESTDIR       = 
 TARGET        = Portfolio.app/Contents/MacOS/Portfolio
@@ -710,7 +713,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Portfolio/mainwindow.h ../Portfolio/investor.h ../Portfolio/market.h ../Portfolio/portfolio.h ../Portfolio/forecast.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Portfolio/main.cpp ../Portfolio/mainwindow.cpp ../Portfolio/investor.cpp ../Portfolio/market.cpp ../Portfolio/portfolio.cpp ../Portfolio/forecast.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Portfolio/main.cpp ../Portfolio/mainwindow.cpp ../Portfolio/investor.cpp ../Portfolio/market.cpp ../Portfolio/portfolio.cpp ../Portfolio/forecast.cpp ../Portfolio/test.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Portfolio/mainwindow.ui ../Portfolio/investor.ui ../Portfolio/market.ui ../Portfolio/portfolio.ui ../Portfolio/forecast.ui $(DISTDIR)/
 
 
@@ -783,8 +786,143 @@ moc_forecast.cpp: /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.fra
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
-compiler_moc_source_make_all:
+compiler_moc_source_make_all: test.moc
 compiler_moc_source_clean:
+	-$(DEL_FILE) test.moc
+test.moc: /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QtWidgets \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractbutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractitemdelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractitemview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractscrollarea.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractslider.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractspinbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qaccessiblewidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qaction.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qactiongroup.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qboxlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qbuttongroup.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcheckbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcolordialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcolormap.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcolumnview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcombobox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcommandlinkbutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcommonstyle.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcompleter.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdatawidgetmapper.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdatetimeedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdesktopwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdial.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialogbuttonbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdirmodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdockwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdrawutil.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qerrormessage.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfileiconprovider.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfilesystemmodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfocusframe.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfontcombobox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfontdialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qformlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qframe.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgesture.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgesturerecognizer.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsanchorlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsgridlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitemanimation.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicslayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicslayoutitem.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicslinearlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsproxywidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicssceneevent.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicstransform.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicswidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qheaderview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qinputdialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qitemdelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qitemeditorfactory.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qkeyeventtransition.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qkeysequenceedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlayoutitem.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlcdnumber.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlistview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmdiarea.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmdisubwindow.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmenu.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmenubar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmouseeventtransition.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qopenglwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qprogressbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qprogressdialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qproxystyle.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qradiobutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qrubberband.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qscrollarea.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qscrollbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qscroller.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qscrollerproperties.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qshortcut.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsizegrip.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsizepolicy.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsplashscreen.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsplitter.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstackedlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstatusbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstyle.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstyleditemdelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstylefactory.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstyleoption.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstylepainter.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstyleplugin.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsystemtrayicon.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtabbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtablewidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtabwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtextbrowser.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtextedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtoolbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtoolbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtoolbutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtooltip.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtreeview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtreewidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtreewidgetitemiterator.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qundogroup.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qundostack.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qundoview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwhatsthis.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwidgetaction.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwizard.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsversion.h \
+		../Portfolio/test.cpp \
+		moc_predefs.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc
+	/Volumes/OliverExternal/CSCI/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/Ollie/Desktop/portfolio-manager/build-Portfolio-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/mkspecs/macx-clang -I/Users/Ollie/Desktop/portfolio-manager/Portfolio -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib ../Portfolio/test.cpp -o test.moc
+
 compiler_uic_make_all: ui_mainwindow.h ui_investor.h ui_market.h ui_portfolio.h ui_forecast.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h ui_investor.h ui_market.h ui_portfolio.h ui_forecast.h
@@ -816,7 +954,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_moc_source_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -920,6 +1058,137 @@ forecast.o: ../Portfolio/forecast.cpp ../Portfolio/forecast.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtCore.framework/Headers/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o forecast.o ../Portfolio/forecast.cpp
+
+test.o: ../Portfolio/test.cpp /Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QtWidgets \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractbutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractitemdelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractitemview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractscrollarea.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractslider.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qabstractspinbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qaccessiblewidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qaction.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qactiongroup.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qboxlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qbuttongroup.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcheckbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcolordialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcolormap.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcolumnview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcombobox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcommandlinkbutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcommonstyle.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qcompleter.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdatawidgetmapper.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdatetimeedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdesktopwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdial.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialogbuttonbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdirmodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdockwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdrawutil.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qerrormessage.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfileiconprovider.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfilesystemmodel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfocusframe.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfontcombobox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qfontdialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qformlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qframe.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgesture.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgesturerecognizer.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsanchorlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsgridlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitemanimation.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicslayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicslayoutitem.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicslinearlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsproxywidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicssceneevent.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicstransform.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicsview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgraphicswidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qheaderview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qinputdialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qitemdelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qitemeditorfactory.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qkeyeventtransition.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qkeysequenceedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlayoutitem.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlcdnumber.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlistview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmdiarea.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmdisubwindow.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmenu.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmenubar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmouseeventtransition.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qopenglwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qprogressbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qprogressdialog.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qproxystyle.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qradiobutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qrubberband.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qscrollarea.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qscrollbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qscroller.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qscrollerproperties.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qshortcut.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsizegrip.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsizepolicy.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsplashscreen.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsplitter.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstackedlayout.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstatusbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstyle.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstyleditemdelegate.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstylefactory.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstyleoption.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstylepainter.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qstyleplugin.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qsystemtrayicon.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtabbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtableview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtablewidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtabwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtextbrowser.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtextedit.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtoolbar.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtoolbox.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtoolbutton.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtooltip.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtreeview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtreewidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtreewidgetitemiterator.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qundogroup.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qundostack.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qundoview.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwhatsthis.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwidgetaction.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwizard.h \
+		/Volumes/OliverExternal/CSCI/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsversion.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o test.o ../Portfolio/test.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

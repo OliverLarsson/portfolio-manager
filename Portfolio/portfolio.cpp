@@ -77,7 +77,8 @@ void Portfolio::on_pushButton_clicked()
  * based on risk tolerance, risk capacity, and wealth
  * the risk path is used to decide which financial assets are loaded into the portfolio
  */
-void Portfolio::risk_path() {
+void Portfolio::risk_path()
+{
     if(risk_tolerance_ >= 0 && risk_tolerance_ <= 3) {
         if((risk_capacity_/wealth_) >= 0 && (risk_capacity_/wealth_) <= .33) {
             path_ = 1;
@@ -124,7 +125,8 @@ void Portfolio::risk_path() {
  * all variables above are created and binded to correctly load the portfolio
  *      with the percentages claimed earlier in the process
  */
-void Portfolio::add_contents() {
+void Portfolio::add_contents()
+{
     int t_stocks = static_cast<int>((risk_profile_/100)*18);
     int t_etf = 18 - t_stocks;
     int i_stocks = static_cast<int>((risk_profile_/100)*14);
@@ -301,7 +303,8 @@ void Portfolio::add_contents() {
  * equally distributes units based on the value of the portfolio at 1 unit per stock and the wealth of the investor
  * casted as an int to ensure value of portfolio never goes over value of investor
  */
-void Portfolio::set_units() {
+void Portfolio::set_units()
+{
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
     if(!db.open()) {

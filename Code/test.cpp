@@ -52,16 +52,28 @@ TEST_CASE("Market class methods", "[Market]") {
   SECTION("Constructor check") {
     REQUIRE( market.get_sector() == "t"); 
   }
-
 }
 
 TEST_CASE("Portfolio class methods", "[Portfolio]") {
+  // Object 
+  Portfolio& portfolio = Portfolio::GetPortfolio();
 
+  portfolio.get_worth(100000); 
+  portfolio.set_risk_capacity(20); 
+  portfolio.set_risk_tolerance(2); 
 
+  portfolio.risk_path(); 
+
+  SECTION("Path") {
+    REQUIRE(portfolio.get_risk_path() == 1); 
+  }
 }
 
-TEST_CASE("Forecast class methods", "[Forecast]") {
-  
-
-}
+/**
+ * Forecasting testing
+ * 
+ * Not a whole lot I felt I could test because of the design pattern
+ *  and that most of the functionality is in SQLite, which can't be 
+ *  tested here. 
+ */ 
 

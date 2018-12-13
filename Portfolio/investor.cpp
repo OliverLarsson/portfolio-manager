@@ -74,7 +74,8 @@ void Investor::on_pushButton_clicked()
  * sets a risk profile dependent on the input of the investor
  * returns a double to set equal to private variable risk_profile_
  */
-double Investor::risk_profile() {
+double Investor::risk_profile()
+{
     if(age_ > 17 && age_ < 40) {
         if(risk_tolerance_ >=1 && risk_tolerance_ < 3) {
             return 70.0;

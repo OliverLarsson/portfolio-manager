@@ -9,7 +9,7 @@
 ## 2) What was completed or modified from each task in initial plan:
 - TEST TEST TEST! 
     - Yep! I wrote all the Catch2 tests that I could do as far as the application permitted. A bright side of writing both a console and a GUI app, separately, is that I'm almost constantly testing against myself since I'm checking that the functionality lines up. 
-    - QT testing 
+    - QT testing: I didn't feel like it was entirely necessary. I know it's important to test everything regardless of how you feel, but due to time constraints and this program being much heavier behind the scenes than it is on the UI, the Catch2 testing on the functions was much more valuable. 
 - Clean things up. Stuff like rounding decimals to reasonable places, maybe adding more information on financial terms that aren't straightforward. Edge cases on the Forecasting user inputs might be helpful. 
     - I definitely underestimated what I would be doing in this sprint. However, I still "cleaned things up" on the SQL queries, edge cases for all classes, and financial terms. 
 - I scrapped the Ultralight plan entirely. My own stupidity thought that Ultralight was an HTML GUI for C++ applications, but after hour thirty of trying to find a tutorial to point me in a direction, I found that it's actually made for those that want to render HTML apps in C++ code. Obviously not close to what I needed. I put the GUI step off quite a bit, which turned out to be really stressful, but I ended up landing on QT. I think I mistook QT for what it really is because I thought it was only meant for the things that we were doing in class. After doing some googling I found that it has a really great design process and a SQLite wrapper that's superb. The transfer of my console app to QT took about a day, whereas the amount of time I spent on theconsole that felt like 200 hours. That's also because designing the methods from scratch to accurately reflect a market/portfolio/forecast took a bit of time, and all I had to do with QT was copy and paste those methods. Nonetheless, it made me wish I had started with QT, as it would've left me more time to create a bigger program. 
@@ -39,6 +39,8 @@
 - The Bad: 
     - I was riding a strong honeymoon phase with the console program and everything was going perfectly. This kind of threw me into a spiral of wanting to build more and more on the Text UI despite it becoming irrelevant in the end. 
     - Time management towards the end. I definitely fell off track in the 5th HW submission and that created more chaos in this step. 
+
+Overall I had an awesome time making this and I'm really thankful you let me take a chance with this!
 
 ## 4) These screenshots show the current functionality of the program. Included with each Text UI screenshot is a screenshot of the same functionality on the GUI mock-up. I included the same screenshots from Homework 3, 4, and 5 for what was already done.  
 
