@@ -1,3 +1,7 @@
+/**
+ * Attempted to make a Factory desing in QT but the Q_OBJECT that creates the UI is not copyable so that wasn't ever going to be made possible
+*/
+
 #ifndef FORECAST_H
 #define FORECAST_H
 

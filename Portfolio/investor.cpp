@@ -5,6 +5,19 @@
 
 using namespace std;
 
+/**
+ * @brief Investor::Investor
+ * @param name
+ * @param age
+ * @param wealth
+ * @param risk_t
+ * @param risk_r
+ * @param sector
+ * @param parent
+ *
+ * All parameters are from the mainwindow class
+ * Pretty hefty constructor but necessary since the information is being shown to the investor immediately as the window opens
+ */
 Investor::Investor(string name, int age, double wealth, double risk_t, double risk_r, string sector, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Investor)
@@ -42,7 +55,11 @@ Investor::~Investor()
     delete ui;
 }
 
-
+/**
+ * @brief Investor::on_pushButton_clicked
+ *
+ * Creates the market class
+ */
 void Investor::on_pushButton_clicked()
 {
     Market market(name_, age_, wealth_, risk_tolerance_, risk_requirement_, sector_, risk_profile_);
@@ -50,6 +67,13 @@ void Investor::on_pushButton_clicked()
     market.exec();
 }
 
+/**
+ * @brief Investor::risk_profile
+ * @return
+ *
+ * sets a risk profile dependent on the input of the investor
+ * returns a double to set equal to private variable risk_profile_
+ */
 double Investor::risk_profile() {
     if(age_ > 17 && age_ < 40) {
         if(risk_tolerance_ >=1 && risk_tolerance_ < 3) {

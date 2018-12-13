@@ -9,6 +9,18 @@
 
 using namespace std;
 
+/**
+ * @brief Forecast::Forecast
+ * @param name
+ * @param age
+ * @param wealth
+ * @param risk_t
+ * @param risk_r
+ * @param sector
+ * @param parent
+ *
+ * parameters from Portfolio class
+ */
 Forecast::Forecast(string name, int age, double wealth, double risk_t, double risk_r, string sector, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Forecast)
@@ -28,6 +40,15 @@ Forecast::~Forecast()
     delete ui;
 }
 
+/**
+ * @brief Forecast::on_pushButton_clicked
+ *
+ * controller for user forecasting selection
+ * I explained it breifly at the top of this page, but I couldn't implement the Factory method in QT
+ *      because the Q_Object that is used to create the class isn't copyable. As a result the
+ *      function is massive and just full of repetitive but slightly differing queries and
+ *      conditionals
+ */
 void Forecast::on_pushButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
@@ -492,7 +513,12 @@ void Forecast::on_pushButton_clicked()
     db.close();
 }
 
-
+/**
+ * @brief Forecast::on_pushButton_2_clicked
+ *
+ * doesn't link anywhere but clears the portfolio table database
+ * not totally necessary since the portfolio table is also cleared in the very beginning, but still reasonable in case
+ */
 void Forecast::on_pushButton_2_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");

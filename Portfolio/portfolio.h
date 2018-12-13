@@ -22,12 +22,27 @@ public:
     void add_contents();
     void set_units();
 
+    /**
+     * Attempt at Singleton implementation in QT -- works on console app but couldn't implement it correctly here
+     *
+    static Portfolio& GetPortfolio() {
+        static Portfolio portfolio;
+        return portfolio;
+    }
+
+    Portfolio(Portfolio const&) = delete;
+    void operator = (Portfolio const&) = delete;
+    */
+
 private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
 private:
+    // Attempt cont. with a private constructor
+    // Portfolio(string name, int age, double wealth, double risk_t, double risk_r, string sector, double risk_profile, QWidget *parent = nullptr);
+
     Ui::Portfolio *ui;
 
     string name_;

@@ -8,6 +8,19 @@
 
 using namespace std;
 
+/**
+ * @brief Market::Market
+ * @param name
+ * @param age
+ * @param wealth
+ * @param risk_t
+ * @param risk_r
+ * @param sector
+ * @param risk_profile
+ * @param parent
+ *
+ * all parameters come from the Investor class
+ */
 Market::Market(string name, int age, double wealth, double risk_t, double risk_r, string sector, double risk_profile, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Market)
@@ -30,6 +43,12 @@ Market::~Market()
     delete ui;
 }
 
+/**
+ * @brief Market::on_pushButton_clicked
+ *
+ * driver for all the SQL queries dependent on user input
+ * connects to database first
+ */
 void Market::on_pushButton_clicked()
 {
     ui->label_8->setText("Choice:");
@@ -139,6 +158,11 @@ void Market::on_pushButton_clicked()
     db.close();
 }
 
+/**
+ * @brief Market::on_pushButton_2_clicked
+ *
+ * creates Portfolio class
+ */
 void Market::on_pushButton_2_clicked()
 {
     Portfolio portfolio(name_, age_, wealth_, risk_tolerance_, risk_requirement_, sector_, risk_profile_);

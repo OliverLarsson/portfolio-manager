@@ -8,6 +8,21 @@
 
 using namespace std;
 
+/**
+ * @brief Portfolio::Portfolio
+ * @param name
+ * @param age
+ * @param wealth
+ * @param risk_t
+ * @param risk_r
+ * @param sector
+ * @param risk_profile
+ * @param parent
+ *
+ * another hefty constructor for the same purpose as the Investor class
+ * parameters all come from the Market class
+ * sets dialogue based on past user input and some calculations
+ */
 Portfolio::Portfolio(string name, int age, double wealth, double risk_t, double risk_r, string sector, double risk_profile, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Portfolio)
@@ -43,6 +58,11 @@ Portfolio::~Portfolio()
     delete ui;
 }
 
+/**
+ * @brief Portfolio::on_pushButton_clicked
+ *
+ * creates Forecast class
+ */
 void Portfolio::on_pushButton_clicked()
 {
     Forecast forecast(name_, age_, wealth_, risk_tolerance_, risk_requirement_, sector_);
@@ -50,6 +70,13 @@ void Portfolio::on_pushButton_clicked()
     forecast.exec();
 }
 
+/**
+ * @brief Portfolio::risk_path
+ *
+ * creates risk path for the portfolio
+ * based on risk tolerance, risk capacity, and wealth
+ * the risk path is used to decide which financial assets are loaded into the portfolio
+ */
 void Portfolio::risk_path() {
     if(risk_tolerance_ >= 0 && risk_tolerance_ <= 3) {
         if((risk_capacity_/wealth_) >= 0 && (risk_capacity_/wealth_) <= .33) {
@@ -86,6 +113,17 @@ void Portfolio::risk_path() {
     }
 }
 
+/**
+ * @brief Portfolio::add_contents
+ * @var t_stocks
+ * @var t_etf
+ * @var i_stocks
+ * @var i_etf
+ *
+ * loads the portfolio with the assets meeting the risk path criteria
+ * all variables above are created and binded to correctly load the portfolio
+ *      with the percentages claimed earlier in the process
+ */
 void Portfolio::add_contents() {
     int t_stocks = static_cast<int>((risk_profile_/100)*18);
     int t_etf = 18 - t_stocks;
@@ -257,6 +295,12 @@ void Portfolio::add_contents() {
 
 }
 
+/**
+ * @brief Portfolio::set_units
+ *
+ * equally distributes units based on the value of the portfolio at 1 unit per stock and the wealth of the investor
+ * casted as an int to ensure value of portfolio never goes over value of investor
+ */
 void Portfolio::set_units() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
@@ -275,6 +319,12 @@ void Portfolio::set_units() {
     db.close();
 }
 
+/**
+ * @brief Portfolio::on_pushButton_2_clicked
+ *
+ * controller for user selections on viewing the portfolio
+ * works same as the market with setting choice_ variable equal to user input
+ */
 void Portfolio::on_pushButton_2_clicked()
 {
     ui->label->setText("Choice:");

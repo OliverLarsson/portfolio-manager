@@ -18,6 +18,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/**
+ * @brief MainWindow::on_allDone_clicked
+ *
+ * sets all the user input values to private variables
+ * sends data on to next class
+ */
 void MainWindow::on_allDone_clicked()
 {
     name = ui->lineEdit->text().toStdString();
@@ -30,7 +36,11 @@ void MainWindow::on_allDone_clicked()
     ui->allDone->setText("Set!");
 }
 
-
+/**
+ * @brief MainWindow::on_marketGo_clicked
+ *
+ * creates new object for the Invester class
+ */
 void MainWindow::on_marketGo_clicked()
 {
     Investor investor(name, age, wealth, risk_tolerance, risk_requirement, sector);
