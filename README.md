@@ -16,14 +16,16 @@ Text UI Instructions
 **************
 
 Once you complete the downloading steps, it's time to play. To run the game, make sure you are in the portfolio-manager directory, then follow these steps on the command line: 
-
-    1. make all
-    2. ./portfolio
+    
+    1. cd Code
+    2. make all
+    3. ./portfolio
 
 If you want to test the game, follow these steps on the command line: 
 
-    1. make all 
-    2. ./test
+    1. cd Code
+    2. make all 
+    3. ./test
 
 *****************
 QT Instructions
