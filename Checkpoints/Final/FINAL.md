@@ -32,7 +32,7 @@
 
 - The Good: 
     - Learned a lot 
-    - Adapted a  
+    - Adapted a lot too 
     - I like to think I improved my coding research strategy since SQLite and QT involved plenty of research to get right  
     - I ran into quite a few technical difficulties, some due to my ignorance, that made me problem solve more than I have in any CS course. This made the project feel a lot more full and worth the time. 
 
