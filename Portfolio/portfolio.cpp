@@ -6,6 +6,8 @@
 #include <QtDebug>
 #include <QDebug>
 
+#include "db_path.h"
+
 using namespace std;
 
 /**
@@ -133,7 +135,7 @@ void Portfolio::add_contents()
     int i_etf = 14 - i_stocks;
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
+    db.setDatabaseName(global_db_path);
     if(!db.open()) {
         qDebug() << db.lastError();
         qFatal("Failed to connect");
@@ -306,7 +308,7 @@ void Portfolio::add_contents()
 void Portfolio::set_units()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
+    db.setDatabaseName(global_db_path);
     if(!db.open()) {
         qDebug() << db.lastError();
         qFatal("Failed to connect");
@@ -334,7 +336,7 @@ void Portfolio::on_pushButton_2_clicked()
     ui->label->repaint();
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
+    db.setDatabaseName(global_db_path);
     if(!db.open()) {
         qDebug() << db.lastError();
         qFatal("Failed to connect");

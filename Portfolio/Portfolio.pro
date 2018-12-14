@@ -31,14 +31,16 @@ SOURCES += \
     market.cpp \
     portfolio.cpp \
     forecast.cpp \
-    test.cpp
+    db_path.cpp
 
 HEADERS += \
         mainwindow.h \
     investor.h \
     market.h \
     portfolio.h \
-    forecast.h
+    forecast.h \
+    db_path.h \
+    db_path.h
 
 FORMS += \
         mainwindow.ui \

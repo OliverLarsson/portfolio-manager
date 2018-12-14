@@ -6,6 +6,8 @@
 #include <QtDebug>
 #include <QDebug>
 
+#include "db_path.h"
+
 using namespace std;
 
 /**
@@ -55,7 +57,7 @@ void Market::on_pushButton_clicked()
     ui->label_8->repaint();
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
+    db.setDatabaseName(global_db_path);
     if(!db.open()) {
         qDebug() << db.lastError();
         qFatal("Failed to connect");

@@ -7,6 +7,8 @@
 #include <QtDebug>
 #include <QDebug>
 
+#include "db_path.h"
+
 using namespace std;
 
 /**
@@ -52,7 +54,7 @@ Forecast::~Forecast()
 void Forecast::on_pushButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
+    db.setDatabaseName(global_db_path);
     if(!db.open()) {
         qDebug() << db.lastError();
         qFatal("Failed to connect");
@@ -522,7 +524,7 @@ void Forecast::on_pushButton_clicked()
 void Forecast::on_pushButton_2_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/Ollie/Desktop/portfolio-manager/Code/Investor.db");
+    db.setDatabaseName(global_db_path);
     if(!db.open()) {
         qDebug() << db.lastError();
         qFatal("Failed to connect");

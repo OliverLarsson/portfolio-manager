@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <iostream>
+#include "db_path.h"
 
 using namespace std;
 
